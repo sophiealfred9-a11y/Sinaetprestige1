@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <title>Page non trouvée - Sina & Prestige</title>
+    <meta name="description" content="La page que vous recherchez n'existe pas ou a été déplacée.">
+    <meta name="robots" content="noindex, follow">
+    <style>
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .error-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 60vh;
+            padding: 2rem;
+            text-align: center;
+            animation: fadeIn 0.6s ease-in;
+        }
+
+        .error-code {
+            font-size: 8rem;
+            font-weight: 700;
+            color: #2c4f73;
+            margin: 0;
+            line-height: 1;
+            animation: slideInDown 0.8s ease-out;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            color: #1a2d42;
+            margin: 1rem 0;
+            animation: slideInDown 0.8s ease-out 0.2s both;
+        }
+
+        .error-message {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            animation: slideInDown 0.8s ease-out 0.4s both;
+        }
+        .error-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .error-btn {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .error-btn-primary {
+            background: #2c4f73;
+            color: white;
+        }
+        .error-btn-primary:hover {
+            background: #1a2d42;
+            transform: translateY(-2px);
+        }
+        .error-btn-secondary {
+            background: #f0f5fa;
+            color: #2c4f73;
+            border: 2px solid #2c4f73;
+        }
+        .error-btn-secondary:hover {
+            background: #e8f1f8;
+            transform: translateY(-2px);
+        }
+        .error-suggestions {
+            margin-top: 3rem;
+            text-align: left;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 600px;
+        }
+        .error-suggestions h3 {
+            color: #2c4f73;
+            margin-top: 0;
+        }
+        .error-suggestions ul {
+            list-style: none;
+            padding: 0;
+        }
+        .error-suggestions li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .error-suggestions li:last-child {
+            border-bottom: none;
+        }
+        .error-suggestions a {
+            color: #2c4f73;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .error-suggestions a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body style="background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);">
+
+    <!-- STICKY TOP BAR -->
+    <div class="top-bar-sticky" id="topBar" role="banner" aria-label="Barre d'information">
+        <div class="top-bar-left">
+            <div><strong>Sina & Prestige</strong> - Organisme de formation certifié Qualiopi</div>
+            <div>Catalogue • Webinaires • Recrutement • Accompagnement RH • Qualité & accessibilité</div>
+        </div>
+        <a href="contact" class="top-bar-cta" aria-label="Demander un devis">Demander un devis</a>
+        <button class="top-bar-close" onclick="document.getElementById('topBar').classList.add('hidden'); document.body.classList.remove('has-top-bar');" aria-label="Fermer la barre d'information">✕</button>
+    </div>
+
+    <!-- HEADER -->
+    <header role="navigation" aria-label="Navigation principale">
+        <nav aria-label="Menu principal">
+            <a href="index" class="logo-section" aria-label="Retour à l'accueil">
+                <img src="images/logo.png" alt="Logo Sina & Prestige">
+                <div class="logo-text">
+                    <div class="main">SINA & PRESTIGE</div>
+                    <div class="sub">ALFREDHRCONSULTING</div>
+                </div>
+            </a>
+            <ul role="menubar">
+                <li role="none"><a href="index" role="menuitem">Accueil</a></li>
+                <li role="none"><a href="formations" role="menuitem">Formations</a></li>
+                <li role="none"><a href="ingenierie-pedagogique" role="menuitem">Ingénierie pédagogique</a></li>
+                <li role="none"><a href="conseil-rh-recrutement" role="menuitem">Conseil RH & recrutement</a></li>
+                <li role="none"><a href="entreprise" role="menuitem">Entreprise & Partenaires</a></li>
+                <li role="none"><a href="qualite-accessibilite" role="menuitem">Qualité & accessibilité</a></li>
+                <li role="none"><a href="a-propos" role="menuitem">À propos</a></li>
+                <li role="none"><a href="contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="error-container">
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Page non trouvée</h2>
+            <p class="error-message">
+                Désolé, la page que vous recherchez n'existe pas ou a été déplacée.
+                Nous vous proposons plusieurs options pour continuer votre visite.
+            </p>
+
+            <div class="error-actions">
+                <a href="index" class="error-btn error-btn-primary">Retourner à l'accueil</a>
+                <a href="contact" class="error-btn error-btn-secondary">Nous contacter</a>
+            </div>
+
+            <div class="error-suggestions">
+                <h3>Où souhaitez-vous aller ?</h3>
+                <ul>
+                    <li><a href="formations">Consultez nos formations</a></li>
+                    <li><a href="ingenierie-pedagogique">Découvrez notre ingénierie pédagogique</a></li>
+                    <li><a href="conseil-rh-recrutement">Explorez nos services RH et recrutement</a></li>
+                    <li><a href="entreprise">Solutions pour les entreprises</a></li>
+                    <li><a href="evenements">Nos événements et webinaires</a></li>
+                    <li><a href="a-propos">En savoir plus sur Sina & Prestige</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo" aria-label="Pied de page">
+        <div class="footer-content">
+            <div class="footer-left">
+                <section class="footer-section">
+                    <h4>Sina & Prestige</h4>
+                    <p>Organisme de formation déclaré</p>
+                    <p><strong>NDA :</strong> 11 75 73 30 575</p>
+                    <p><strong>Email :</strong> contact@sinaetprestige.fr</p>
+                </section>
+            </div>
+            <div class="footer-right">
+                <section class="footer-section">
+                    <h4>Nos Services</h4>
+                    <ul>
+                        <li><a href="formations">Formations</a></li>
+                        <li><a href="ingenierie-pedagogique">Ingénierie pédagogique</a></li>
+                        <li><a href="conseil-rh-recrutement">Conseil RH & Recrutement</a></li>
+                        <li><a href="entreprise">Partenaires</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="a-propos">À propos</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="accessibilite">Accessibilité</a></li>
+                        <li><a href="ressources">Documents</a></li>
+                    </ul>
+                </section>
+                <section class="footer-section">
+                    <h4>Documents Légaux</h4>
+                    <ul>
+                        <li><a href="mentions-legales">Mentions légales</a></li>
+                        <li><a href="confidentialite">Confidentialité</a></li>
+                        <li><a href="cgv">CGV / CGU</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-center">
+                <p>&copy; 2026 SINA & PRESTIGE - Tous droits réservés</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Track 404 error in Google Analytics
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                'page_path': window.location.pathname,
+                'page_title': '404 - Page not found'
+            });
+        }
+    </script>
+
+</body>
+</html>
