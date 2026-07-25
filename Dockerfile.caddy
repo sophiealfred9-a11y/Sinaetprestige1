@@ -1,0 +1,124 @@
+:80 {
+	# Health check
+	handle_path /health {
+		respond "healthy" 200
+	}
+
+	# API proxy
+	handle_path /api/* {
+		reverse_proxy api:5000 {
+			header_up X-Forwarded-Proto {scheme}
+			header_up X-Real-IP {remote_host}
+		}
+	}
+
+	# Static assets - CSS, JS, Images, etc
+	handle /css/* {
+		file_server {
+			root /srv
+			hide .htaccess
+		}
+		header Cache-Control "public, max-age=31536000, immutable"
+		header Content-Type "text/css; charset=utf-8"
+		encode gzip
+	}
+
+	handle /js/* {
+		file_server {
+			root /srv
+			hide .htaccess
+		}
+		header Cache-Control "public, max-age=31536000, immutable"
+		header Content-Type "application/javascript; charset=utf-8"
+		encode gzip
+	}
+
+	handle /images/* {
+		file_server {
+			root /srv
+			hide .htaccess
+		}
+		header Cache-Control "public, max-age=31536000, immutable"
+		encode gzip
+	}
+
+	handle /pdfs/* {
+		file_server {
+			root /srv
+			hide .htaccess
+		}
+		header Cache-Control "public, max-age=2592000"
+		encode gzip
+	}
+
+	handle /fonts/* {
+		file_server {
+			root /srv
+			hide .htaccess
+		}
+		header Cache-Control "public, max-age=31536000, immutable"
+		encode gzip
+	}
+
+	# Root path
+	handle_path / {
+		file_server {
+			root /srv
+			index index.html
+			hide .htaccess
+		}
+		header Content-Type "text/html; charset=utf-8"
+		header X-Frame-Options "SAMEORIGIN"
+		header X-Content-Type-Options "nosniff"
+		header X-XSS-Protection "1; mode=block"
+		header Referrer-Policy "strict-origin-when-cross-origin"
+		header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+		header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'"
+		encode gzip
+	}
+
+	# All other paths - clean URLs + 404 with proper status code
+	handle_path /* {
+		# Check if exact file or .html version exists
+		@found file {path} {path}.html
+
+		# Serve found files
+		handle @found {
+			try_files {path} {path}.html
+			file_server {
+				root /srv
+				hide .htaccess
+			}
+			header Content-Type "text/html; charset=utf-8"
+			header X-Frame-Options "SAMEORIGIN"
+			header X-Content-Type-Options "nosniff"
+			header X-XSS-Protection "1; mode=block"
+			header Referrer-Policy "strict-origin-when-cross-origin"
+			header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+			header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'"
+			encode gzip
+		}
+
+		# Serve 404 page for missing files
+		handle {
+			rewrite /404.html
+			file_server {
+				root /srv
+				hide .htaccess
+			}
+			header Content-Type "text/html; charset=utf-8"
+			header X-Frame-Options "SAMEORIGIN"
+			header X-Content-Type-Options "nosniff"
+			header X-XSS-Protection "1; mode=block"
+			header Referrer-Policy "strict-origin-when-cross-origin"
+			header Permissions-Policy "accelerometer=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+			header Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'"
+			respond 404
+			encode gzip
+		}
+	}
+
+	# Deny dotfiles
+	respond /. 403
+	respond /*~ 403
+}
