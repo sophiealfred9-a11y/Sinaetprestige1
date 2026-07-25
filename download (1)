@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <title>Procédure de Réclamation - Sina & Prestige</title>
+    <meta name="description" content="Procédure de réclamation de Sina & Prestige - Traitement équitable et rapide de vos réclamations concernant nos formations et services.">
+    <link rel="canonical" href="https://sinaetprestige.fr/reclamations">
+    <meta property="og:title" content="Procédure de Réclamation - Sina & Prestige">
+    <meta property="og:description" content="Procédure de traitement des réclamations - Engagement de qualité et transparence.">
+    <meta property="og:url" content="https://sinaetprestige.fr/reclamations">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://sinaetprestige.fr/images/og-image.png">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Procédure de Réclamation - Sina & Prestige",
+      "url": "https://sinaetprestige.fr/reclamations.html",
+      "description": "Procédure de traitement des réclamations"
+    }
+    </script>
+</head>
+<body style="background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);">
+    <!-- STICKY TOP BAR -->
+    <div class="top-bar-sticky" id="topBar" role="banner" aria-label="Barre d'information">
+        <div class="top-bar-left">
+            <div><strong>Sina & Prestige</strong> - Organisme de formation certifié Qualiopi</div>
+            <div>Catalogue • Webinaires • Recrutement • Accompagnement RH • Qualité & accessibilité</div>
+        </div>
+        <a href="contact" class="top-bar-cta" aria-label="Demander un devis">Demander un devis</a>
+        <button class="top-bar-close" onclick="document.getElementById('topBar').classList.add('hidden'); document.body.classList.remove('has-top-bar');" aria-label="Fermer la barre d'information">✕</button>
+    </div>
+
+    <!-- HEADER -->
+    <header role="navigation" aria-label="Navigation principale">
+        <nav aria-label="Menu principal">
+            <a href="index" class="logo-section" aria-label="Retour À l'accueil">
+                <img src="images/logo.png" alt="Logo Sina & Prestige">
+                <div class="logo-text">
+                    <div class="main">SINA & PRESTIGE</div>
+                    <div class="sub">ALFREDHRCONSULTING</div>
+                </div>
+            </a>
+            <ul role="menubar">
+                <li role="none"><a href="index" role="menuitem">Accueil</a></li>
+                <li role="none"><a href="recrutement" role="menuitem">Recrutement</a></li>
+                <li role="none"><a href="webinaires-masterclass" role="menuitem">Webinaires & Masterclass</a></li>
+                <li role="none"><a href="accompagnement-rh" role="menuitem">Accompagnement RH</a></li>
+                <li role="none"><a href="formations" role="menuitem">Formations</a></li>
+                <li role="none"><a href="entreprise" role="menuitem">Entreprise & Partenaires</a></li>
+                <li role="none"><a href="qualite" role="menuitem">Qualité & accessibilité</a></li>
+                <li role="none"><a href="a-propos" role="menuitem">À propos</a></li>
+                <li role="none"><a href="contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div class="content">
+            <h1>Procédure de Réclamation</h1>
+
+            <p>Nous valorisons votre retour et nous engageons À traiter toute réclamation de manière équitable et rapide.</p>
+
+            <h2>1. Objet de la Réclamation</h2>
+            <p>Vous pouvez formuler une réclamation concernant :</p>
+            <ul>
+                <li>La qualité d'une formation suivie</li>
+                <li>Le comportement d'un formateur ou du personnel</li>
+                <li>Les conditions matérielles ou d'accès</li>
+                <li>Les résultats d'une évaluation</li>
+                <li>Le respect des engagements Qualiopi</li>
+                <li>Tout autre service ou service fourni</li>
+            </ul>
+
+            <h2>2. Procédure en 3 Étapes</h2>
+            <div class="steps">
+                <div class="step">
+                    <h3>Étape 1 : Formulation de la Réclamation</h3>
+                    <p><strong>Délai :</strong> 15 jours suivant l'événement réclamé</p>
+                    <p><strong>Voie :</strong> Email À contact@sinaetprestige.fr</p>
+                    <p><strong>Contenu :</strong> Vos coordonnées complètes, description précise de la situation, date et pièces justificatives</p>
+                </div>
+
+                <div class="step">
+                    <h3>Étape 2 : Examen de la Réclamation</h3>
+                    <p><strong>Délai :</strong> 10 jours ouvrables À compter de la réception</p>
+                    <p><strong>Traitement :</strong> Analyse approfondie, éventuels entretiens avec les parties</p>
+                    <p><strong>Confirmation :</strong> Email de réception et numéro de dossier</p>
+                </div>
+
+                <div class="step">
+                    <h3>Étape 3 : Réponse et Résolution</h3>
+                    <p><strong>Délai :</strong> 15 jours maximum À partir de la réception</p>
+                    <p><strong>Réponse :</strong> Email détaillé avec conclusions et solutions proposées</p>
+                    <p><strong>Suivi :</strong> Mise en Å“uvre de la solution convenue</p>
+                </div>
+            </div>
+
+            <h2>3. Contenu de la Réclamation</h2>
+            <p>Votre réclamation doit contenir :</p>
+            <ul>
+                <li>Vos nom, prénom, email et téléphone</li>
+                <li>Référence formation ou service (dates, titre)</li>
+                <li>Description détaillée de la situation</li>
+                <li>Pièces justificatives (photos, emails, documents)</li>
+                <li>Résolution souhaitée</li>
+            </ul>
+
+            <h2>4. Traitement Confidentiel</h2>
+            <p>Toutes les réclamations sont traitées de manière confidentielle par notre équipe dédiée. Les informations ne seront partagées que si nécessaire pour la résolution.</p>
+
+            <h2>5. Recours</h2>
+            <p>Si vous n'êtes pas satisfait de notre réponse :</p>
+            <ul>
+                <li>Demande de réexamen : contact@sinaetprestige.fr</li>
+                <li>Médiation : accès via les organismes professionnels</li>
+                <li>Juridique : recours en justice selon la juridiction compétente</li>
+            </ul>
+
+            <h2>6. Suivi des Réclamations</h2>
+            <p>Nous enregistrons toutes les réclamations pour :</p>
+            <ul>
+                <li>Assurer la traçabilité</li>
+                <li>Identifier les points d'amélioration</li>
+                <li>Mettre en place des actions correctives</li>
+                <li>Respecter nos engagements Qualiopi</li>
+            </ul>
+
+            <h2>7. Contact</h2>
+            <p><strong>Email :</strong> <a href="mailto:contact@sinaetprestige.fr">contact@sinaetprestige.fr</a></p>
+            <p><strong>Référent qualité :</strong> <a href="contact">Formulaire de contact</a></p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer role="contentinfo" aria-label="Pied de page">
+        <div class="footer-content">
+            <!-- LEFT COLUMN -->
+            <div class="footer-left">
+                <section class="footer-section">
+                    <h4>Sina & Prestige</h4>
+                    <p>Organisme de formation déclaré</p>
+                    <p><strong>NDA :</strong> 11 75 73 30 575</p>
+                    <p><strong>Région :</strong> Île-de-France</p>
+                    <p><strong>Email :</strong> contact@sinaetprestige.fr</p>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN - 3 GRIDS -->
+            <div class="footer-right">
+                <!-- SERVICES -->
+                <section class="footer-section">
+                    <h4>Nos Services</h4>
+                    <ul>
+                        <li><a href="formations">Formations</a></li>
+                        <li><a href="webinaires-masterclass">Webinaires & Masterclass</a></li>
+                        <li><a href="recrutement">Recrutement</a></li>
+                        <li><a href="accompagnement-rh">Accompagnement RH</a></li>
+                        <li><a href="entreprise">Partenaires</a></li>
+                    </ul>
+                </section>
+
+                <!-- INFORMATIONS -->
+                <section class="footer-section">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="a-propos">À propos</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="reclamations">Réclamations</a></li>
+                        <li><a href="accessibilite">Accessibilité</a></li>
+                        <li><a href="ressources">Documents</a></li>
+                    </ul>
+                </section>
+
+                <!-- LEGAL -->
+                <section class="footer-section">
+                    <h4>Documents Légaux</h4>
+                    <ul>
+                        <li><a href="mentions-legales">Mentions légales</a></li>
+                        <li><a href="confidentialite">Confidentialité</a></li>
+                        <li><a href="cgv">CGV / CGU</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- BOTTOM SECTION -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <div class="qualiopi-box">
+                    <a href="pdfs/certificat-QUA009621-2026-05-27T14_01_34.642Z%20(2).pdf" target="_blank" title="Cliquez pour voir le certificat Qualiopi">
+                        <img src="images/qualiopi.png" alt="Qualiopi Certification" loading="lazy">
+                    </a>
+                    <div class="qualiopi-content">
+                        <h5>Qualiopi</h5>
+                        <p>Certification Qualiopi</p>
+                        <a href="https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation" target="_blank" class="qualiopi-link">En savoir plus →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-center">
+                <p>&copy; 2026 SINA & PRESTIGE - Tous droits réservés</p>
+            </div>
+            <div class="footer-bottom-right">
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
+</html>

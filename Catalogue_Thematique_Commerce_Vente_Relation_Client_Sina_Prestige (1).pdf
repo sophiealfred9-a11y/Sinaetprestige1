@@ -1,0 +1,74 @@
+<!-- PROFESSIONAL FOOTER - USE ON ALL PAGES -->
+<footer role="contentinfo" aria-label="Pied de page">
+    <div class="footer-content">
+        <!-- LEFT COLUMN -->
+        <div class="footer-left">
+            <section class="footer-section">
+                <h4>Sina & Prestige</h4>
+                <p>Organisme de formation déclaré</p>
+                <p><strong>NDA :</strong> 11 75 73 30 575</p>
+                <p><strong>Région :</strong> Île-de-France</p>
+                <p><strong>Email :</strong> contact@sinaetprestige.fr</p>
+            </section>
+        </div>
+
+        <!-- RIGHT COLUMN - 3 GRIDS -->
+        <div class="footer-right">
+            <!-- SERVICES -->
+            <section class="footer-section">
+                <h4>Nos Services</h4>
+                <ul>
+                    <li><a href="formations">Formations</a></li>
+                    <li><a href="webinaires-masterclass">Webinaires & Masterclass</a></li>
+                    <li><a href="recrutement">Recrutement</a></li>
+                    <li><a href="accompagnement-rh">Accompagnement RH</a></li>
+                    <li><a href="entreprise">Partenaires</a></li>
+                </ul>
+            </section>
+
+            <!-- INFORMATIONS -->
+            <section class="footer-section">
+                <h4>Informations</h4>
+                <ul>
+                    <li><a href="a-propos">À propos</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li><a href="reclamations">Réclamations</a></li>
+                    <li><a href="accessibilite">Accessibilité</a></li>
+                    <li><a href="ressources">Documents</a></li>
+                </ul>
+            </section>
+
+            <!-- LEGAL -->
+            <section class="footer-section">
+                <h4>Documents Légaux</h4>
+                <ul>
+                    <li><a href="mentions-legales">Mentions légales</a></li>
+                    <li><a href="confidentialite">Confidentialité</a></li>
+                    <li><a href="cgv">CGV / CGU</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <!-- BOTTOM SECTION -->
+    <div class="footer-bottom">
+        <div class="footer-bottom-left">
+            <div class="qualiopi-box">
+                <a href="pdfs/certificat-QUA009621-2026-05-27T14_01_34.642Z%20(2).pdf" target="_blank" title="Cliquez pour voir le certificat Qualiopi">
+                    <img src="images/qualiopi.png" alt="Qualiopi Certification" loading="lazy">
+                </a>
+                <div class="qualiopi-content">
+                    <h5>Qualiopi</h5>
+                    <p>Certification Qualiopi</p>
+                    <a href="https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation" target="_blank" class="qualiopi-link">En savoir plus →</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-center">
+            <p>&copy; 2026 SINA & PRESTIGE - Tous droits réservés</p>
+        </div>
+        <div class="footer-bottom-right">
+            <p></p>
+        </div>
+    </div>
+</footer>

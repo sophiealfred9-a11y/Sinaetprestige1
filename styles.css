@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="css/styles.css?v=1.0">
+    <title>Contact - Sina & Prestige</title>
+    <meta name="description" content="Contactez Sina & Prestige pour vos demandes de formation, recrutement ou accompagnement RH. Réponse sous 24-48h.">
+    <link rel="canonical" href="https://sinaetprestige.fr/contact">
+    <meta property="og:title" content="Contact - Sina & Prestige">
+    <meta property="og:description" content="Contactez Sina & Prestige pour vos demandes de formation, recrutement ou accompagnement RH. Réponse sous 24-48h.">
+    <meta property="og:image" content="https://sinaetprestige.fr/images/logo.png">
+    <meta property="og:url" content="https://sinaetprestige.fr/contact">
+    <meta property="og:type" content="website">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact - Sina & Prestige",
+      "url": "https://sinaetprestige.fr/contact",
+      "organization": {
+        "@type": "LocalBusiness",
+        "name": "Sina & Prestige",
+        "email": "contact@sinaetprestige.fr",
+        "url": "https://sinaetprestige.fr",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "FR",
+          "addressRegion": "Île-de-France"
+        },
+        "areaServed": ["FR"],
+        "serviceType": "Formation professionnelle"
+      }
+    }
+    </script>
+
+</head>
+<body style="background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);">
+
+    <!-- STICKY TOP BAR -->
+    <div class="top-bar-sticky" id="topBar" role="banner" aria-label="Barre d'information">
+        <div class="top-bar-left">
+            <div><strong>Sina & Prestige</strong> - Organisme de formation certifié Qualiopi</div>
+            <div>Catalogue • Webinaires • Recrutement • Accompagnement RH • Qualité & accessibilité</div>
+        </div>
+        <a href="contact" class="top-bar-cta" aria-label="Demander un devis">Demander un devis</a>
+        <button class="top-bar-close" onclick="document.getElementById('topBar').classList.add('hidden'); document.body.classList.remove('has-top-bar');" aria-label="Fermer la barre d'information">✕</button>
+    </div>
+
+    <!-- HEADER -->
+    <header role="navigation" aria-label="Navigation principale">
+        <nav aria-label="Menu principal">
+            <a href="index" class="logo-section" aria-label="Retour À l'accueil">
+                <img src="images/logo.png" alt="Logo Sina & Prestige">
+                <div class="logo-text">
+                    <div class="main">SINA & PRESTIGE</div>
+                    <div class="sub">ALFREDHRCONSULTING</div>
+                </div>
+            </a>
+            <ul role="menubar">
+                <li role="none"><a href="index" role="menuitem">Accueil</a></li>
+                <li role="none"><a href="recrutement" role="menuitem">Recrutement</a></li>
+                <li role="none"><a href="webinaires-masterclass" role="menuitem">Webinaires & Masterclass</a></li>
+                <li role="none"><a href="accompagnement-rh" role="menuitem">Accompagnement RH</a></li>
+                <li role="none"><a href="formations" role="menuitem">Formations</a></li>
+                <li role="none"><a href="entreprise" role="menuitem">Entreprise & Partenaires</a></li>
+                <li role="none"><a href="qualite" role="menuitem">Qualité & accessibilité</a></li>
+                <li role="none"><a href="a-propos" role="menuitem">À propos</a></li>
+                <li role="none"><a href="contact" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- HERO -->
+        <section class="hero" style="position: relative; z-index: 2; text-align: center; display: flex; align-items: center; justify-content: center; min-height: 400px; padding: 4rem 2rem;">
+            <div style="width: 100%; max-width: 900px;">
+                <h1>Contactez-nous</h1>
+                <p class="hero-subtext">Une question, un projet ou un besoin spécifique ? Notre équipe vous répond rapidement.</p>
+            </div>
+        </section>
+
+        <div class="contact-container">
+            <div class="contact-form">
+                <h2 style="color: #2c4f73; margin-bottom: 1.5rem;">Échangeons sur votre besoin</h2>
+                <form id="contactForm" novalidate>
+                    <div id="formMessage" style="display: none; padding: 1rem; margin-bottom: 1.5rem; border-radius: 4px; font-weight: 500;"></div>
+
+                    <fieldset style="border: none; padding: 0; margin: 0;">
+                        <legend style="display: none;">Formulaire de contact</legend>
+
+                        <div class="form-group">
+                            <label for="je_suis">Vous êtes <span style="color: #d32f2f;">*</span></label>
+                            <select id="je_suis" name="je_suis" required aria-required="true">
+                                <option value="">-- Sélectionner votre profil --</option>
+                                <option value="particulier">Particulier / Candidat</option>
+                                <option value="entreprise">Responsable RH / Entreprise</option>
+                                <option value="ecole">École / Organisme de formation</option>
+                                <option value="expert">Expert / Formateur</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Nom complet <span style="color: #d32f2f;">*</span></label>
+                            <input type="text" id="name" name="name" required aria-required="true" minlength="2">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email <span style="color: #d32f2f;">*</span></label>
+                            <input type="email" id="email" name="email" required aria-required="true">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telephone">Téléphone</label>
+                            <input type="tel" id="telephone" name="telephone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="entreprise">Entreprise / Organisation</label>
+                            <input type="text" id="entreprise" name="entreprise">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mon_besoin">Mon besoin <span style="color: #d32f2f;">*</span></label>
+                            <select id="mon_besoin" name="mon_besoin" required aria-required="true">
+                                <option value="">-- Sélectionner --</option>
+                                <option value="formation">Formation continue</option>
+                                <option value="recrutement">Recrutement / Sourcing</option>
+                                <option value="accompagnement-rh">Accompagnement RH</option>
+                                <option value="masterclass">Webinaire / Masterclass</option>
+                                <option value="partenariat">Partenariat</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="thematique">Thématique / Domaine <span style="color: #d32f2f;">*</span></label>
+                            <select id="thematique" name="thematique" required aria-required="true">
+                                <option value="">-- Sélectionner une thématique --</option>
+                                <option value="gestion-rh">Gestion RH et talent management</option>
+                                <option value="ia-digital">IA, Digital et transformation</option>
+                                <option value="leadership">Leadership et management</option>
+                                <option value="vente-commercial">Vente et compétences commerciales</option>
+                                <option value="soft-skills">Soft skills et communication</option>
+                                <option value="recrutement">Sourcing et recrutement</option>
+                                <option value="formation-formateurs">Formation de formateurs</option>
+                                <option value="alternance-stage">Alternance et stages</option>
+                                <option value="autre">Autre domaine</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="format">Format souhaité</label>
+                            <select id="format" name="format">
+                                <option value="">-- Sélectionner --</option>
+                                <option value="presentiel">Présentiel</option>
+                                <option value="distanciel">Distanciel</option>
+                                <option value="hybride">Hybride</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="budget">Budget estimé</label>
+                            <input type="text" id="budget" name="budget" placeholder="ex: 5 000 À 10 000€">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="delai">Délai souhaité <span style="color: #d32f2f;">*</span></label>
+                            <select id="delai" name="delai" required aria-required="true">
+                                <option value="">-- Sélectionner --</option>
+                                <option value="urgent">Urgent (< 1 mois)</option>
+                                <option value="1-3mois">1 À 3 mois</option>
+                                <option value="3-6mois">3 À 6 mois</option>
+                                <option value="sans-delai">Sans délai précis</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message <span style="color: #d32f2f;">*</span></label>
+                            <textarea id="message" name="message" placeholder="Décrivez votre besoin en détail..." required aria-required="true" minlength="10"></textarea>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <input type="checkbox" name="rgpd" required aria-required="true" style="margin-top: 0.25rem; flex-shrink: 0;">
+                                <span>J'accepte que mes données soient utilisées pour être recontacté conformément À la <a href="confidentialite" style="color: #2c4f73; text-decoration: underline;">politique de confidentialité</a> (RGPD) <span style="color: #d32f2f;">*</span></span>
+                            </label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label style="display: flex; align-items: flex-start; gap: 0.75rem;">
+                                <input type="checkbox" name="newsletter" style="margin-top: 0.25rem; flex-shrink: 0;">
+                                <span>Je souhaite recevoir nos actualités et webinaires</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">Envoyer ma demande</button>
+                        <p style="font-size: 0.85rem; color: #999; margin-top: 1rem; font-style: italic;">Délai de réponse : 24 À 48 heures ouvrées</p>
+                    </fieldset>
+                </form>
+            </div>
+
+            <div class="contact-details">
+                <div class="info-box">
+                    <h3>Contactez-nous directement</h3>
+                    <p><strong>Email :</strong> <a href="mailto:contact@sinaetprestige.fr" style="color: #2c4f73; text-decoration: none;">contact@sinaetprestige.fr</a></p>
+                    <p><strong>Téléphone :</strong> <span style="color: #2c4f73;">Sur demande via le formulaire</span></p>
+                    <p><strong>Délai de réponse :</strong> 24 À 48 heures ouvrées</p>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; color: #666;">Merci pour votre demande. L'équipe Sina & Prestige reviendra vers vous sous 24 À 48 heures ouvrées pour échanger sur votre besoin et vous proposer un accompagnement adapté.</p>
+                </div>
+
+                <div class="detail-card">
+                    <h4>Accessibilité et handicap</h4>
+                    <p>Référent handicap disponible pour discuter d'adaptations ou d'accommodements spécifiques. Contactez-nous directement pour un accompagnement personnalisé.</p>
+                </div>
+
+                <div class="detail-card">
+                    <h4>Organisme de formation certifié</h4>
+                    <p><strong>Email :</strong> contact@sinaetprestige.fr</p>
+                    <p><strong>Numéro de déclaration :</strong> 11 75 73 30 575</p>
+                    <p><strong>SIREN :</strong> 754 890 471</p>
+                    <p><strong>Localisation :</strong> Île-de-France</p>
+                </div>
+
+                <div class="detail-card">
+                    <h4>À propos de Sina & Prestige</h4>
+                    <p>Sina & Prestige accompagne les professionnels, entreprises et établissements dans le développement des compétences, les évolutions de carrière et la structuration de leurs pratiques RH et pédagogiques.</p>
+                    <a href="a-propos" style="color: #2c4f73; text-decoration: none; font-weight: 600;">En savoir plus →</a>
+                </div>
+
+                <div class="detail-card">
+                    <h4>Nos services</h4>
+                    <ul style="list-style: none; margin-top: 0.5rem;">
+                        <li><a href="formations" style="color: #2c4f73; text-decoration: none;">Formations certifiées Qualiopi</a></li>
+                        <li><a href="recrutement" style="color: #2c4f73; text-decoration: none;">Recrutement & Sourcing</a></li>
+                        <li><a href="accompagnement-rh" style="color: #2c4f73; text-decoration: none;">Accompagnement RH</a></li>
+                        <li><a href="webinaires-masterclass" style="color: #2c4f73; text-decoration: none;">Webinaires & Masterclass</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER - STANDARD -->
+    <footer role="contentinfo" aria-label="Pied de page">
+        <div class="footer-content">
+            <!-- LEFT COLUMN -->
+            <div class="footer-left">
+                <section class="footer-section">
+                    <h4>Sina & Prestige</h4>
+                    <p>Organisme de formation déclaré</p>
+                    <p><strong>NDA :</strong> 11 75 73 30 575</p>
+                    <p><strong>Région :</strong> Île-de-France</p>
+                    <p><strong>Email :</strong> contact@sinaetprestige.fr</p>
+                </section>
+            </div>
+
+            <!-- RIGHT COLUMN - 3 GRIDS -->
+            <div class="footer-right">
+                <!-- SERVICES -->
+                <section class="footer-section">
+                    <h4>Nos Services</h4>
+                    <ul>
+                        <li><a href="formations">Formations</a></li>
+                        <li><a href="webinaires-masterclass">Webinaires & Masterclass</a></li>
+                        <li><a href="recrutement">Recrutement</a></li>
+                        <li><a href="accompagnement-rh">Accompagnement RH</a></li>
+                        <li><a href="entreprise">Partenaires</a></li>
+                    </ul>
+                </section>
+
+                <!-- INFORMATIONS -->
+                <section class="footer-section">
+                    <h4>Informations</h4>
+                    <ul>
+                        <li><a href="a-propos">À propos</a></li>
+                        <li><a href="contact">Contact</a></li>
+                        <li><a href="reclamations">Réclamations</a></li>
+                        <li><a href="accessibilite">Accessibilité</a></li>
+                        <li><a href="ressources">Documents</a></li>
+                    </ul>
+                </section>
+
+                <!-- LEGAL -->
+                <section class="footer-section">
+                    <h4>Documents Légaux</h4>
+                    <ul>
+                        <li><a href="mentions-legales">Mentions légales</a></li>
+                        <li><a href="confidentialite">Confidentialité</a></li>
+                        <li><a href="cgv">CGV / CGU</a></li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+
+        <!-- BOTTOM SECTION -->
+        <div class="footer-bottom">
+            <div class="footer-bottom-left">
+                <div class="qualiopi-box">
+                    <a href="pdfs/certificat-QUA009621-2026-05-27T14_01_34.642Z%20(2).pdf" target="_blank" title="Cliquez pour voir le certificat Qualiopi">
+                        <img src="images/qualiopi.png" alt="Qualiopi Certification" loading="lazy">
+                    </a>
+                    <div class="qualiopi-content">
+                        <h5>Qualiopi</h5>
+                        <p>Certification Qualiopi</p>
+                        <a href="https://travail-emploi.gouv.fr/qualiopi-marque-de-certification-qualite-des-prestataires-de-formation" target="_blank" class="qualiopi-link">En savoir plus →</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom-center">
+                <p>&copy; 2026 SINA & PRESTIGE - Tous droits réservés</p>
+            </div>
+            <div class="footer-bottom-right">
+                <p></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script>
+        let csrfToken = null;
+
+        async function fetchCSRFToken() {
+            try {
+                const response = await fetch('/api/csrf-token');
+                const data = await response.json();
+                csrfToken = data.csrf_token;
+            } catch (error) {
+                console.error('Failed to fetch CSRF token:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchCSRFToken);
+
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            if (!csrfToken) {
+                alert('Erreur de sécurité. Veuillez rafraîchir la page.');
+                return;
+            }
+
+            const form = e.target;
+            const submitBtn = document.getElementById('submitBtn');
+            const formMessage = document.getElementById('formMessage');
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Envoi en cours...';
+            formMessage.style.display = 'none';
+
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                je_suis: document.getElementById('je_suis').value,
+                telephone: document.getElementById('telephone').value,
+                entreprise: document.getElementById('entreprise').value,
+                mon_besoin: document.getElementById('mon_besoin').value,
+                thematique: document.getElementById('thematique').value,
+                format: document.getElementById('format').value,
+                budget: document.getElementById('budget').value,
+                delai: document.getElementById('delai').value,
+                message: document.getElementById('message').value,
+                rgpd: document.querySelector('input[name="rgpd"]').checked,
+                newsletter: document.querySelector('input[name="newsletter"]').checked,
+                csrf_token: csrfToken
+            };
+
+            try {
+                // API endpoint - uses relative path so it works via Caddy/nginx proxy
+                const apiUrl = '/api/contact';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    // Track conversion event in Google Analytics
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'generate_lead', {
+                            'value': 1,
+                            'currency': 'EUR',
+                            'form_type': document.getElementById('mon_besoin').value,
+                            'profile_type': document.getElementById('je_suis').value
+                        });
+                    }
+
+                    formMessage.style.backgroundColor = '#d4edda';
+                    formMessage.style.color = '#155724';
+                    formMessage.style.borderLeft = '4px solid #28a745';
+                    formMessage.textContent = 'Message envoyé avec succès! Nous vous recontacterons sous 24-48h.';
+                    form.reset();
+                    fetchCSRFToken();
+                } else {
+                    formMessage.style.backgroundColor = '#f8d7da';
+                    formMessage.style.color = '#721c24';
+                    formMessage.style.borderLeft = '4px solid #dc3545';
+                    formMessage.textContent = '- Erreur: ' + (data.error || 'Impossible d\'envoyer le message');
+                }
+                formMessage.style.display = 'block';
+            } catch (error) {
+                formMessage.style.backgroundColor = '#f8d7da';
+                formMessage.style.color = '#721c24';
+                formMessage.style.borderLeft = '4px solid #dc3545';
+                formMessage.textContent = '- Erreur de connexion. Veuillez réessayer plus tard.';
+                formMessage.style.display = 'block';
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Envoyer ma demande';
+            }
+        });
+    </script>
+</body>
+</html>
