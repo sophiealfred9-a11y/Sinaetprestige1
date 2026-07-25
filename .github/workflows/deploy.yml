@@ -1,0 +1,60 @@
+name: CI/CD - Deploy to OVH
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  # Test & Deploy
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Run backend tests & linting
+        working-directory: ./backend
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install flake8
+          flake8 app.py --count --select=E9,F63,F7,F82 --show-source --statistics
+
+      - name: Create SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.OVH_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -H ${{ secrets.OVH_SERVER_IP }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to OVH
+        run: |
+          ssh -i ~/.ssh/deploy_key ${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SERVER_IP }} << 'EOF'
+          cd ${{ secrets.OVH_APP_PATH }}
+
+          # Pull latest code from GitHub
+          git pull origin main
+
+          # Stop old containers
+          docker compose -f docker/docker-compose.yml down
+
+          # Rebuild & restart (reads .env from server)
+          docker compose -f docker/docker-compose.yml up -d --build
+
+          # Verify deployment
+          sleep 5
+          curl -f http://localhost:8080/health || exit 1
+
+          # Clean up old images
+          docker image prune -f
+          EOF
+
+      - name: Verify deployment
+        run: |
+          ssh -i ~/.ssh/deploy_key ${{ secrets.OVH_SSH_USER }}@${{ secrets.OVH_SERVER_IP }} "curl -s http://localhost:8080/health"

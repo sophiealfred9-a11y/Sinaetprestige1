@@ -1,0 +1,23 @@
+# Sina & Prestige - robots.txt
+# SEO-compliant robots.txt per CAHIER SEO 2026
+
+User-agent: *
+Allow: /
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Disallow: /admin/
+Disallow: /private/
+Disallow: /__pycache__/
+Disallow: /backend/
+Disallow: /temp/
+Disallow: /*?*search*
+Disallow: /results
+Disallow: /staging
+
+# Sitemap location
+Sitemap: https://sinaetprestige.fr/sitemap.xml
+
+# Standard crawl preferences
+Crawl-delay: 1
+Request-rate: 30/60
