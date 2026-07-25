@@ -1,6 +1,0 @@
-Contact: security@sinaetprestige.fr
-Expires: 2027-07-19T00:00:00.000Z
-Preferred-Languages: fr, en
-Canonical: https://sinaetprestige.fr/security.txt
-Policy: https://sinaetprestige.fr/mentions-legales.html
-Hiring: https://sinaetprestige.fr/recrutement.html
