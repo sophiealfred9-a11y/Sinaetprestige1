@@ -154,35 +154,38 @@ function initLazyLoading() {
 
 // Mobile menu toggle
 function initMobileMenu() {
-  const nav = document.querySelector('nav');
-  if (!nav) return;
+  const nav = document.querySelector('.site-nav-modern');
+  const menu = document.getElementById('siteMenu');
+  const toggle = document.querySelector('.site-menu-toggle');
+  if (!nav || !menu || !toggle) return;
 
-  // Create hamburger button if not exists
-  if (!document.querySelector('.mobile-menu-btn')) {
-    const menuBtn = document.createElement('button');
-    menuBtn.className = 'mobile-menu-btn';
-    menuBtn.setAttribute('aria-label', 'Menu');
-    menuBtn.setAttribute('aria-expanded', 'false');
-    menuBtn.innerHTML = '☰';
+  const closeMenu = () => {
+    menu.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Ouvrir le menu');
+    toggle.classList.remove('is-open');
+  };
 
-    const ul = nav.querySelector('ul');
-    nav.appendChild(menuBtn);
+  toggle.addEventListener('click', (e) => {
+    e.preventDefault();
+    const open = !menu.classList.contains('is-open');
+    menu.classList.toggle('is-open', open);
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Fermer le menu' : 'Ouvrir le menu');
+  });
 
-    menuBtn.addEventListener('click', function(e) {
-      e.preventDefault();
-      const isOpen = ul.classList.contains('show');
-      ul.classList.toggle('show');
-      menuBtn.setAttribute('aria-expanded', !isOpen);
-    });
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('click', (e) => {
+    if (!nav.contains(e.target)) closeMenu();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
 
-    // Close menu when clicking on a link
-    ul.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', function() {
-        ul.classList.remove('show');
-        menuBtn.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
+  const mq = window.matchMedia('(min-width: 981px)');
+  const sync = () => { if (mq.matches) closeMenu(); };
+  mq.addEventListener?.('change', sync);
 }
 
 // Animate elements on scroll
@@ -378,7 +381,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initKeyboardNav();
   initAnalytics();
-  // initMobileMenu(); // DISABLED - Menu always horizontal
+  initMobileMenu();
   // initRobotWidget(); // DISABLED - AI chat removed
 });
 

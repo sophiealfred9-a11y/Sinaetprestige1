@@ -128,6 +128,7 @@
             text-decoration: underline;
         }
     </style>
+    <link rel="stylesheet" href="css/refonte-2026.css">
 </head>
 <body style="background: linear-gradient(135deg, #f0f5fa 0%, #e8f1f8 100%);">
 
@@ -142,27 +143,46 @@
     </div>
 
     <!-- HEADER -->
-    <header role="navigation" aria-label="Navigation principale">
-        <nav aria-label="Menu principal">
-            <a href="index" class="logo-section" aria-label="Retour à l'accueil">
-                <img src="images/logo.png" alt="Logo Sina & Prestige">
-                <div class="logo-text">
-                    <div class="main">SINA & PRESTIGE</div>
-                    <div class="sub">ALFREDHRCONSULTING</div>
-                </div>
-            </a>
-            <ul role="menubar">
-                <li role="none"><a href="index" role="menuitem">Accueil</a></li>
-                <li role="none"><a href="formations" role="menuitem">Formations</a></li>
-                <li role="none"><a href="ingenierie-pedagogique" role="menuitem">Ingénierie pédagogique</a></li>
-                <li role="none"><a href="conseil-rh-recrutement" role="menuitem">Conseil RH & recrutement</a></li>
-                <li role="none"><a href="entreprise" role="menuitem">Entreprise & Partenaires</a></li>
-                <li role="none"><a href="qualite-accessibilite" role="menuitem">Qualité & accessibilité</a></li>
-                <li role="none"><a href="a-propos" role="menuitem">À propos</a></li>
-                <li role="none"><a href="contact" role="menuitem">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header role="banner" class="site-header-modern" id="siteHeader">
+  <nav aria-label="Navigation principale" class="site-nav-modern">
+    <a href="index" class="logo-section" aria-label="Sina & Prestige — accueil">
+      <img src="images/logo.png" alt="Sina & Prestige" loading="eager">
+      <div class="logo-text">
+        <div class="main">SINA & PRESTIGE</div>
+        <div class="sub">ALFREDHRCONSULTING</div>
+      </div>
+    </a>
+    <button class="site-menu-toggle" type="button" aria-expanded="false" aria-controls="siteMenu" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="site-menu" id="siteMenu">
+      <ul class="site-nav-links" role="menubar">
+        <li><a href="index">Accueil</a></li>
+        <li><a href="formations">Formations</a></li>
+        <li><a href="recrutement">Recrutement</a></li>
+        <li><a href="accompagnement-rh">Accompagnement RH</a></li>
+        <li><a href="entreprise">Entreprise &amp; Partenaires</a></li>
+        <li><a href="qualite">Qualité &amp; accessibilité</a></li>
+        <li><a href="a-propos">À propos</a></li>
+        <li><a href="contact">Contact</a></li>
+      </ul>
+      <details class="site-explorer">
+        <summary>Explorer</summary>
+        <div class="site-explorer-panel">
+          <a href="univers">10 univers</a>
+          <a href="publics">Solutions par public</a>
+          <a href="calendrier-formations">Calendrier</a>
+          <a href="catalogues-plaquettes">Catalogues &amp; plaquettes</a>
+          <a href="videos">Vidéos</a>
+          <a href="ressources">Ressources &amp; articles</a>
+          <a href="evenements">Événements</a>
+          <a href="presse">Presse &amp; médias</a>
+        </div>
+      </details>
+      <a href="contact" class="site-nav-cta">Demander un devis</a>
+    </div>
+  </nav>
+</header>
 
     <main id="main-content">
         <div class="error-container">
@@ -249,5 +269,7 @@
         }
     </script>
 
+    <script defer src="js/refonte-2026.js"></script>
+    <script src="js/main.js" defer></script>
 </body>
 </html>

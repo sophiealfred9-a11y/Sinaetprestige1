@@ -16,7 +16,7 @@ Disallow: /results
 Disallow: /staging
 
 # Sitemap location
-Sitemap: https://sinaetprestige.fr/sitemap.xml
+Sitemap: https://www.sinaetprestige.fr/sitemap.xml
 
 # Standard crawl preferences
 Crawl-delay: 1

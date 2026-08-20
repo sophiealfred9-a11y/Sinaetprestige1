@@ -14,7 +14,7 @@ LABEL description="Sina & Prestige - Professional Training Organization Website"
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 
 # Copy frontend files
-COPY frontend/ /usr/share/nginx/html/
+COPY ./ /usr/share/nginx/html/
 
 # Create cache busting headers
 RUN echo "map \$sent_http_content_type \$expires { default off; text/html epoch; text/css max; application/javascript max; image/jpeg max; image/png max; image/svg+xml max; application/font-woff max; application/font-woff2 max; } server { expires \$expires; }" > /etc/nginx/conf.d/expires.conf
