@@ -1,4 +1,9 @@
-:80 {
+sinaetprestige.fr {
+    redir https://www.sinaetprestige.fr{uri} 301
+}
+
+www.sinaetprestige.fr {
+
 	# Health check
 	handle_path /health {
 		respond "healthy" 200
@@ -43,6 +48,15 @@
 	}
 
 	handle /pdfs/* {
+		file_server {
+			root /srv
+			hide .htaccess
+		}
+		header Cache-Control "public, max-age=2592000"
+		encode gzip
+	}
+
+	handle /videos/* {
 		file_server {
 			root /srv
 			hide .htaccess
@@ -121,4 +135,5 @@
 	# Deny dotfiles
 	respond /. 403
 	respond /*~ 403
+}
 }

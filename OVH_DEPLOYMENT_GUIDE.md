@@ -393,3 +393,7 @@ Your application is deployed and running on OVH Cloud:
 6. ✅ 404 Page (branded)
 
 🚀 **PRODUCTION READY!**
+
+## Formulaires — Formspree
+
+La version actuelle du frontend envoie les formulaires publics directement aux endpoints Formspree fournis dans `FORMSPREE_CONFIG.md`. Le routage vers `contact@sinaetprestige.fr` et les accusés automatiques doivent être vérifiés dans le tableau de bord Formspree avant production. Le backend historique reste présent pour compatibilité du dépôt, mais il n’est plus appelé par les formulaires de la refonte P01-P23.

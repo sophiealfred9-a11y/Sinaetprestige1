@@ -70,7 +70,7 @@
 # ========================================
 <IfModule mod_headers.c>
   # Content Security Policy
-  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io; frame-ancestors 'none'; base-uri 'self'; form-action 'self';"
 
   # X-Frame-Options (clickjacking protection)
   Header set X-Frame-Options "SAMEORIGIN"
@@ -93,8 +93,39 @@
 # ========================================
 Options -Indexes
 
+
+# Canonical P01-P23 URLs — legacy clean URLs
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^formations/?$ /p02-formations [R=301,L]
+RewriteRule ^calendrier-formations/?$ /p03-calendrier-inscriptions [R=301,L]
+RewriteRule ^recrutement/?$ /p04-recrutement-rh [R=301,L]
+RewriteRule ^accompagnement-rh/?$ /p04-recrutement-rh [R=301,L]
+RewriteRule ^entreprise/?$ /p05-entreprises [R=301,L]
+RewriteRule ^publics/?$ /p06-employabilite [R=301,L]
+RewriteRule ^ia-emploi-insertion/?$ /p06-employabilite [R=301,L]
+RewriteRule ^evenements/?$ /p10-evenements-masterclass [R=301,L]
+RewriteRule ^webinaires-masterclass/?$ /p10-evenements-masterclass [R=301,L]
+RewriteRule ^univers/?$ /p11-expertises [R=301,L]
+RewriteRule ^a-propos/?$ /p13-a-propos [R=301,L]
+RewriteRule ^fondatrice/?$ /p14-fondatrice-interview [R=301,L]
+RewriteRule ^ressources/?$ /p18-ressources-videos [R=301,L]
+RewriteRule ^videos/?$ /p18-ressources-videos [R=301,L]
+RewriteRule ^catalogues-plaquettes/?$ /p19-catalogues-programmes [R=301,L]
+RewriteRule ^qualite/?$ /p20-qualite-qualiopi-accessibilite [R=301,L]
+RewriteRule ^qualite-accessibilite/?$ /p20-qualite-qualiopi-accessibilite [R=301,L]
+RewriteRule ^temoignages/?$ /p16-presse-medias [R=301,L]
+RewriteRule ^presse/?$ /p16-presse-medias [R=301,L]
+RewriteRule ^articles/?$ /p17-articles-blog [R=301,L]
+RewriteRule ^contact/?$ /p22-contact [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>
+
 # ========================================
-# REWRITE RULES (Disabled - Use with Apache only)
+# REWRITE RULES
 # ========================================
 # For localhost development, use: python server.py
 # This enables clean URLs without .html extension
