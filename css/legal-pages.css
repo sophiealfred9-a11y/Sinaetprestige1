@@ -1,0 +1,24 @@
+/* Sina & Prestige — legal / quality pages harmonisation */
+:root{--sp-navy:#061a3d;--sp-blue:#0b2f72;--sp-gold:#f5b51b;--sp-cream:#f8f6f0;--sp-line:#dbe3ef;--sp-text:#17345f;}
+body.policy-page{background:#fbfaf7!important;color:var(--sp-text);}
+.policy-page main{background:var(--sp-cream);padding:0 0 70px;}
+.policy-page main .content,.policy-page main>.content{max-width:1160px;margin:0 auto;padding:58px 28px 0;}
+.policy-page main .content:before{content:"DOCUMENTATION • QUALITÉ • TRANSPARENCE";display:inline-block;color:#9b6d00;background:#fff5d9;border:1px solid #f1d68a;border-radius:999px;padding:7px 13px;font:700 11px/1 Arial,sans-serif;letter-spacing:.08em;margin-bottom:13px;}
+.policy-page main .content>h1{font-family:Georgia,'Times New Roman',serif;font-size:52px;line-height:1.02;color:var(--sp-navy);margin:0 0 12px;max-width:900px;}
+.policy-page main .content>p:first-of-type{font-size:18px;line-height:1.65;color:#5d7190;max-width:850px;margin:0 0 30px;}
+.policy-page main .content>h2{font-family:Georgia,'Times New Roman',serif;font-size:27px;line-height:1.2;color:var(--sp-navy);background:#fff;border:1px solid var(--sp-line);border-radius:14px 14px 0 0;padding:22px 25px 10px;margin:24px 0 0;position:relative;}
+.policy-page main .content>h2:before{content:"";display:inline-block;width:26px;height:3px;background:var(--sp-gold);vertical-align:middle;margin:0 10px 5px 0;}
+.policy-page main .content>h2+p,.policy-page main .content>h2+ul,.policy-page main .content>h2+p+p{background:#fff;border-left:1px solid var(--sp-line);border-right:1px solid var(--sp-line);padding:0 25px 18px;margin:0;color:#5d7190;line-height:1.65;}
+.policy-page main .content>h2+ul{padding-top:0;padding-left:47px;padding-bottom:24px;}
+.policy-page main .content>h2+ul li{margin:8px 0;padding-left:4px;}
+.policy-page main .content>h2:last-of-type{border-radius:14px 14px 0 0;}
+.policy-page main .content>h2:last-of-type + p,.policy-page main .content>h2:last-of-type + p + p{border-bottom:1px solid var(--sp-line);border-radius:0 0 14px 14px;padding-bottom:25px;}
+.policy-page main .content a{color:var(--sp-blue);font-weight:700;text-decoration:none;border-bottom:1px solid rgba(11,47,114,.25);}
+.policy-page main .content a:hover{color:#9b6d00;border-color:var(--sp-gold);}
+.policy-page main .content strong{color:var(--sp-navy);}
+.policy-page .page-header{max-width:1160px;margin:0 auto;padding:55px 28px 10px;background:transparent;}
+.policy-page .page-header h1{font-family:Georgia,'Times New Roman',serif;color:var(--sp-navy);font-size:52px;line-height:1.05;margin:0 0 12px;}
+.policy-page .page-header p{font-size:18px;color:#5d7190;max-width:780px;line-height:1.6;}
+/* The legal hub already has its own composed design; only tighten its document buttons. */
+.legal-card .sp-btn,.legal-card a{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:40px;}
+@media(max-width:800px){.policy-page main .content,.policy-page .page-header{padding-left:18px;padding-right:18px}.policy-page main .content>h1,.policy-page .page-header h1{font-size:38px}.policy-page main .content>h2{font-size:23px;padding:18px 18px 9px}.policy-page main .content>h2+p,.policy-page main .content>h2+ul,.policy-page main .content>h2+p+p{padding-left:18px;padding-right:18px}.policy-page main .content>h2+ul{padding-left:36px}}

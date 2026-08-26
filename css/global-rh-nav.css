@@ -1,0 +1,35 @@
+
+/* Global Sina & Prestige navigation — unified with the Recruitment & RH header */
+.site-head-global{height:76px;background:#031333;color:#fff;display:flex;align-items:center;position:relative;z-index:1000}
+.site-head-global .site-nav{width:min(1940px,calc(100% - 76px));margin:0 auto;display:flex;align-items:center;gap:30px}
+.site-head-global .brand{display:flex;align-items:center;gap:9px;margin-right:auto;text-decoration:none;color:#fff}
+.site-head-global .brand img{width:48px;height:48px;object-fit:contain}
+.site-head-global .brand-text{font:20px Georgia,serif;line-height:1;letter-spacing:1.5px;color:#fff}
+.site-head-global .brand-text small{display:block;font:8px Arial,sans-serif;color:#e4ae27;letter-spacing:1.5px;margin-top:5px}
+.site-head-global .nav-links{display:flex;align-items:center;gap:25px}
+.site-head-global .nav-links a{color:#fff;text-decoration:none;font-family:Inter,Arial,sans-serif;font-weight:700;font-size:14px;line-height:1;padding:30px 0 25px;border-bottom:3px solid transparent;white-space:nowrap}
+.site-head-global .nav-links a:hover{color:#fff}
+.site-head-global .nav-links a.active{border-color:#f5b51b}
+.site-head-global .nav-links .nav-cta{background:#f5b51b;color:#07183d!important;padding:13px 22px!important;border-radius:6px;border:0!important}
+.site-head-global .search{font-size:24px;color:#fff;line-height:1}
+.site-head-global .sp-toggle-global{display:none;background:transparent;border:0;color:#fff;font-size:24px;cursor:pointer}
+@media(max-width:1200px){.site-head-global .site-nav{width:calc(100% - 48px)}.site-head-global .nav-links{gap:14px}.site-head-global .nav-links a{font-size:11px}}
+@media(max-width:850px){.site-head-global{height:68px}.site-head-global .site-nav{width:calc(100% - 28px)}.site-head-global .brand img{width:42px;height:42px}.site-head-global .brand-text{font-size:17px}.site-head-global .sp-toggle-global{display:block;margin-left:auto}.site-head-global .nav-links{display:none;position:absolute;top:68px;left:0;right:0;background:#031333;padding:12px 20px 18px;flex-direction:column;align-items:stretch;gap:2px;box-shadow:0 12px 25px rgba(0,0,0,.25)}.site-head-global .nav-links.is-open{display:flex}.site-head-global .nav-links a{padding:12px 10px;border-bottom:1px solid rgba(255,255,255,.12)}.site-head-global .nav-links .nav-cta{margin-top:7px;text-align:center}.site-head-global .search{display:none}}
+
+/* Ressources mega/dropdown — shared across the whole site */
+.site-head-global .resources-menu{position:relative;display:flex;align-items:center;height:100%}
+.site-head-global .resources-menu>.resources-link{display:inline-flex!important;align-items:center;gap:5px;cursor:pointer}
+.site-head-global .resources-menu>.resources-link span{font-size:12px;transition:transform .2s ease}
+.site-head-global .resources-dropdown{position:absolute;top:calc(100% - 1px);right:-10px;min-width:255px;padding:10px;background:#071a40;border:1px solid rgba(255,255,255,.14);border-top:2px solid #f5b51b;border-radius:0 0 8px 8px;box-shadow:0 18px 35px rgba(0,0,0,.32);display:none;z-index:1200}
+.site-head-global .resources-dropdown a{display:block!important;padding:11px 13px!important;border:0!important;border-radius:5px;font-size:13px!important;line-height:1.25!important;font-weight:600!important;white-space:nowrap}
+.site-head-global .resources-dropdown a:hover{background:rgba(245,181,27,.12);color:#f5b51b!important}
+.site-head-global .resources-menu:hover .resources-dropdown,
+.site-head-global .resources-menu.is-open .resources-dropdown{display:block}
+.site-head-global .resources-menu:hover>.resources-link span,
+.site-head-global .resources-menu.is-open>.resources-link span{transform:rotate(180deg)}
+@media(max-width:850px){
+  .site-head-global .resources-menu{display:block;height:auto}
+  .site-head-global .resources-menu>.resources-link{display:flex!important;width:100%;justify-content:space-between}
+  .site-head-global .resources-dropdown{position:static;min-width:0;padding:4px 0 8px;background:rgba(0,0,0,.12);border:0;border-radius:0;box-shadow:none}
+  .site-head-global .resources-dropdown a{padding:10px 20px!important;font-size:12px!important;border-bottom:1px solid rgba(255,255,255,.08)!important}
+}

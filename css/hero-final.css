@@ -1,0 +1,24 @@
+/* HERO FINAL — Accueil / Formations / Calendrier
+   Match the Recrutement & RH hero typography, spacing and button treatment. */
+.training-hero .rh-hero-inner{align-items:center}
+.training-hero .rh-hero-copy{width:48%;padding:22px 0 34px}
+.training-hero .rh-hero .crumb,
+.training-hero .crumb{font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.4;color:#e4eaf4;margin:0 0 25px}
+.training-hero .kicker{font-family:Georgia,'Times New Roman',serif;font-size:23px;line-height:1.2;font-weight:400;color:#fff;margin:0}
+.training-hero h1,
+.maquette-page .training-hero h1{font-family:Inter,Arial,sans-serif;font-size:43px;line-height:1.08;font-weight:800;letter-spacing:-.7px;color:#fff;margin:8px 0 16px;text-transform:none}
+.training-hero h1 span,
+.maquette-page .training-hero h1 span{font-family:Inter,Arial,sans-serif;font-weight:800;color:#ffba25}
+.training-hero .rh-hero-copy>p{font-family:Inter,Arial,sans-serif;max-width:680px;font-size:17px;line-height:1.5;font-weight:400;color:#f2f5fa;margin:0}
+.training-hero .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.training-hero .hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border:1px solid #fff;border-radius:6px;background:transparent;color:#fff;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:1.2;font-weight:800;text-decoration:none;box-sizing:border-box}
+.training-hero .hero-actions .btn b{margin-left:18px;font-size:18px;font-weight:800;color:inherit}
+.training-hero .hero-actions .btn.gold{background:#f5b51b;border-color:#f5b51b;color:#07183d}
+.training-hero .hero-actions .btn.gold b{color:#07183d}
+.training-hero .hero-actions .btn:not(.gold){background:transparent;color:#fff;border-color:#fff}
+.training-hero .rh-hero-bg{background-size:cover;background-position:center right}
+.training-hero .rh-hero-bg{background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/formations-hero-generated.png')}
+.training-hero.calendar-hero .rh-hero-bg{background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/calendrier-hero-generated.png')}
+@media(max-width:1200px){.training-hero .rh-hero-copy{width:52%}.training-hero h1,.maquette-page .training-hero h1{font-size:38px}}
+@media(max-width:850px){.training-hero .rh-hero-copy{width:100%;padding-top:30px}.training-hero h1,.maquette-page .training-hero h1{font-size:34px}.training-hero .rh-hero-bg{background-position:65% center}}
+@media(max-width:520px){.training-hero h1,.maquette-page .training-hero h1{font-size:30px}.training-hero .hero-actions .btn{width:100%}}

@@ -1,0 +1,18 @@
+/* HERO PARTENAIRES — même référence visuelle que le hero Recrutement & RH */
+.partner-hero{position:relative;min-height:445px;background:#061a45;color:#fff;overflow:hidden}
+.partner-hero .rh-hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/partenaires-hero-generated.png');background-size:cover;background-position:center right}
+.partner-hero .rh-hero-inner{position:relative;width:min(1940px,calc(100% - 76px));min-height:445px;margin:auto;display:flex;align-items:center}
+.partner-hero .rh-hero-copy{width:48%;padding:22px 0 34px}
+.partner-hero .crumb{font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.4;color:#e4eaf4;margin:0 0 25px}
+.partner-hero .kicker{font-family:Georgia,'Times New Roman',serif;font-size:23px;line-height:1.2;font-weight:400;color:#ffba25;margin:0}
+.partner-hero h1{font-family:Inter,Arial,sans-serif;font-size:43px;line-height:1.08;font-weight:800;letter-spacing:-.7px;color:#fff;margin:8px 0 16px}
+.partner-hero h1 span{color:#ffba25}
+.partner-hero .rh-hero-copy>p{font-family:Inter,Arial,sans-serif;max-width:680px;font-size:17px;line-height:1.5;font-weight:400;color:#f2f5fa;margin:0}
+.partner-hero .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
+.partner-hero .hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border:1px solid #fff;border-radius:6px;background:transparent;color:#fff;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:1.2;font-weight:800;text-decoration:none;box-sizing:border-box}
+.partner-hero .hero-actions .btn b{margin-left:18px;font-size:18px;font-weight:800;color:inherit}
+.partner-hero .hero-actions .btn.gold{background:#f5b51b;border-color:#f5b51b;color:#07183d}
+.partner-hero .hero-actions .btn.gold b{color:#07183d}
+@media(max-width:1200px){.partner-hero .rh-hero-inner{width:calc(100% - 48px)}.partner-hero .rh-hero-copy{width:52%}.partner-hero h1{font-size:38px}}
+@media(max-width:850px){.partner-hero{min-height:560px}.partner-hero .rh-hero-bg{background-position:65% center}.partner-hero .rh-hero-inner{width:calc(100% - 28px);min-height:560px}.partner-hero .rh-hero-copy{width:100%;padding-top:30px}.partner-hero h1{font-size:34px}}
+@media(max-width:520px){.partner-hero h1{font-size:30px}.partner-hero .hero-actions .btn{width:100%}}
