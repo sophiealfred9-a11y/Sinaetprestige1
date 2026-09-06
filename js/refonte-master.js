@@ -35,14 +35,14 @@ if(params.get('date'))$$('input[name="session_date"]').forEach(x=>x.value=params
 if(params.get('modalite'))$$('input[name="modalite"]').forEach(x=>x.value=params.get('modalite'));
 $$('[data-calendar-filter]').forEach(btn=>btn.addEventListener('click',()=>{ $$('[data-calendar-filter]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.calendarFilter;$$('.sp-session').forEach(row=>row.hidden=filter!=='all'&&row.dataset.cat!==filter); }));
 const endpoints={
-'CONTACT':'contact.php',
-'PREINSCRIPTION FORMATION':'contact.php',
-'BESOIN RECRUTEMENT':'contact.php',
-'PROJET ENTREPRISE':'contact.php',
-'PRESCRIPTEUR':'contact.php',
-'ORIENTATION FINANCEMENT':'contact.php',
-'AIDE FINANCEMENT':'contact.php',
-'NEWSLETTER':'contact.php'
+'CONTACT':'https://formspree.io/f/maeybgqg',
+'PREINSCRIPTION FORMATION':'https://formspree.io/f/maeybgqg',
+'BESOIN RECRUTEMENT':'https://formspree.io/f/maeybgqg',
+'PROJET ENTREPRISE':'https://formspree.io/f/maeybgqg',
+'PRESCRIPTEUR':'https://formspree.io/f/maeybgqg',
+'ORIENTATION FINANCEMENT':'https://formspree.io/f/maeybgqg',
+'AIDE FINANCEMENT':'https://formspree.io/f/maeybgqg',
+'NEWSLETTER':'https://formspree.io/f/maeybgqg'
 };
 function subjectFor(kind,fd){const nom=fd.get('nom')||'',formation=fd.get('formation')||'',date=fd.get('session_date')||'',org=fd.get('organisation')||'',profil=fd.get('profil')||'';switch(kind){case'PREINSCRIPTION FORMATION':return `PREINSCRIPTION FORMATION | ${formation} | ${date} | ${nom}`;case'BESOIN RECRUTEMENT':return `BESOIN RECRUTEMENT | ${org} | ${nom}`;case'PROJET ENTREPRISE':return `PROJET ENTREPRISE | ${org} | ${fd.get('objectif')||''}`;case'PRESCRIPTEUR':return `PRESCRIPTEUR | ${org} | ${fd.get('situation')||''}`;case'ORIENTATION FINANCEMENT':return `ORIENTATION FINANCEMENT | ${nom} | ${profil}`;case'AIDE FINANCEMENT':return `AIDE FINANCEMENT | ${nom} | ${profil}`;case'NEWSLETTER':return `INSCRIPTION ACTUALITÉS | ${fd.get('email')||''}`;default:return `CONTACT | ${fd.get('objectif')||''} | ${nom}`;}}
 $$('[data-sp-form]').forEach(form=>form.addEventListener('submit',async e=>{
@@ -50,7 +50,7 @@ $$('[data-sp-form]').forEach(form=>form.addEventListener('submit',async e=>{
  if(!form.reportValidity())return;if($('input[name="website"]',form)?.value)return;
  const fd=new FormData(form),email=fd.get('email')||'';fd.set('_subject',subjectFor(kind,fd).slice(0,250));fd.set('_replyto',email);fd.set('form_type',kind);fd.set('submitted_from',location.href);fd.set('consentement_rgpd',fd.get('rgpd')==='on'?'oui':'non');
  btn.disabled=true;btn.textContent='Envoi…';
- try{const r=await fetch('contact.php',{method:'POST',body:fd,headers:{Accept:'application/json'}});const j=await r.json().catch(()=>({}));if(!r.ok || !j.success)throw new Error(j.message||'Impossible d’envoyer la demande.');msg.className='sp-form-message success';msg.textContent=j.message||'Votre demande a bien été envoyée. Nous revenons vers vous après traitement.';form.reset();if(f&&$('input[name="formation"]',form))$('input[name="formation"]',form).value=f.code+' — '+f.title;if(params.get('date')&&$('input[name="session_date"]',form))$('input[name="session_date"]',form).value=params.get('date');if(params.get('modalite')&&$('input[name="modalite"]',form))$('input[name="modalite"]',form).value=params.get('modalite');}
+ try{const r=await fetch(endpoints[kind]||endpoints.CONTACT,{method:'POST',body:fd,headers:{Accept:'application/json'}});const j=await r.json().catch(()=>({}));if(!r.ok || !j.ok)throw new Error(j.error||'Impossible d’envoyer la demande.');msg.className='sp-form-message success';msg.textContent='Votre demande a bien été envoyée. Nous revenons vers vous après traitement.';form.reset();if(f&&$('input[name="formation"]',form))$('input[name="formation"]',form).value=f.code+' — '+f.title;if(params.get('date')&&$('input[name="session_date"]',form))$('input[name="session_date"]',form).value=params.get('date');if(params.get('modalite')&&$('input[name="modalite"]',form))$('input[name="modalite"]',form).value=params.get('modalite');}
  catch(err){msg.className='sp-form-message error';msg.textContent=err.message||'Une erreur est survenue. Veuillez réessayer.';}
  finally{btn.disabled=false;btn.textContent=(form.dataset.kind==='PREINSCRIPTION FORMATION'?'Envoyer ma préinscription':'Envoyer la demande');}
 }));

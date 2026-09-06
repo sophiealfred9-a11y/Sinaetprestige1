@@ -2,11 +2,11 @@
   'use strict';
 
   const ENDPOINTS = Object.freeze({
-    contact: 'contact.php',
-    preinscription: 'contact.php',
-    recrutement: 'contact.php',
-    entreprise: 'contact.php',
-    prescripteurFinancement: 'contact.php'
+    contact: 'https://formspree.io/f/maeybgqg',
+    preinscription: 'https://formspree.io/f/maeybgqg',
+    recrutement: 'https://formspree.io/f/maeybgqg',
+    entreprise: 'https://formspree.io/f/maeybgqg',
+    prescripteurFinancement: 'https://formspree.io/f/maeybgqg'
   });
 
   window.SinaPrestigeFormspree = { ENDPOINTS };
@@ -54,7 +54,7 @@
     }
 
     try {
-      const response = await fetch('contact.php', {
+      const response = await fetch(ENDPOINTS.contact, {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' }
