@@ -16,6 +16,55 @@
 .sp-home-card h3{font-size:1.03rem;line-height:1.3;margin:.15rem 0 .55rem;color:#234d72}
 .sp-home-card p{font-size:.9rem;line-height:1.55;color:#526a79;margin:0 0 .75rem}
 .sp-home-card .program-link{color:#2874b8;font-weight:700;text-decoration:none}
+
+/* Accompagnement RH aligned with the homepage hierarchy */
+.accompagnement-page{background:#f5f8fc!important;color:#10283b}
+.accompagnement-page main{background:#f5f8fc}
+.accompagnement-page .hero{position:relative;display:block;min-height:445px;padding:0;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.94) 30%,rgba(3,19,51,.68) 52%,rgba(3,19,51,.12) 82%),url('../images/herorh.png');background-size:cover;background-position:center;color:#fff;overflow:hidden}
+.accompagnement-page .hero>div:first-child{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;width:min(640px,calc(100% - 76px));margin-left:max(38px,calc((100vw - 1280px)/2));padding:44px 0}
+.accompagnement-page .hero h1{font:800 43px/1.08 Inter,Arial,sans-serif;color:#fff;margin:0 0 16px;letter-spacing:-.7px}
+.accompagnement-page .hero-subtext{max-width:680px;margin:0 0 26px;color:#f2f5fa;font-size:17px;line-height:1.5}
+.accompagnement-page .hero-btn,.accompagnement-page .hero-btn2{display:inline-flex;align-items:center;justify-content:center;width:max-content;min-height:46px;padding:12px 20px;border:1px solid #fff;border-radius:6px;text-decoration:none;font:800 14px/1.2 Inter,Arial,sans-serif}
+.accompagnement-page .hero-btn{background:#f5b51b;border-color:#f5b51b;color:#07183d}
+.accompagnement-page .hero-btn2{margin-left:8px;background:transparent;color:#fff}
+.accompagnement-page .hero-right{display:none}
+.accompagnement-page .hero-gradient{display:none}
+.accompagnement-page .content{width:min(1280px,calc(100% - 76px));margin:auto}
+.accompagnement-page .site-head-global{height:76px}
+.accompagnement-page .site-head-global .site-nav{width:min(1280px,calc(100% - 76px));margin:0 auto}
+.accompagnement-page .content{width:min(1940px,calc(100% - 72px))}
+.accompagnement-page .site-head-global .site-nav{width:min(1940px,calc(100% - 72px))}
+.accompagnement-page .hero{min-height:430px}
+.accompagnement-page .hero-right{min-height:430px}
+.accompagnement-page .hero>div:first-child{width:min(720px,45%);margin-left:max(36px,calc((100vw - 1940px)/2 + 36px))}
+.accompagnement-page .section{padding:58px 0;border-top:1px solid #e1e8f0}
+.accompagnement-page .section h2{font:800 30px/1.2 Inter,Arial,sans-serif;color:#09235d;margin:0 0 12px}
+.accompagnement-page .section>p{max-width:780px;color:#526a79;font-size:16px;line-height:1.65}
+.accompagnement-page .offers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:28px}
+.accompagnement-page .offer-card{display:flex;flex-direction:column;background:#fff;border:1px solid #d8e4ea;border-radius:14px;box-shadow:0 8px 24px rgba(9,35,93,.06);overflow:hidden}
+.accompagnement-page .offer-header{padding:20px;background:#09235d;color:#fff}
+.accompagnement-page .offer-header h3{font-size:19px;margin:0;color:#fff}
+.accompagnement-page .offer-content{padding:20px;flex:1}
+.accompagnement-page .offer-content p{font-size:14px;line-height:1.5;color:#526a79;margin-top:0}
+.accompagnement-page .offer-content ul{padding-left:18px;margin-bottom:0;color:#607786;font-size:13px;line-height:1.65}
+.accompagnement-page .diagnostic-process{padding:26px;background:#f5f8fc;border:1px solid #d8e4ea;border-radius:14px}
+.accompagnement-page .diagnostic-process h3{font:800 20px/1.25 Inter,Arial,sans-serif;color:#09235d}
+.accompagnement-page .diagnostic-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.accompagnement-page .diagnostic-steps .step{padding:16px 12px;background:#fff;border:1px solid #d8e4ea;border-radius:10px;text-align:center}
+.accompagnement-page .step-number{display:flex;align-items:center;justify-content:center;width:34px;height:34px;margin:0 auto 10px;border-radius:50%;background:#f5b51b;color:#09235d;font-weight:800}
+.accompagnement-page .diagnostic-steps h4{font-size:15px;color:#09235d;margin:0 0 5px}
+.accompagnement-page .diagnostic-steps p{font-size:12px;line-height:1.45;color:#607786;margin:0}
+.accompagnement-page .benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.accompagnement-page .benefit{padding:20px;background:#fff;border:1px solid #d8e4ea;border-radius:12px;box-shadow:0 6px 18px rgba(9,35,93,.04)}
+.accompagnement-page .benefit h4{font-size:16px;color:#09235d;margin:0 0 7px}
+.accompagnement-page .benefit p{font-size:13px;line-height:1.5;color:#607786;margin:0}
+.accompagnement-page .cta-section{padding:38px 42px;background:#061a45;border-radius:14px;color:#fff;text-align:center}
+.accompagnement-page .cta-section h2{color:#fff;margin-top:0}
+.accompagnement-page .cta-section p{color:rgba(255,255,255,.76);max-width:650px;margin:0 auto 22px}
+.accompagnement-page .cta-section a{display:inline-flex;min-height:42px;align-items:center;padding:10px 18px;margin:0 4px;border-radius:6px;border:1px solid #f5b51b;background:#f5b51b;color:#07183d;font-weight:800;text-decoration:none}
+.accompagnement-page .cta-section a+a{border-color:#fff;background:transparent;color:#fff}
+@media(max-width:900px){.accompagnement-page .hero{min-height:520px;background-position:65% center;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.9) 48%,rgba(3,19,51,.5) 100%),url('../images/herorh.png')}.accompagnement-page .hero>div:first-child{width:calc(100% - 48px);margin:0 24px;padding:42px 0}.accompagnement-page .hero h1{font-size:34px}.accompagnement-page .offers-grid{grid-template-columns:repeat(2,1fr)}.accompagnement-page .diagnostic-steps{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:600px){.accompagnement-page .site-head-global{height:68px}.accompagnement-page .site-head-global .site-nav{width:calc(100% - 28px)}.accompagnement-page .content{width:calc(100% - 28px)}.accompagnement-page .section{padding:38px 0}.accompagnement-page .section h2{font-size:24px}.accompagnement-page .hero>div:first-child{width:calc(100% - 28px);margin:0 14px}.accompagnement-page .hero h1{font-size:30px}.accompagnement-page .hero-btn,.accompagnement-page .hero-btn2{width:auto;padding:10px 12px;font-size:12px}.accompagnement-page .offers-grid,.accompagnement-page .benefits{grid-template-columns:1fr}.accompagnement-page .diagnostic-process{padding:18px 12px}.accompagnement-page .diagnostic-steps{grid-template-columns:repeat(2,1fr)}.accompagnement-page .cta-section{padding:28px 18px}.accompagnement-page .cta-section a{margin:4px 0}}
 .sp-home-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}
 .sp-video-card{overflow:hidden;padding:0}
 .sp-video-card video{width:100%;display:block;aspect-ratio:16/9;object-fit:cover;background:#10283b}

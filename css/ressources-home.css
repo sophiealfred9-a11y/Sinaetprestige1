@@ -1,0 +1,33 @@
+/* Ressources aligned with the homepage visual system. */
+.resources-page,body.resources-page:not(.has-top-bar){padding-top:0!important;background:#f5f8fc;color:#10283b;font-family:Inter,Arial,sans-serif}
+.resources-page main{background:#f5f8fc}
+.resources-page .sp-hero{min-height:445px;padding:0;background-color:#061a45;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/hero.png');background-position:center right;background-size:cover;background-repeat:no-repeat;color:#fff;display:flex;align-items:center}
+.resources-page .sp-hero:before,.resources-page .sp-hero:after{display:none}
+.resources-page .sp-hero>.sp-wrap{width:min(1940px,calc(100% - 76px));min-height:445px;padding:22px 0 34px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;box-sizing:border-box}
+.resources-page .sp-eyebrow{color:#ffba25;font-size:13px;letter-spacing:.08em}
+.resources-page .sp-title{font-family:Inter,Arial,sans-serif;font-size:43px;line-height:1.08;font-weight:800;letter-spacing:-.7px;color:#fff;margin:8px 0 16px;max-width:680px}
+.resources-page .sp-lead{font-size:17px;line-height:1.5;color:#f2f5fa;max-width:680px;margin:0}
+.resources-page .sp-section{padding:58px 0;background:#fff}
+.resources-page .sp-section>.sp-wrap{width:min(1940px,calc(100% - 76px))}
+.resources-page .sp-section-head{display:block;margin-bottom:26px}
+.resources-page .sp-section-head h2{font:800 30px/1.25 Inter,Arial,sans-serif;color:#09235d;margin:0 0 10px}
+.resources-page .sp-section-head p{font-size:16px;line-height:1.55;color:#52627e;margin:0;max-width:760px}
+.resources-page .sp-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.resources-page .sp-card,.resources-page .sp-doc-card{border:1px solid #d8e4ea;border-radius:12px;background:#fff;box-shadow:0 4px 14px rgba(9,35,93,.05);padding:22px;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.resources-page .sp-card:hover,.resources-page .sp-doc-card:hover{transform:none;box-shadow:0 4px 14px rgba(9,35,93,.05);border-color:#d8e4ea}
+.resources-page .sp-card h3,.resources-page .sp-doc-card h3{font-family:Inter,Arial,sans-serif;font-size:19px;line-height:1.3;font-weight:800;color:#09235d;margin:10px 0 9px}
+.resources-page .sp-card p,.resources-page .sp-doc-card p{font-size:14px;line-height:1.55;color:#52627e;margin:0 0 18px}
+.resources-page .sp-pill{background:#fff5d6;color:#8a650d;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:800;letter-spacing:.06em}
+.resources-page .sp-btn,.resources-page .sp-doc-link{border-radius:6px;padding:11px 16px;font-size:13px;font-weight:800;border:1px solid #09235d;background:#09235d;color:#fff}
+.resources-page .sp-btn.alt{background:#fff;color:#09235d}
+.resources-page .sp-btn:hover,.resources-page .sp-doc-link:hover{background:inherit;border-color:inherit;color:inherit;transform:none;filter:none}
+.resources-page .sp-documents{background:#f5f8fc}
+.resources-page .sp-section.sp-documents>.sp-wrap{width:min(1940px,calc(100% - 76px))}
+.resources-page .sp-doc-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.resources-page .sp-doc-card{display:flex;gap:16px;min-height:180px}
+.resources-page .sp-doc-icon{width:48px;height:58px;flex:0 0 48px;border:0;border-radius:8px;background:#09235d;color:#f5b51b;font-size:0;position:relative}
+.resources-page .sp-doc-icon:before{content:'\f15c';font:900 22px/58px 'Font Awesome 6 Free';display:block;text-align:center}
+.resources-page .sp-empty{border:1px dashed #b9c8da;border-radius:8px;background:#fff;padding:24px;color:#52627e}
+@media(max-width:850px){.resources-page .sp-hero{min-height:560px;background-position:65% center}.resources-page .sp-hero>.sp-wrap{width:calc(100% - 28px);min-height:560px;padding:30px 0 34px}.resources-page .sp-title{font-size:34px}.resources-page .sp-lead{font-size:15px}.resources-page .sp-section{padding:46px 0}.resources-page .sp-section>.sp-wrap{width:calc(100% - 28px)}.resources-page .sp-grid,.resources-page .sp-doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:850px){.resources-page .sp-hero{min-height:560px;background-position:65% center}.resources-page .sp-hero>.sp-wrap{width:calc(100% - 28px);min-height:560px;padding:30px 0 34px}.resources-page .sp-title{font-size:34px}.resources-page .sp-lead{font-size:15px}.resources-page .sp-section{padding:46px 0}.resources-page .sp-section>.sp-wrap{width:calc(100% - 28px)}.resources-page .sp-grid,.resources-page .sp-doc-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.resources-page .sp-title{font-size:30px}.resources-page .sp-grid,.resources-page .sp-doc-grid{grid-template-columns:1fr}.resources-page .sp-card,.resources-page .sp-doc-card{padding:18px}.resources-page .sp-section-head h2{font-size:24px}.resources-page .sp-section-head p{font-size:14px}}

@@ -2,11 +2,11 @@
   'use strict';
 
   const ENDPOINTS = Object.freeze({
-    contact: 'https://formspree.io/f/xeewqerw',
-    preinscription: 'https://formspree.io/f/xaewgogy',
-    recrutement: 'https://formspree.io/f/mljrybyg',
-    entreprise: 'https://formspree.io/f/myegqwqe',
-    prescripteurFinancement: 'https://formspree.io/f/mzeplrlr'
+    contact: 'contact.php',
+    preinscription: 'contact.php',
+    recrutement: 'contact.php',
+    entreprise: 'contact.php',
+    prescripteurFinancement: 'contact.php'
   });
 
   window.SinaPrestigeFormspree = { ENDPOINTS };
@@ -35,9 +35,6 @@
   }
 
   async function submitForm(form) {
-    const endpoint = form.dataset.formspreeEndpoint;
-    if (!endpoint) return;
-
     const submitButton = form.querySelector('button[type="submit"], input[type="submit"]');
     const originalLabel = submitButton ? submitButton.textContent : '';
 
@@ -52,16 +49,12 @@
     }
 
     const formData = new FormData(form);
-    if (!formData.has('_subject')) {
-      formData.append('_subject', form.dataset.formspreeSubject || 'Demande Sina & Prestige');
-    }
-    if (!formData.has('_replyto')) {
-      const email = form.querySelector('input[type="email"]');
-      if (email && email.value) formData.append('_replyto', email.value);
+    if (!formData.has('form_type')) {
+      formData.append('form_type', form.dataset.formspreeType || 'CONTACT');
     }
 
     try {
-      const response = await fetch(endpoint, {
+      const response = await fetch('contact.php', {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' }
@@ -70,12 +63,11 @@
       let data = {};
       try { data = await response.json(); } catch (_) {}
 
-      if (!response.ok) {
-        const detail = data.errors?.map(error => error.message).filter(Boolean).join(' ') || 'Impossible d’envoyer le formulaire.';
-        throw new Error(detail);
+      if (!response.ok || !data.success) {
+        throw new Error(data.message || 'Impossible d’envoyer le formulaire.');
       }
 
-      showMessage(form, form.dataset.formspreeSuccess || 'Votre demande a bien été envoyée. Nous vous recontacterons prochainement.', true);
+      showMessage(form, data.message || form.dataset.formspreeSuccess || 'Votre demande a bien été envoyée. Nous vous recontacterons prochainement.', true);
       form.reset();
 
       if (typeof gtag !== 'undefined') {

@@ -1,0 +1,76 @@
+/* Final responsive sizing for the À propos page. */
+.page-about-reference{overflow-x:hidden!important}
+.page-about-reference .site-head-global{height:82px!important}
+.page-about-reference .site-head-global .site-nav{width:min(1940px,calc(100% - 76px))!important;gap:20px!important}
+.page-about-reference .site-head-global .brand img{width:48px;height:48px}
+.page-about-reference .site-head-global .brand-text{font-size:20px;letter-spacing:1.5px}
+.page-about-reference .site-head-global .brand-text small{font-size:8px;margin-top:5px}
+.page-about-reference .site-head-global .nav-links{gap:14px!important}
+.page-about-reference .site-head-global .nav-links a{font-size:12px!important;padding:24px 0 19px!important;border-bottom-width:2px!important}
+.page-about-reference .about-wrap{width:min(1940px,calc(100% - 76px))!important;max-width:none;padding:0!important}
+.page-about-reference .about-reference-hero{min-height:445px!important}
+.page-about-reference .about-reference-inner{height:445px!important}
+.page-about-reference .about-panel,.page-about-reference .about-section{min-width:0!important;width:100%!important}
+.page-about-reference .about-panel h2,.page-about-reference .about-section>h2{font-size:24px;line-height:1.2}
+.page-about-reference .about-sub,.page-about-reference .section-lead{font-size:16px;line-height:1.55}
+.page-about-reference .engage-card h3{font-size:16px}
+.page-about-reference .engage-card p{font-size:14px;line-height:1.5}
+.page-about-reference .founder-grid{grid-template-columns:minmax(280px,360px) minmax(0,1fr);gap:24px}
+.page-about-reference .founder-card img{height:230px}
+.page-about-reference .event-card strong{font-size:14px}
+.page-about-reference .event-card span{font-size:12px}
+.page-about-reference .tile-grid a{font-size:14px}
+.page-about-reference .tile-grid i{font-size:30px}
+.page-about-reference .quality-links b{font-size:12px}
+.page-about-reference .about-cta>div{font-size:24px}
+.page-about-reference .about-cta a{font-size:13px}
+@media(max-width:1500px) and (min-width:851px){
+  .page-about-reference .site-head-global .site-nav{width:calc(100% - 48px);gap:12px}
+  .page-about-reference .site-head-global .nav-links{gap:8px}
+  .page-about-reference .site-head-global .nav-links a{font-size:10px}
+  .page-about-reference .site-head-global .nav-links .nav-cta{padding:10px 13px!important}
+}
+@media(max-width:1200px){
+  .page-about-reference .about-wrap{width:calc(100% - 48px)!important}
+  .page-about-reference .about-panel{padding:25px 28px}
+  .page-about-reference .about-panel h2,.page-about-reference .about-section>h2{font-size:22px}
+  .page-about-reference .about-cta{grid-template-columns:1.6fr 1fr 1fr 1fr}
+}
+@media(max-width:850px){
+  .page-about-reference .site-head-global{height:82px!important}
+  .page-about-reference .site-head-global .site-nav{width:calc(100% - 28px)}
+  .page-about-reference .site-head-global .nav-links{top:82px!important}
+  .page-about-reference .about-wrap{width:calc(100% - 28px)!important}
+  .page-about-reference .about-reference-hero{min-height:560px!important}
+  .page-about-reference .about-reference-inner{height:560px!important}
+  .page-about-reference .about-two-col,.page-about-reference .lower{grid-template-columns:1fr!important}
+  .page-about-reference .about-panel{padding:24px 20px;min-height:0;border-right:0;border-bottom:1px solid #dce4f1}
+  .page-about-reference .about-panel:last-child{border-bottom:0}
+  .page-about-reference .about-section{padding:30px 0}
+  .page-about-reference .engagement-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+  .page-about-reference .founder-grid{grid-template-columns:1fr}
+  .page-about-reference .timeline-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .page-about-reference .quality-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .page-about-reference .tile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+  .page-about-reference .about-cta{grid-template-columns:1fr;gap:12px;padding:22px}
+  .page-about-reference .about-cta a{width:100%}
+  .page-about-reference .circle-vision{width:min(100%,540px)}
+  .page-about-reference .icon-flow{overflow-x:auto;padding-bottom:8px}
+}
+@media(max-width:600px){
+  .page-about-reference .about-wrap{width:calc(100% - 28px)!important}
+  .page-about-reference .about-reference-copy h1{font-size:2.7rem}
+  .page-about-reference .about-reference-copy h2{font-size:1.7rem}
+  .page-about-reference .about-reference-copy>p{font-size:15px}
+  .page-about-reference .about-panel h2,.page-about-reference .about-section>h2{font-size:20px}
+  .page-about-reference .about-sub,.page-about-reference .section-lead{font-size:15px}
+  .page-about-reference .engagement-grid,.page-about-reference .timeline-items{grid-template-columns:1fr}
+  .page-about-reference .engage-card{padding:18px}
+  .page-about-reference .founder-card img{height:auto;max-height:360px}
+  .page-about-reference .tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .page-about-reference .quality-links{grid-template-columns:1fr}
+  .page-about-reference .about-cta>div{font-size:20px}
+  .page-about-reference .circle-vision{height:300px}
+  .page-about-reference .circle-center{width:125px;height:125px;font-size:16px}
+  .page-about-reference .orbit{font-size:11px}
+}

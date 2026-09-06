@@ -2471,7 +2471,7 @@ footer {
 }
 
 .partner-type li::before {
-  content: '→';
+  content: '';
   position: absolute;
   left: 0;
   color: var(--secondary-color);
@@ -2637,7 +2637,7 @@ footer {
 }
 
 .card-action::after {
-  content: '→';
+  content: '';
   transition: all 0.3s ease;
 }
 
@@ -3326,7 +3326,7 @@ footer {
 }
 
 .offer-content li:before {
-  content: '→';
+  content: '';
   position: absolute;
   left: 0;
   color: #2874b8;

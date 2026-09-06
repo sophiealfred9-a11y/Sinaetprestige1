@@ -13,7 +13,7 @@
 .training-hero .hero-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
 .training-hero .hero-actions .btn{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:12px 20px;border:1px solid #fff;border-radius:6px;background:transparent;color:#fff;font-family:Inter,Arial,sans-serif;font-size:14px;line-height:1.2;font-weight:800;text-decoration:none;box-sizing:border-box}
 .training-hero .hero-actions .btn b{margin-left:18px;font-size:18px;font-weight:800;color:inherit}
-.training-hero .hero-actions .btn.gold{background:#f5b51b;border-color:#f5b51b;color:#07183d}
+.training-hero .hero-actions .btn.gold{background:#f5b51b;border-color:#f5b51b;color:#07183d!important}
 .training-hero .hero-actions .btn.gold b{color:#07183d}
 .training-hero .hero-actions .btn:not(.gold){background:transparent;color:#fff;border-color:#fff}
 .training-hero .rh-hero-bg{background-size:cover;background-position:center right}
@@ -22,3 +22,31 @@
 @media(max-width:1200px){.training-hero .rh-hero-copy{width:52%}.training-hero h1,.maquette-page .training-hero h1{font-size:38px}}
 @media(max-width:850px){.training-hero .rh-hero-copy{width:100%;padding-top:30px}.training-hero h1,.maquette-page .training-hero h1{font-size:34px}.training-hero .rh-hero-bg{background-position:65% center}}
 @media(max-width:520px){.training-hero h1,.maquette-page .training-hero h1{font-size:30px}.training-hero .hero-actions .btn{width:100%}}
+
+.maquette-page .calendar-filters #filter-search{grid-column:1/-1;width:100%;height:48px;font-size:14px;padding-left:16px}
+@media(max-width:640px){.maquette-page .calendar-filters #filter-search{height:44px;font-size:12px}}
+
+/* Keep the formations hero visually identical to the homepage hero. */
+.maquette-page .calendar-hero .crumb,
+.maquette-page .calendar-hero .kicker{display:none}
+.maquette-page .calendar-hero .rh-hero-bg{background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/formations-hero-generated.png')}
+
+/* Formations hierarchy aligned with the homepage */
+.maquette-page .cal-wrap{width:min(1940px,calc(100% - 72px));max-width:none;padding:52px 36px}
+.maquette-page .cal-wrap>.center-title{font:800 30px/1.25 Inter,Arial,sans-serif;color:#09235d;margin:0 0 24px}
+.maquette-page .calendar-filters{grid-template-columns:2fr repeat(6,minmax(125px,1fr));gap:12px;margin-bottom:30px}
+.maquette-page .calendar-filters .filter{height:46px;border:1px solid #dfe6f1;border-radius:8px;padding:0 14px;font-size:14px;color:#475569;background:#fff}
+.maquette-page .calendar-toolbar{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid #e2e8f0}
+.maquette-page .calendar-toolbar h2{font:800 24px/1.25 Inter,Arial,sans-serif;color:#09235d;margin:0}
+.maquette-page .calendar-row{min-width:0;border:1px solid #dfe6f1;border-radius:12px;padding:12px;gap:12px;box-shadow:0 4px 14px rgba(9,35,93,.04)}
+.maquette-page .calendar-row .cal-info{min-width:0}
+.maquette-page .calendar-row .cal-info h3{font-size:15px;line-height:1.3;overflow-wrap:anywhere}
+.maquette-page .calendar-row .cal-info p{font-size:12px;line-height:1.45}
+.maquette-page .calendar-row .cal-info .meta{display:flex;flex-wrap:wrap;gap:4px 10px}
+.maquette-page .calendar-row .cal-info .meta span{font-size:11px;white-space:normal}
+.maquette-page .calendar-row .cal-actions .m-btn{font-size:11px;white-space:normal;text-align:center}
+.maquette-page .quick-card{border:1px solid #dfe6f1;border-radius:14px;background:#f5f8fc;padding:24px;box-shadow:0 8px 22px rgba(9,35,93,.06)}
+.maquette-page .quick-card h2{font:800 22px/1.25 Inter,Arial,sans-serif;color:#09235d;margin:0 0 10px}
+.maquette-page .quick-card p{font-size:13px;line-height:1.5;color:#52627e}
+@media(max-width:1100px){.maquette-page .cal-wrap{width:calc(100% - 48px);padding:44px 24px}.maquette-page .calendar-filters{grid-template-columns:repeat(3,minmax(0,1fr))}.maquette-page .calendar-filters #filter-search{grid-column:1/-1}.maquette-page .calendar-row{grid-template-columns:75px 120px minmax(0,1.4fr) 1fr}.maquette-page .calendar-row .cal-info h3{font-size:14px}}
+@media(max-width:640px){.maquette-page .cal-wrap{width:calc(100% - 28px);padding:32px 14px}.maquette-page .cal-wrap>.center-title{font-size:23px}.maquette-page .calendar-filters{grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}.maquette-page .calendar-filters #filter-search{grid-column:1/-1}.maquette-page .calendar-filters .filter{height:42px;font-size:12px}.maquette-page .calendar-row{grid-template-columns:58px minmax(0,1fr);gap:8px;padding:8px}.maquette-page .calendar-row .datebox{grid-column:1;grid-row:1 / span 3;min-width:0;padding-right:6px;overflow:hidden}.maquette-page .calendar-row .cal-thumb{grid-column:2;grid-row:1;width:100%;height:82px}.maquette-page .calendar-row .cal-info{grid-column:2;grid-row:2}.maquette-page .calendar-row .cal-info h3{font-size:14px}.maquette-page .calendar-row .cal-info p{font-size:10px}.maquette-page .calendar-row .cal-actions{grid-column:2;grid-row:3}.maquette-page .calendar-row .cal-actions .m-btn{font-size:10px}.maquette-page .quick-card{padding:18px}}

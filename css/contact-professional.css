@@ -1,0 +1,20 @@
+/* Professional contact page presentation. */
+body:has(#contact-form){background:#f5f8fc;color:#14213d}
+body:has(#contact-form) .sp-hero{padding:70px 0 62px;background:linear-gradient(135deg,#061a45 0%,#12346c 62%,#092044 100%)}
+body:has(#contact-form) .sp-title{font-size:clamp(2.8rem,5vw,4.4rem);max-width:760px}
+body:has(#contact-form) .sp-lead{font-size:1.08rem;max-width:680px}
+body:has(#contact-form) .sp-section{padding:70px 0}
+body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid{grid-template-columns:minmax(240px,.72fr) minmax(0,1.28fr);gap:44px;align-items:start}
+body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid>div:first-child{padding:20px 0}
+body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid>div:first-child h2{margin:10px 0 14px;font-size:2.25rem}
+body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid>div:first-child p{color:#596276;line-height:1.65}
+body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid>div:first-child strong{color:#061a45;font-size:1.05rem}
+body:has(#contact-form) .sp-form{padding:32px;border-radius:16px;border-color:#d8e1ed;box-shadow:0 16px 40px rgba(13,25,51,.08)}
+body:has(#contact-form) .sp-form-grid{gap:18px}
+body:has(#contact-form) .sp-field{gap:7px}
+body:has(#contact-form) .sp-field label{color:#14213d;font-size:.88rem}
+body:has(#contact-form) .sp-field input,body:has(#contact-form) .sp-field select,body:has(#contact-form) .sp-field textarea{border-color:#d4dce8;border-radius:8px;padding:13px 14px;background:#fff}
+body:has(#contact-form) .sp-field input:focus,body:has(#contact-form) .sp-field select:focus,body:has(#contact-form) .sp-field textarea:focus{outline:3px solid rgba(245,181,27,.22);border-color:#f5b51b}
+body:has(#contact-form) .sp-form button{width:100%;margin-top:8px}
+body:has(#contact-form) .sp-form-message{margin-bottom:18px}
+@media(max-width:800px){body:has(#contact-form) .sp-hero{padding:56px 0 50px}body:has(#contact-form) .sp-section{padding:48px 0}body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid{grid-template-columns:1fr;gap:26px}body:has(#contact-form) .sp-section>.sp-wrap>.sp-grid>div:first-child{padding:0}body:has(#contact-form) .sp-form{padding:22px 18px}}

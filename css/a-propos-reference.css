@@ -1,3 +1,28 @@
+@import url('a-propos-final.css');
+.page-about-reference i[class*="fa-"]{font-style:normal}
+.page-about-reference .founder-card img{display:block;width:100%;height:520px!important;max-height:520px!important;aspect-ratio:auto!important;object-fit:contain!important;background:#f4f6fa}
+.page-about-reference .sp-actions a>i,.page-about-reference .outline-btn>i,.page-about-reference .event-card span>i,.page-about-reference .about-cta span>i{display:inline-block;width:auto;height:auto;margin-right:7px;border:0;border-radius:0;background:transparent;font-size:.9em;color:currentColor}
+/* Responsive hierarchy aligned with the homepage layout. */
+.page-about-reference .site-head-global{height:76px}
+.page-about-reference .site-head-global .site-nav{width:min(1940px,calc(100% - 76px));gap:20px}
+.page-about-reference .site-head-global .brand img{width:48px;height:48px}
+.page-about-reference .site-head-global .brand-text{font-size:20px;letter-spacing:1.5px}
+.page-about-reference .site-head-global .brand-text small{font-size:8px;margin-top:5px}
+.page-about-reference .site-head-global .nav-links{gap:14px}
+.page-about-reference .site-head-global .nav-links a{font-size:12px;padding:24px 0 19px;border-bottom-width:2px}
+.page-about-reference .about-wrap{width:min(1940px,calc(100% - 76px));max-width:none;padding:0}
+.page-about-reference .about-panel,.page-about-reference .about-section{min-width:0}
+.page-about-reference .about-panel h2,.page-about-reference .about-section>h2{font-size:24px;line-height:1.2}
+.page-about-reference .about-sub,.page-about-reference .section-lead{font-size:16px;line-height:1.55}
+.page-about-reference .engage-card h3{font-size:16px}.page-about-reference .engage-card p{font-size:14px;line-height:1.5}
+.page-about-reference .founder-grid{grid-template-columns:minmax(280px,360px) minmax(0,1fr);gap:24px}.page-about-reference .founder-card img{height:230px}
+.page-about-reference .event-card strong{font-size:14px}.page-about-reference .event-card span{font-size:12px}
+.page-about-reference .tile-grid a{font-size:14px}.page-about-reference .tile-grid i{font-size:30px}.page-about-reference .quality-links b{font-size:12px}.page-about-reference .about-cta>div{font-size:24px}.page-about-reference .about-cta a{font-size:13px}
+@media(max-width:1500px) and (min-width:851px){.page-about-reference .site-head-global .site-nav{width:calc(100% - 48px);gap:12px}.page-about-reference .site-head-global .nav-links{gap:8px}.page-about-reference .site-head-global .nav-links a{font-size:10px}.page-about-reference .site-head-global .nav-links .nav-cta{padding:10px 13px!important}}
+@media(max-width:1200px){.page-about-reference .about-wrap{width:calc(100% - 48px)}.page-about-reference .about-panel{padding:25px 28px}.page-about-reference .about-panel h2,.page-about-reference .about-section>h2{font-size:22px}.page-about-reference .about-cta{grid-template-columns:1.6fr 1fr 1fr 1fr}}
+@media(max-width:850px){.page-about-reference .site-head-global{height:68px}.page-about-reference .site-head-global .site-nav{width:calc(100% - 28px)}.page-about-reference .about-wrap{width:calc(100% - 28px)}.page-about-reference .about-two-col,.page-about-reference .lower{grid-template-columns:1fr}.page-about-reference .about-panel{padding:24px 20px;min-height:0;border-right:0;border-bottom:1px solid #dce4f1}.page-about-reference .about-panel:last-child{border-bottom:0}.page-about-reference .about-section{padding:30px 0}.page-about-reference .engagement-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.page-about-reference .founder-grid{grid-template-columns:1fr}.page-about-reference .timeline-items{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.page-about-reference .quality-links{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.page-about-reference .tile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}.page-about-reference .about-cta{grid-template-columns:1fr;gap:12px;padding:22px}.page-about-reference .about-cta a{width:100%}.page-about-reference .circle-vision{width:min(100%,540px)}.page-about-reference .icon-flow{overflow-x:auto;padding-bottom:8px}}
+@media(max-width:600px){.page-about-reference .about-wrap{width:calc(100% - 28px)}.page-about-reference .about-reference-copy h1{font-size:2.7rem}.page-about-reference .about-reference-copy h2{font-size:1.7rem}.page-about-reference .about-reference-copy>p{font-size:15px}.page-about-reference .about-panel h2,.page-about-reference .about-section>h2{font-size:20px}.page-about-reference .about-sub,.page-about-reference .section-lead{font-size:15px}.page-about-reference .engagement-grid,.page-about-reference .timeline-items{grid-template-columns:1fr}.page-about-reference .engage-card{padding:18px}.page-about-reference .founder-card img{height:460px!important;max-height:460px!important}.page-about-reference .tile-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.page-about-reference .quality-links{grid-template-columns:1fr}.page-about-reference .about-cta>div{font-size:20px}.page-about-reference .circle-vision{height:300px}.page-about-reference .circle-center{width:125px;height:125px;font-size:16px}.page-about-reference .orbit{font-size:11px}}
+@import url('a-propos-responsive-fix.css');
 /* À propos — composition calée sur la maquette de référence */
 .page-about-reference .site-head-global{height:118px;background:#031333;box-shadow:none;border-bottom:0}
 .page-about-reference .site-head-global .site-nav{width:calc(100% - 88px);max-width:1940px;gap:34px}
@@ -10,65 +35,62 @@
 .page-about-reference .site-head-global .search{font-size:26px}
 
 .page-about-reference .about-reference-hero{
-  min-height:603px;
+  min-height:445px;
   padding:0;
-  background:#061a3c url('../images/a-propos-hero-reference.png') center center / cover no-repeat;
+  background:#061a45 linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/a-propos-hero-reference.png') center right / cover no-repeat;
   position:relative;
   overflow:hidden;
 }
 .page-about-reference .about-reference-hero:before,
 .page-about-reference .about-reference-hero:after{display:none}
-.page-about-reference .about-reference-inner{width:100%;height:603px;position:relative}
+.page-about-reference .about-reference-inner{width:min(1940px,calc(100% - 76px));min-height:445px;height:auto;margin:0 auto;position:relative;display:flex;align-items:center}
 .page-about-reference .about-reference-copy{
   position:relative;
   z-index:2;
-  width:min(960px,54%);
-  margin-left:max(44px, calc((100% - 1940px)/2));
-  padding-top:53px;
+  width:48%;
+  padding:22px 0 34px;
   color:#fff;
 }
 .page-about-reference .about-reference-copy .sp-breadcrumb{
   color:rgba(255,255,255,.86);
-  font-size:16px;
+  font-size:13px;
   line-height:1.4;
-  margin:0 0 39px;
+  margin:0 0 25px;
 }
-.page-about-reference .about-reference-copy .sp-breadcrumb a{color:#fff;text-decoration:none}
 .page-about-reference .about-reference-copy h1{
-  margin:0 0 20px;
-  font-family:Georgia,"Times New Roman",serif;
-  font-weight:700;
-  font-size:clamp(3.2rem,4vw,4.8rem);
-  line-height:.98;
-  letter-spacing:-.025em;
-  color:#fff;
+  margin:0 0 16px;
+  font-family:Inter,Arial,sans-serif;
+  font-weight:800;
+  font-size:43px;
+  line-height:1.08;
+  letter-spacing:-.7px;
   white-space:nowrap;
 }
 .page-about-reference .about-reference-copy h2{
-  margin:0 0 29px;
-  max-width:900px;
-  font-family:Inter,ui-sans-serif,system-ui,sans-serif;
-  font-size:clamp(2rem,2.55vw,3rem);
-  line-height:1.18;
-  letter-spacing:-.035em;
+  margin:0 0 16px;
+  max-width:680px;
+  font-family:Georgia,"Times New Roman",serif;
+  font-size:23px;
+  line-height:1.2;
+  letter-spacing:0;
   font-weight:800;
   color:#fff;
 }
 .page-about-reference .about-reference-copy h2 span{color:#f5b51b}
 .page-about-reference .about-reference-copy>p{
-  max-width:760px;
+  max-width:680px;
   margin:0;
   font-family:Inter,ui-sans-serif,system-ui,sans-serif;
-  font-size:20px;
-  line-height:1.62;
+  font-size:17px;
+  line-height:1.5;
   color:rgba(255,255,255,.9);
 }
-.page-about-reference .about-reference-copy .sp-actions{margin-top:45px;display:flex;gap:27px}
+.page-about-reference .about-reference-copy .sp-actions{margin-top:26px;display:flex;gap:12px;flex-wrap:wrap}
 .page-about-reference .about-reference-copy .sp-btn{
-  min-height:58px;
-  padding:15px 22px;
-  border-radius:8px;
-  font-size:16px;
+  min-height:46px;
+  padding:12px 20px;
+  border-radius:6px;
+  font-size:14px;
   font-weight:800;
   border:1px solid rgba(255,255,255,.82);
   text-decoration:none;
@@ -83,22 +105,23 @@
   .page-about-reference .site-head-global .brand-text{font-size:21px}
   .page-about-reference .site-head-global .nav-links{gap:14px}
   .page-about-reference .site-head-global .nav-links a{font-size:12px;padding:30px 0 24px}
-  .page-about-reference .about-reference-copy{width:54%;margin-left:42px;padding-top:48px}
-  .page-about-reference .about-reference-copy h1{font-size:clamp(2.8rem,4vw,4rem)}
-  .page-about-reference .about-reference-copy h2{font-size:2.15rem}
+  .page-about-reference .about-reference-copy{width:52%;padding:22px 0 34px}
+  .page-about-reference .about-reference-copy h1{font-size:38px}
+  .page-about-reference .about-reference-copy h2{font-size:21px}
   .page-about-reference .about-reference-copy>p{font-size:17px}
 }
 @media(max-width:850px){
   .page-about-reference .site-head-global{height:68px}
   .page-about-reference .site-head-global .site-nav{width:calc(100% - 28px)}
-  .page-about-reference .about-reference-hero{min-height:680px;background-position:center top}
-  .page-about-reference .about-reference-inner{height:680px;background:linear-gradient(180deg,rgba(3,19,51,.72) 0%,rgba(3,19,51,.62) 52%,rgba(3,19,51,.86) 100%)}
-  .page-about-reference .about-reference-copy{width:auto;margin:0;padding:42px 24px 0}
-  .page-about-reference .about-reference-copy .sp-breadcrumb{font-size:13px;margin-bottom:28px}
-  .page-about-reference .about-reference-copy h1{font-size:2.7rem;white-space:normal}
-  .page-about-reference .about-reference-copy h2{font-size:1.7rem}
+  .page-about-reference .about-reference-hero{min-height:560px;background-position:65% center}
+  .page-about-reference .about-reference-inner{min-height:560px;height:auto;background:none}
+  .page-about-reference .about-reference-copy{width:100%;padding:30px 0 34px}
+  .page-about-reference .about-reference-copy .sp-breadcrumb{font-size:13px;margin-bottom:25px}
+  .page-about-reference .about-reference-copy h1{font-size:34px;white-space:normal}
+  .page-about-reference .about-reference-copy h2{font-size:20px}
   .page-about-reference .about-reference-copy>p{font-size:15px;max-width:600px}
-  .page-about-reference .about-reference-copy .sp-actions{flex-wrap:wrap;gap:12px;margin-top:28px}
+  .page-about-reference .about-reference-copy .sp-actions{gap:8px;margin-top:26px;flex-wrap:nowrap}
+  .page-about-reference .about-reference-copy .sp-btn{min-height:42px;padding:9px 12px;font-size:12px;white-space:nowrap}
 }
 /* Suite À propos — alignée sur la maquette de référence */
 .page-about-reference{background:#fff}

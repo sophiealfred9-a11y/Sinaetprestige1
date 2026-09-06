@@ -1,0 +1,37 @@
+/* Final homepage-aligned layer for the accompaniment page. */
+.accompagnement-page{background:#f5f8fc!important;color:#061a45!important}
+.accompagnement-page main section,.accompagnement-page .offer-card,.accompagnement-page .program-card,.accompagnement-page .detail-card{opacity:1!important;animation:none!important}
+.accompagnement-page .site-head-global{height:76px!important}
+.accompagnement-page .site-head-global .site-nav{width:min(1940px,calc(100% - 76px))!important;margin:0 auto!important}
+.accompagnement-page .hero{position:relative!important;display:block!important;min-height:430px!important;padding:0!important;background:#061a45 url('../images/herorh.png') center/cover no-repeat!important;color:#fff!important;overflow:hidden!important}
+.accompagnement-page .hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%);z-index:0}
+.accompagnement-page .hero>div:first-child{position:relative!important;z-index:1!important;display:flex!important;flex-direction:column!important;justify-content:center!important;width:48%!important;min-height:430px!important;margin-left:max(38px,calc((100vw - 1940px)/2 + 38px))!important;padding:35px 0!important}
+.accompagnement-page .hero h1{font:800 43px/1.08 Inter,Arial,sans-serif!important;letter-spacing:-.7px!important;color:#fff!important;margin:0 0 16px!important}
+.accompagnement-page .hero-subtext{max-width:680px!important;margin:0 0 26px!important;color:#f2f5fa!important;font-size:17px!important;line-height:1.5!important}
+.accompagnement-page .hero-btn,.accompagnement-page .hero-btn2{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:max-content!important;min-height:46px!important;padding:12px 20px!important;border:1px solid #fff!important;border-radius:6px!important;font:800 14px/1.2 Inter,Arial,sans-serif!important;text-decoration:none!important}
+.accompagnement-page .hero-btn{background:#f5b51b!important;border-color:#f5b51b!important;color:#07183d!important}
+.accompagnement-page .hero-btn2{margin-left:8px!important;background:transparent!important;color:#fff!important}
+.accompagnement-page .hero-actions{display:flex!important;align-items:center!important;gap:12px!important;flex-wrap:wrap!important;margin-top:0!important}
+.accompagnement-page .hero-right{display:none!important}
+.accompagnement-page .content{width:min(1940px,calc(100% - 76px))!important;margin:0 auto!important}
+.accompagnement-page .section{padding:56px 0!important;border-top:1px solid #e1e8f0!important;background:#fff!important}
+.accompagnement-page .section h2{font:800 30px/1.2 Inter,Arial,sans-serif!important;color:#09235d!important;margin:0 0 12px!important}
+.accompagnement-page .section>p{max-width:780px!important;color:#526a79!important;font-size:16px!important;line-height:1.65!important}
+.accompagnement-page .offers-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:20px!important;margin-top:28px!important}
+.accompagnement-page .offer-card{min-width:0!important;background:#fff!important;border:1px solid #dfe6f1!important;border-radius:12px!important;box-shadow:0 4px 12px rgba(9,35,93,.04)!important;overflow:hidden!important}
+.accompagnement-page .offer-header{padding:20px!important;background:#09235d!important;color:#fff!important}
+.accompagnement-page .offer-header h3{font-size:19px!important;color:#fff!important;margin:0!important}
+.accompagnement-page .offer-content{padding:22px!important}
+.accompagnement-page .offer-content p{font-size:14px!important;line-height:1.55!important;color:#475569!important}
+.accompagnement-page .offer-content ul{padding-left:18px!important;color:#64718a!important;font-size:13px!important;line-height:1.6!important}
+.accompagnement-page .diagnostic-process{padding:28px!important;background:#f5f8fc!important;border:1px solid #dfe6f1!important;border-radius:12px!important}
+.accompagnement-page .diagnostic-steps{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:14px!important}
+.accompagnement-page .diagnostic-steps .step{min-width:0!important;padding:18px 12px!important;background:#fff!important;border:1px solid #dfe6f1!important;border-radius:10px!important;text-align:center!important}
+.accompagnement-page .benefits{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:16px!important;margin-top:26px!important}
+.accompagnement-page .benefit{min-width:0!important;padding:20px!important;background:#fff!important;border:1px solid #dfe6f1!important;border-radius:12px!important;box-shadow:0 4px 12px rgba(9,35,93,.03)!important}
+.accompagnement-page .cta-section{margin-top:0!important;padding:38px 42px!important;background:#061a45!important;border-radius:12px!important;color:#fff!important;text-align:center!important}
+.accompagnement-page footer{background:#031333!important;color:#fff!important}
+@media(max-width:1100px){.accompagnement-page .offers-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}.accompagnement-page .diagnostic-steps{grid-template-columns:repeat(3,minmax(0,1fr))!important}.accompagnement-page .content{width:calc(100% - 48px)!important}}
+@media(max-width:850px){.accompagnement-page .site-head-global{height:68px!important}.accompagnement-page .site-head-global .site-nav{width:calc(100% - 28px)!important}.accompagnement-page .hero{min-height:560px!important}.accompagnement-page .hero>div:first-child{width:calc(100% - 28px)!important;min-height:560px!important;margin:0 14px!important}.accompagnement-page .hero h1{font-size:34px!important}.accompagnement-page .content{width:calc(100% - 28px)!important}.accompagnement-page .section{padding:40px 0!important}}
+@media(max-width:600px){.accompagnement-page .hero h1{font-size:30px!important}.accompagnement-page .hero-subtext{font-size:14px!important}.accompagnement-page .hero-btn,.accompagnement-page .hero-btn2{min-height:42px!important;padding:10px 12px!important;font-size:12px!important}.accompagnement-page .offers-grid,.accompagnement-page .benefits{grid-template-columns:1fr!important}.accompagnement-page .diagnostic-steps{grid-template-columns:repeat(2,minmax(0,1fr))!important}.accompagnement-page .section h2{font-size:24px!important}.accompagnement-page .cta-section{padding:28px 18px!important}}
+@media(max-width:850px){.accompagnement-page .hero-actions{flex-wrap:nowrap!important;gap:8px!important}.accompagnement-page .hero-btn,.accompagnement-page .hero-btn2{width:auto!important;white-space:nowrap!important}}

@@ -30,6 +30,8 @@
   forms.forEach(f => (sessions[f.code] || []).forEach(pair => events.push({code:f.code,title:f.title,family:f.family,date:pair[0],mode:pair[1],public:publicFor(f),location:pair[1].includes('Distanciel')?'France entière':'Normandie',month:monthName(pair[0]),monthNum:monthNumber(pair[0])})));
 
   const list=qs('#session-list');
+  let visibleLimit=5;
+  let loadMoreButton=null;
   const makeRow=(x)=>{
     const d=parseDate(x.date); const day=d?String(d.getDate()).padStart(2,'0'):''; const mon=d?d.toLocaleDateString('fr-FR',{month:'short'}).replace('.','').toUpperCase():''; const yr=d?d.getFullYear():'';
     const row=document.createElement('article'); row.className='calendar-row';
@@ -41,9 +43,12 @@
   if(list){
     list.innerHTML='';
     events.forEach(e=>list.appendChild(makeRow(e)));
-    const more=document.createElement('div'); more.style.textAlign='center'; more.style.padding='6px'; more.innerHTML='<button class="m-btn light small" id="more-sessions" type="button">Voir plus de sessions &nbsp;⌄</button>'; list.appendChild(more);
-    // all sessions are already present; button simply reveals a confirmation rather than duplicating rows
-    qs('#more-sessions')?.addEventListener('click',()=>{more.remove();});
+    loadMoreButton=document.createElement('button');
+    loadMoreButton.type='button';
+    loadMoreButton.className='load-more-sessions';
+    loadMoreButton.textContent='Charger plus de dates';
+    list.insertAdjacentElement('afterend',loadMoreButton);
+    loadMoreButton.addEventListener('click',()=>{visibleLimit+=5;applyFilters();});
   }
 
   const selectOptions={
@@ -82,12 +87,17 @@
     const theme=qs('#filter-theme')?.value||'', pub=qs('#filter-public')?.value||'', mode=qs('#filter-mode')?.value||'', loc=qs('#filter-location')?.value||'', month=qs('#filter-month')?.value||'', funding=qs('#filter-funding')?.value||'';
     const professionalContext=['professionnels','entreprise','entreprises'].includes((urlParams.get('public')||'').toLowerCase());
     const domainThemes=domainGroups[activeDomain]||[];
+    const matchingRows=[];
     qsa('.calendar-row').forEach(r=>{
       const txt=r.innerText.toLowerCase();
       const okDomain=!domainThemes.length || domainThemes.includes(r.dataset.category);
       const okContext=!professionalContext || r.dataset.public!=='Tout public';
-      r.hidden=!(okDomain && okContext && (!search||txt.includes(search)) && (!theme||r.dataset.category===theme) && (!pub||r.dataset.public===pub) && (!mode||r.dataset.mode===mode) && (!loc||r.dataset.location===loc) && (!month||r.dataset.month===month) && (!funding||r.dataset.funding===funding));
+      const matches=okDomain && okContext && (!search||txt.includes(search)) && (!theme||r.dataset.category===theme) && (!pub||r.dataset.public===pub) && (!mode||r.dataset.mode===mode) && (!loc||r.dataset.location===loc) && (!month||r.dataset.month===month) && (!funding||r.dataset.funding===funding);
+      r.dataset.filterMatch=matches?'true':'false';
+      if(matches)matchingRows.push(r);
     });
+    qsa('.calendar-row').forEach(r=>{r.hidden=r.dataset.filterMatch!=='true'||matchingRows.indexOf(r)>=visibleLimit;});
+    if(loadMoreButton){loadMoreButton.hidden=matchingRows.length<=visibleLimit;loadMoreButton.textContent=`Charger plus de dates (${Math.min(5,matchingRows.length-visibleLimit)})`;}
     const label=qs('#active-domain-label');
     if(label){
       label.hidden=!activeDomain||!domainLabels[activeDomain];
@@ -95,15 +105,31 @@
     }
     renderCalendar();
   };
-  ['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>qs(s)?.addEventListener('input',applyFilters));
+  ['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>qs(s)?.addEventListener('input',()=>{visibleLimit=5;applyFilters();}));
   qs('#reset-filters')?.addEventListener('click',()=>{['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>{const e=qs(s);if(e)e.value='';});activeDomain=''; const u=new URL(location.href); u.search=''; history.replaceState({},'',u); applyFilters();});
 
   const quick=qs('#inscription');
+  const quickCard=quick?.closest('.quick-card');
+  let signupModal=null, selectedSession=null;
+  if(quick&&quickCard){
+    const quickTitle=qs('h2',quickCard); if(quickTitle)quickTitle.textContent='Inscription rapide';
+    const quickSubmit=qs('button[type="submit"]',quick); if(quickSubmit)quickSubmit.textContent='Envoyer ma demande';
+    signupModal=document.createElement('div'); signupModal.className='formation-signup-modal'; signupModal.hidden=true;
+    signupModal.innerHTML='<div class="formation-signup-backdrop" data-signup-close></div><div class="formation-signup-dialog" role="dialog" aria-modal="true" aria-labelledby="formation-signup-title"><button class="formation-signup-close" type="button" aria-label="Fermer" data-signup-close>&times;</button><div class="formation-signup-heading"><span class="kicker">Inscription à une session</span><h2 id="formation-signup-title">Votre demande d’inscription</h2><div class="formation-selected-session" aria-live="polite"></div></div></div>';
+    document.body.appendChild(signupModal);
+    signupModal.querySelector('.formation-signup-dialog').appendChild(quickCard);
+    signupModal.querySelectorAll('[data-signup-close]').forEach(control=>control.addEventListener('click',()=>{signupModal.hidden=true;document.body.classList.remove('signup-modal-open');}));
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'&&signupModal&&!signupModal.hidden){signupModal.hidden=true;document.body.classList.remove('signup-modal-open');}});
+  }
+  const openSignup=()=>{if(!signupModal)return;signupModal.hidden=false;document.body.classList.add('signup-modal-open');signupModal.querySelector('input:not([type=hidden])')?.focus();};
   function fillQuick(code,date,mode){
     if(!quick)return;
+    const formation=forms.find(f=>f.code===code);
+    selectedSession={code,date,mode,title:formation?.title||code};
     const sel=qs('#quick-formation',quick); if(sel){if(!sel.options.length){forms.forEach(f=>{const o=document.createElement('option');o.value=f.code;o.textContent=f.title;sel.appendChild(o);});} sel.value=code;}
     const dateInput=qs('input[name="session_date"]',quick), modeInput=qs('input[name="modalite"]',quick); if(dateInput)dateInput.value=date||''; if(modeInput)modeInput.value=mode||'';
-    quick.scrollIntoView({behavior:'smooth',block:'start'});
+    const summary=qs('.formation-selected-session',signupModal); if(summary)summary.innerHTML=`<strong>${selectedSession.title}</strong><span>${date||'Date à confirmer'}</span><span>${mode||'Modalité à confirmer'}</span>`;
+    openSignup();
   }
   qsa('.cal-signup').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();fillQuick(a.dataset.code,a.dataset.date,a.dataset.mode);}));
   if(quick){
@@ -126,4 +152,124 @@
 
   // Force all published sessions to the open/yellow state: no registration counts are represented in source data.
   qsa('.status').forEach(s=>{s.className='status gold-status';s.innerHTML='INSCRIPTIONS<br>OUVERTES';});
+
+  const revealItems=qsa('.rh-hero-copy > *, .calendar-filters, .calendar-toolbar, .calendar-row, .load-more-sessions, .below-three > *, .docs-box, .question-box');
+  if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches&&'IntersectionObserver' in window){
+    revealItems.forEach((item,index)=>{item.classList.add('formation-reveal');item.style.setProperty('--reveal-delay',`${Math.min(index%6,5)*70}ms`);});
+    const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');revealObserver.unobserve(entry.target);}}),{threshold:.12,rootMargin:'0px 0px -40px'});
+    revealItems.forEach(item=>revealObserver.observe(item));
+  }
+
+  const partnerCarousel=qs('.partner-ecosystem-carousel');
+  const partnerTrack=qs('.partner-ecosystem-grid',partnerCarousel);
+  if(partnerTrack){
+    Array.from(partnerTrack.children).forEach(card=>{
+      const clone=card.cloneNode(true);
+      clone.setAttribute('aria-hidden','true');
+      clone.querySelectorAll('a,button').forEach(control=>{control.tabIndex=-1;});
+      partnerTrack.appendChild(clone);
+    });
+  }
+
+  const catalogueCarousel=qs('.catalogue-carousel');
+  const catalogueTrack=qs('.cat-grid',catalogueCarousel);
+  if(catalogueTrack){
+    const catalogueCards=Array.from(catalogueTrack.children);
+    catalogueCards.forEach(card=>{
+      const clone=card.cloneNode(true);
+      clone.classList.add('catalogue-carousel-clone');
+      clone.setAttribute('aria-hidden','true');
+      clone.querySelectorAll('a,button').forEach(control=>{control.tabIndex=-1;});
+      catalogueTrack.appendChild(clone);
+    });
+    const mobileCatalogue=window.matchMedia('(max-width: 600px)');
+    let catalogueIndex=0;
+    let catalogueTimer;
+    const catalogueDots=document.createElement('div');
+    catalogueDots.className='catalogue-dots';
+    catalogueDots.setAttribute('aria-label','Navigation des catalogues');
+    catalogueCards.forEach((card,index)=>{
+      const dot=document.createElement('button');
+      dot.type='button';
+      dot.className='catalogue-dot';
+      dot.setAttribute('aria-label',`Afficher le catalogue ${index+1}`);
+      dot.addEventListener('click',()=>{catalogueIndex=index;showMobileCatalogue();startMobileCatalogue();});
+      catalogueDots.appendChild(dot);
+    });
+    catalogueCarousel.appendChild(catalogueDots);
+    const catalogueToggle=document.createElement('button');
+    catalogueToggle.type='button';
+    catalogueToggle.className='catalogue-toggle';
+    catalogueToggle.setAttribute('aria-label','Mettre en pause le défilement');
+    catalogueToggle.textContent='||';
+    catalogueCarousel.appendChild(catalogueToggle);
+    let cataloguePaused=false;
+    const showMobileCatalogue=()=>{
+      if(!mobileCatalogue.matches)return;
+      catalogueCards.forEach((card,index)=>card.classList.toggle('is-mobile-active',index===catalogueIndex));
+      catalogueDots.querySelectorAll('.catalogue-dot').forEach((dot,index)=>{
+        dot.classList.toggle('is-active',index===catalogueIndex);
+        dot.setAttribute('aria-current',index===catalogueIndex?'true':'false');
+      });
+    };
+    const startMobileCatalogue=()=>{
+      clearInterval(catalogueTimer);
+      showMobileCatalogue();
+      if(cataloguePaused||!mobileCatalogue.matches||catalogueCards.length<2)return;
+      catalogueTimer=setInterval(()=>{catalogueIndex=(catalogueIndex+1)%catalogueCards.length;showMobileCatalogue();},3000);
+    };
+    catalogueToggle.addEventListener('click',()=>{
+      cataloguePaused=!cataloguePaused;
+      catalogueToggle.textContent=cataloguePaused?'>':'||';
+      catalogueToggle.setAttribute('aria-label',cataloguePaused?'Relancer le défilement':'Mettre en pause le défilement');
+      startMobileCatalogue();
+    });
+    let catalogueTouchStartX=0;
+    catalogueCarousel.addEventListener('touchstart',event=>{
+      catalogueTouchStartX=event.changedTouches[0].clientX;
+    },{passive:true});
+    catalogueCarousel.addEventListener('touchend',event=>{
+      const touchDelta=event.changedTouches[0].clientX-catalogueTouchStartX;
+      if(Math.abs(touchDelta)<40)return;
+      catalogueIndex=(catalogueIndex+(touchDelta<0?1:-1)+catalogueCards.length)%catalogueCards.length;
+      showMobileCatalogue();
+      startMobileCatalogue();
+    },{passive:true});
+    mobileCatalogue.addEventListener('change',startMobileCatalogue);
+    startMobileCatalogue();
+  }
+  const filterGroup=qs('.calendar-filters'), searchInput=qs('#filter-search');
+  const filterLabels={
+    'filter-theme':'Thématique',
+    'filter-public':'Public',
+    'filter-mode':'Présentiel ou distanciel',
+    'filter-location':'Lieu',
+    'filter-month':'Mois',
+    'filter-funding':'Financement ou dispositif'
+  };
+  qsa('.calendar-filters select').forEach(select=>{
+    if(filterLabels[select.id])select.setAttribute('aria-label',filterLabels[select.id]);
+  });
+  qsa('a[href*="%3F"]').forEach(link=>{
+    let href=link.getAttribute('href');
+    try{href=decodeURIComponent(href);}catch(_){return;}
+    href=href.replace(/^contact\?/,'contact.html?').replace(/\.html(?=([&#]|$))/g,'');
+    link.setAttribute('href',href);
+  });
+  if(filterGroup&&searchInput&&!qs('.search-toolbar')){
+    filterGroup.id='formation-filters';
+    const toolbar=document.createElement('div'); toolbar.className='search-toolbar';
+    const label=document.createElement('label'); label.className='search-field'; label.htmlFor='filter-search';
+    const icon=document.createElement('span'); icon.className='search-icon'; icon.setAttribute('aria-hidden','true');
+    const toggle=document.createElement('button'); toggle.className='filters-toggle'; toggle.type='button'; toggle.textContent='Afficher les filtres'; toggle.setAttribute('aria-expanded','true'); toggle.setAttribute('aria-controls','formation-filters');
+    label.append(icon,searchInput); toolbar.append(label,toggle); filterGroup.parentNode.insertBefore(toolbar,filterGroup);
+  }
+  const filterToggle=qs('.filters-toggle'), filters=qs('#formation-filters');
+  if(filterToggle&&filters){
+    filterToggle.addEventListener('click',()=>{
+      const collapsed=filters.classList.toggle('is-collapsed');
+      filterToggle.setAttribute('aria-expanded',String(!collapsed));
+      filterToggle.textContent=collapsed?'Afficher les filtres':'Masquer les filtres';
+    });
+  }
 })();
