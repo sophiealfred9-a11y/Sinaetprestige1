@@ -3,7 +3,7 @@
 .accompagnement-page main section,.accompagnement-page .offer-card,.accompagnement-page .program-card,.accompagnement-page .detail-card{opacity:1!important;animation:none!important}
 .accompagnement-page .site-head-global{height:76px!important}
 .accompagnement-page .site-head-global .site-nav{width:min(1940px,calc(100% - 76px))!important;margin:0 auto!important}
-.accompagnement-page .hero{position:relative!important;display:block!important;min-height:430px!important;padding:0!important;background:#061a45 url('../images/herorh.png') center/cover no-repeat!important;color:#fff!important;overflow:hidden!important}
+.accompagnement-page .hero{position:relative!important;display:block!important;min-height:430px!important;padding:0!important;background:#061a45 url('../images/herorh.webp') center/cover no-repeat!important;color:#fff!important;overflow:hidden!important}
 .accompagnement-page .hero:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%);z-index:0}
 .accompagnement-page .hero>div:first-child{position:relative!important;z-index:1!important;display:flex!important;flex-direction:column!important;justify-content:center!important;width:48%!important;min-height:430px!important;margin-left:max(38px,calc((100vw - 1940px)/2 + 38px))!important;padding:35px 0!important}
 .accompagnement-page .hero h1{font:800 43px/1.08 Inter,Arial,sans-serif!important;letter-spacing:-.7px!important;color:#fff!important;margin:0 0 16px!important}

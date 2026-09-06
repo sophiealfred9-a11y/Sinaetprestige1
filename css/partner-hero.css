@@ -1,6 +1,6 @@
 /* HERO PARTENAIRES — même référence visuelle que le hero Recrutement & RH */
 .partner-hero{position:relative;min-height:445px;background:#061a45;color:#fff;overflow:hidden}
-.partner-hero .rh-hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/partenaires-hero-generated.png');background-size:cover;background-position:center right}
+.partner-hero .rh-hero-bg{position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/partenaires-hero-generated.webp');background-size:cover;background-position:center right}
 .partner-hero .rh-hero-inner{position:relative;width:min(1940px,calc(100% - 76px));min-height:445px;margin:auto;display:flex;align-items:center}
 .partner-hero .rh-hero-copy{width:48%;padding:22px 0 34px}
 .partner-hero .crumb{font-family:Inter,Arial,sans-serif;font-size:13px;line-height:1.4;color:#e4eaf4;margin:0 0 25px}

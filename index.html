@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Sina &amp; Prestige | Formations, Recrutement &amp; Accompagnement RH</title>
   <meta name="description" content="Sina &amp; Prestige, organisme de formation certifié Qualiopi au titre de ses actions de formation. Former, recruter, accompagner et révéler les talents.">
-  <link rel="icon" type="image/png" href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.png">
+  <link rel="icon" type="image/png" href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp">
   <link rel="stylesheet" href="css/site-redesign.css">
   <link rel="stylesheet" href="css/recrutement-page.css">
   <link rel="stylesheet" href="css/maquette-formations-calendrier.css">
@@ -288,19 +288,40 @@
       .hero-actions {
         flex-direction: row;
         align-items: center;
-        gap: 8px !important;
-        flex-wrap: nowrap;
+        gap: 10px !important;
+        flex-wrap: wrap;
       }
       .training-hero .hero-actions .btn {
         width: auto;
-        min-height: 42px;
-        padding: 9px 12px;
+        min-height: 44px;
+        padding: 10px 16px;
         border-width: 1px;
-        border-radius: 5px;
-        font-size: 12px;
-        white-space: nowrap;
+        border-radius: 6px;
+        font-size: 13px;
+        white-space: normal;
         text-align: center;
         justify-content: center;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .rh-hero-copy h1 {
+        font-size: 24px !important;
+        line-height: 1.25 !important;
+      }
+      .rh-hero-copy p {
+        font-size: 13.5px !important;
+        line-height: 1.45 !important;
+      }
+      .hero-actions {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        width: 100% !important;
+      }
+      .training-hero .hero-actions .btn {
+        width: 100% !important;
+        min-height: 46px !important;
+        font-size: 14px !important;
       }
     }
 
@@ -1056,7 +1077,7 @@
 <header class="site-head site-head-global">
   <nav class="site-nav" aria-label="Navigation principale">
     <a class="brand" href="index.html" aria-label="Sina &amp; Prestige - Accueil">
-      <img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.png" alt="Sina &amp; Prestige">
+      <img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt="Sina &amp; Prestige">
       <span class="brand-text">SINA &amp; PRESTIGE<small>ALFRED HR CONSULTING</small></span>
     </a>
     <button class="sp-toggle-global" type="button" aria-label="Ouvrir le menu" aria-controls="globalMenu" aria-expanded="false">☰</button>
@@ -1154,7 +1175,7 @@
           <!-- Carte 1: RH -->
           <article class="cat-card">
             <div class="cat-card-header">
-              <img src="images/formation-rh.png" alt="Catalogue RH Sina &amp; Prestige">
+              <img src="images/formation-rh.webp" alt="Catalogue RH Sina &amp; Prestige">
               <span class="cat-badge gold">PDF • 2026/2027</span>
             </div>
             <div class="cat-card-body">
@@ -1176,7 +1197,7 @@
           <!-- Carte 2: Commerce -->
           <article class="cat-card">
             <div class="cat-card-header">
-              <img src="images/formation-vente.png" alt="Catalogue Commerce Sina &amp; Prestige">
+              <img src="images/formation-vente.webp" alt="Catalogue Commerce Sina &amp; Prestige">
               <span class="cat-badge">PDF OFFICIEL</span>
             </div>
             <div class="cat-card-body">
@@ -1198,7 +1219,7 @@
           <!-- Carte 3: Tech & IA -->
           <article class="cat-card">
             <div class="cat-card-header">
-              <img src="images/formation-Ia.digi.png" alt="Catalogue Tech &amp; IA Sina &amp; Prestige">
+              <img src="images/formation-Ia.digi.webp" alt="Catalogue Tech &amp; IA Sina &amp; Prestige">
               <span class="cat-badge gold">INNOVATION &amp; TECH</span>
             </div>
             <div class="cat-card-body">
@@ -1220,7 +1241,7 @@
           <!-- Carte 4: Masterclass -->
           <article class="cat-card">
             <div class="cat-card-header">
-              <img src="images/catalogue-cover-4.png" alt="Classroom &amp; Masterclass Sina &amp; Prestige">
+              <img src="images/catalogue-cover-4.webp" alt="Classroom &amp; Masterclass Sina &amp; Prestige">
               <span class="cat-badge">ÉVÉNEMENTS</span>
             </div>
             <div class="cat-card-body">
@@ -1301,7 +1322,7 @@
         
         <div class="apple-quote-container">
           <div class="apple-quote-portrait">
-            <img src="images/fondatrice-officielle.png" alt="Varvara Alfred — Fondatrice &amp; CEO Sina &amp; Prestige">
+            <img src="images/fondatrice-officielle.webp" alt="Varvara Alfred — Fondatrice &amp; CEO Sina &amp; Prestige">
           </div>
           <div class="apple-quote-content">
             <span class="apple-quote-kicker">MOT DE LA FONDATRICE</span>
@@ -1512,7 +1533,7 @@
     <div class="sp-footer-grid">
       <div>
         <div class="sp-footer-brand">
-          <img alt="Sina &amp; Prestige" height="50" src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.png" width="50">
+          <img alt="Sina &amp; Prestige" height="50" src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" width="50">
           <div><strong>SINA &amp; PRESTIGE</strong><small>ALFRED HR CONSULTING</small></div>
         </div>
         <p>Organisme de formation certifié Qualiopi au titre des actions de formation.</p>
@@ -1541,7 +1562,7 @@
       <div class="sp-footer-quality-wrap">
         <h3>Qualité</h3>
         <div class="sp-footer-quality">
-          <img alt="Certification Qualiopi — au titre des actions de formation" height="47" src="images/qualiopi.png" width="88">
+          <img alt="Certification Qualiopi — au titre des actions de formation" height="47" src="images/qualiopi.webp" width="88">
           <div><strong>Certification Qualiopi</strong><span>Au titre des actions de formation</span><a href="qualite-accessibilite.html">Qualité &amp; accessibilité </a></div>
         </div>
         <p style="margin-top:13px">

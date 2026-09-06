@@ -15,7 +15,7 @@
 .sp-international-hero {
   min-height: 330px;
   height: 330px;
-  background-image: url('../images/international-hero-bg.png');
+  background-image: url('../images/international-hero-bg.webp');
   background-position: center center;
   background-size: cover;
 }

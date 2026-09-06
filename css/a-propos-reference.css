@@ -37,7 +37,7 @@
 .page-about-reference .about-reference-hero{
   min-height:445px;
   padding:0;
-  background:#061a45 linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/a-propos-hero-reference.png') center right / cover no-repeat;
+  background:#061a45 linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/a-propos-hero-reference.webp') center right / cover no-repeat;
   position:relative;
   overflow:hidden;
 }

@@ -7,12 +7,12 @@
   forms.forEach(f=>pdfMap[f.code]=`pdfs/${f.code.toLowerCase()}.pdf`);
 
   const imageForFamily=(family)=>{
-    if(/emploi|employabil/i.test(family)) return 'images/formation-career.png';
-    if(/rh|recrut/i.test(family)) return 'images/formation-rh.png';
-    if(/commerce|vente|prospection/i.test(family)) return 'images/formation-vente.png';
-    if(/projet|management/i.test(family)) return 'images/formation-gestion.png';
-    if(/ia|data|cloud|it/i.test(family)) return 'images/formation-Ia.digi.png';
-    return 'images/formation-gestiondeprojet.png';
+    if(/emploi|employabil/i.test(family)) return 'images/formation-career.webp';
+    if(/rh|recrut/i.test(family)) return 'images/formation-rh.webp';
+    if(/commerce|vente|prospection/i.test(family)) return 'images/formation-vente.webp';
+    if(/projet|management/i.test(family)) return 'images/formation-gestion.webp';
+    if(/ia|data|cloud|it/i.test(family)) return 'images/formation-Ia.digi.webp';
+    return 'images/formation-gestiondeprojet.webp';
   };
   const publicFor=(f)=>{
     if(/management|manager/i.test(f.family)) return 'Managers';

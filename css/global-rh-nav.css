@@ -1,5 +1,7 @@
 
 /* Global Sina & Prestige navigation — unified across all pages */
+body.contact-page .sp-main>.sp-hero{min-height:445px;padding:0;background-color:#061a45;background-image:linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/hero.webp');background-position:center right;background-size:cover;background-repeat:no-repeat;color:#fff}
+body.contact-page .sp-main>.sp-hero::before,body.contact-page .sp-main>.sp-hero::after{display:none}
 :root {
   --sp-color-navy: #031333;
   --sp-color-blue: #09235d;
@@ -518,7 +520,7 @@ main > .sp-section.reveal-visible {
 @media(max-width:640px){.maquette-page .docs-box .docs-grid{grid-template-columns:1fr!important;gap:8px}.maquette-page .docs-box .doc{min-width:0;align-items:flex-start;overflow-wrap:anywhere;word-break:normal}.maquette-page .docs-box .doc a{overflow-wrap:anywhere}}
 
 /* Editorial heroes use the same frame as the homepage hero. */
-.sp-main>.sp-hero:not(.sp-international-hero){min-height:445px;padding:0;background:#061a45 linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/hero.png') center right/cover no-repeat;color:#fff}
+.sp-main>.sp-hero:not(.sp-international-hero){min-height:445px;padding:0;background:#061a45 linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/hero.webp') center right/cover no-repeat;color:#fff}
 .sp-main>.sp-hero:not(.sp-international-hero)::before,.sp-main>.sp-hero:not(.sp-international-hero)::after{display:none}
 .sp-main>.sp-hero:not(.sp-international-hero)>.sp-wrap{width:min(1940px,calc(100% - 76px));min-height:445px;padding:22px 0 34px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;box-sizing:border-box}
 .sp-main>.sp-hero:not(.sp-international-hero) .sp-breadcrumb{width:100%;margin-bottom:25px;color:#e4eaf4}
