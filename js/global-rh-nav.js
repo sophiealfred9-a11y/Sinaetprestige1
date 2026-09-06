@@ -167,6 +167,9 @@
     }else{
       revealSections.forEach(function(section){section.classList.add('reveal-visible');});
     }
+    setTimeout(function(){
+      revealSections.forEach(function(section){section.classList.add('reveal-visible');});
+    },1000);
     document.querySelectorAll('.sp-toggle-global').forEach(function(toggle){
       if(!toggle.querySelector('span')){
         toggle.innerHTML='<span></span><span></span><span></span>';
