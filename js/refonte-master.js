@@ -35,14 +35,14 @@ if(params.get('date'))$$('input[name="session_date"]').forEach(x=>x.value=params
 if(params.get('modalite'))$$('input[name="modalite"]').forEach(x=>x.value=params.get('modalite'));
 $$('[data-calendar-filter]').forEach(btn=>btn.addEventListener('click',()=>{ $$('[data-calendar-filter]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const filter=btn.dataset.calendarFilter;$$('.sp-session').forEach(row=>row.hidden=filter!=='all'&&row.dataset.cat!==filter); }));
 const endpoints={
-'CONTACT':'https://formspree.io/f/maeybgqg',
-'PREINSCRIPTION FORMATION':'https://formspree.io/f/maeybgqg',
-'BESOIN RECRUTEMENT':'https://formspree.io/f/maeybgqg',
-'PROJET ENTREPRISE':'https://formspree.io/f/maeybgqg',
-'PRESCRIPTEUR':'https://formspree.io/f/maeybgqg',
-'ORIENTATION FINANCEMENT':'https://formspree.io/f/maeybgqg',
-'AIDE FINANCEMENT':'https://formspree.io/f/maeybgqg',
-'NEWSLETTER':'https://formspree.io/f/maeybgqg'
+'CONTACT':'https://formspree.io/f/xeaqlbvg',
+'PREINSCRIPTION FORMATION':'https://formspree.io/f/xeaqlbvg',
+'BESOIN RECRUTEMENT':'https://formspree.io/f/xeaqlbvg',
+'PROJET ENTREPRISE':'https://formspree.io/f/xeaqlbvg',
+'PRESCRIPTEUR':'https://formspree.io/f/xeaqlbvg',
+'ORIENTATION FINANCEMENT':'https://formspree.io/f/xeaqlbvg',
+'AIDE FINANCEMENT':'https://formspree.io/f/xeaqlbvg',
+'NEWSLETTER':'https://formspree.io/f/xeaqlbvg'
 };
 function subjectFor(kind,fd){const nom=fd.get('nom')||'',formation=fd.get('formation')||'',date=fd.get('session_date')||'',org=fd.get('organisation')||'',profil=fd.get('profil')||'';switch(kind){case'PREINSCRIPTION FORMATION':return `PREINSCRIPTION FORMATION | ${formation} | ${date} | ${nom}`;case'BESOIN RECRUTEMENT':return `BESOIN RECRUTEMENT | ${org} | ${nom}`;case'PROJET ENTREPRISE':return `PROJET ENTREPRISE | ${org} | ${fd.get('objectif')||''}`;case'PRESCRIPTEUR':return `PRESCRIPTEUR | ${org} | ${fd.get('situation')||''}`;case'ORIENTATION FINANCEMENT':return `ORIENTATION FINANCEMENT | ${nom} | ${profil}`;case'AIDE FINANCEMENT':return `AIDE FINANCEMENT | ${nom} | ${profil}`;case'NEWSLETTER':return `INSCRIPTION ACTUALITÉS | ${fd.get('email')||''}`;default:return `CONTACT | ${fd.get('objectif')||''} | ${nom}`;}}
 $$('[data-sp-form]').forEach(form=>form.addEventListener('submit',async e=>{

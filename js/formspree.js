@@ -2,11 +2,11 @@
   'use strict';
 
   const ENDPOINTS = Object.freeze({
-    contact: 'https://formspree.io/f/maeybgqg',
-    preinscription: 'https://formspree.io/f/maeybgqg',
-    recrutement: 'https://formspree.io/f/maeybgqg',
-    entreprise: 'https://formspree.io/f/maeybgqg',
-    prescripteurFinancement: 'https://formspree.io/f/maeybgqg'
+    contact: 'https://formspree.io/f/xeaqlbvg',
+    preinscription: 'https://formspree.io/f/xeaqlbvg',
+    recrutement: 'https://formspree.io/f/xeaqlbvg',
+    entreprise: 'https://formspree.io/f/xeaqlbvg',
+    prescripteurFinancement: 'https://formspree.io/f/xeaqlbvg'
   });
 
   window.SinaPrestigeFormspree = { ENDPOINTS };
