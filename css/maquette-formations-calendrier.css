@@ -105,3 +105,12 @@
 .maquette-page .question-box{margin-top:18px;padding:24px 26px;border-radius:12px;gap:24px}.maquette-page .question-box h3{font:800 22px/1.25 Inter,Arial,sans-serif;margin:0 0 7px}.maquette-page .question-box span{display:block;font-size:14px!important;line-height:1.5}.maquette-page .question-actions{gap:10px}.maquette-page .question-actions a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:11px 16px;border-radius:6px;font-size:13px;line-height:1.3;font-weight:800}
 @media(max-width:640px){.maquette-page .below-three .info-box{padding:20px 18px}.maquette-page .below-three .info-box h3{font-size:18px}.maquette-page .below-three .info-box p{font-size:13px}.maquette-page .below-three .info-box li,.maquette-page .below-three .info-box .m-btn,.maquette-page .docs-box .doc{font-size:12px}.maquette-page .docs-box{padding:20px 18px}.maquette-page .docs-box h3{font-size:18px!important}.maquette-page .docs-box .docs-grid{grid-template-columns:1fr;gap:8px}.maquette-page .docs-box .doc{min-width:0;align-items:flex-start;overflow-wrap:anywhere;word-break:normal}.maquette-page .docs-box .doc a{overflow-wrap:anywhere}}
 @media(max-width:640px){.maquette-page .question-box{display:block;padding:20px 18px}.maquette-page .question-box h3{font-size:19px}.maquette-page .question-box span{font-size:13px!important}.maquette-page .question-actions{display:grid;grid-template-columns:1fr;gap:8px;margin-top:16px}.maquette-page .question-actions a{width:100%;min-height:42px;font-size:12px}}
+
+/* Keep the signup dialog inside the mobile viewport. */
+@media(max-width:600px){
+	.formation-signup-modal{width:100vw;max-width:100vw;overflow:hidden;box-sizing:border-box}
+	.formation-signup-dialog{width:100%;min-width:0;max-width:100%;max-height:calc(100dvh - 16px);overflow-x:hidden;overflow-y:auto;box-sizing:border-box}
+	.formation-signup-dialog .quick-card,.formation-signup-dialog .quick-form,.formation-signup-dialog .quick-form label{min-width:0;max-width:100%}
+	.formation-signup-dialog .quick-form input,.formation-signup-dialog .quick-form select,.formation-signup-dialog .quick-form textarea{max-width:100%;min-width:0}
+	.formation-signup-dialog .quick-form .checkline{white-space:normal;overflow-wrap:anywhere}
+}

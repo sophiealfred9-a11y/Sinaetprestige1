@@ -24,7 +24,7 @@
 
     /* Section Separator */
     .section-separator-20 {
-      height: 20px;
+      height: 8px;
       background-color: #fafafa;
       width: 100%;
       border: none;
@@ -34,10 +34,22 @@
 
     /* Global Spacing */
     .sp-home-section {
-      padding: 44px 0;
+      padding: 36px 0;
     }
     .sp-bg-soft {
       background-color: var(--sp-bg-light);
+    }
+
+    .social-follow-section {
+      background: linear-gradient(135deg, #06183b 0%, #09235d 100%);
+      color: #ffffff;
+    }
+    .social-follow-section .domain-title,
+    .social-follow-section .section-subhead {
+      color: #ffffff !important;
+    }
+    .social-follow-section .section-subhead {
+      opacity: .82;
     }
 
     /* Desktop Typography Scaling */
@@ -98,8 +110,22 @@
       font-size: 15px;
       color: var(--sp-text-muted);
       margin-top: -16px;
-      margin-bottom: 28px;
+      margin-bottom: 22px;
       line-height: 1.5;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .training-hero {
+      min-height: 390px !important;
+    }
+    .training-hero .rh-hero-inner {
+      min-height: 390px !important;
+    }
+
+    .expertise-section-title::after {
+      display: none !important;
     }
 
     /* Piliers Grid */
@@ -252,6 +278,42 @@
     .m-btn:hover {
       transform: translateY(-1px);
     }
+    .btn,
+    .m-btn,
+    .cat-btn,
+    .ing-btn {
+      padding-left: 13px !important;
+      padding-right: 13px !important;
+      width: auto;
+      max-width: 100%;
+      text-align: center;
+    }
+    .pillar-card .m-btn,
+    .cat-card-body .cat-btn,
+    .ing-engagement-box .ing-btn,
+    .event-item-card .m-btn {
+      align-self: flex-start;
+    }
+    .card-linkable {
+      cursor: pointer;
+    }
+    @media (min-width: 601px) {
+      .btn,
+      .m-btn,
+      .cat-btn,
+      .ing-btn {
+        padding: 10px 13px !important;
+        font-size: 15px !important;
+        line-height: 1.25;
+      }
+      .m-btn.small,
+      .cat-btn {
+        font-size: 14px !important;
+      }
+      .training-hero .hero-actions .btn {
+        min-height: 42px !important;
+      }
+    }
 
     /* Responsive Breakpoints */
     @media (max-width: 1024px) {
@@ -259,7 +321,7 @@
         grid-template-columns: repeat(2, 1fr);
         gap: 16px;
       }
-      .sp-home-section { padding: 36px 0; }
+      .sp-home-section { padding: 30px 0; }
       h2.center-title, h2.domain-title, .audience-title { font-size: 24px !important; }
     }
 
@@ -305,6 +367,14 @@
     }
 
     @media (max-width: 520px) {
+      .training-hero,
+      .training-hero .rh-hero-inner {
+        min-height: 350px !important;
+      }
+      .training-hero .rh-hero-copy {
+        padding-top: 18px !important;
+        padding-bottom: 22px !important;
+      }
       .rh-hero-copy h1 {
         font-size: 24px !important;
         line-height: 1.25 !important;
@@ -314,18 +384,35 @@
         line-height: 1.45 !important;
       }
       .hero-actions {
-        flex-direction: column !important;
-        align-items: stretch !important;
-        width: 100% !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        width: auto !important;
+        gap: 8px !important;
+        flex-wrap: nowrap !important;
       }
       .training-hero .hero-actions .btn {
-        width: 100% !important;
-        min-height: 46px !important;
-        font-size: 14px !important;
+        width: auto !important;
+        min-height: 42px !important;
+        padding: 9px 12px !important;
+        font-size: 13px !important;
+        white-space: nowrap;
       }
     }
 
     @media (max-width: 600px) {
+      .btn,
+      .m-btn,
+      .cat-btn,
+      .ing-btn {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        font-size: 13px !important;
+        line-height: 1.25;
+      }
+      .pillar-card .m-btn {
+        font-size: 12px !important;
+        min-height: 38px;
+      }
       .pillar-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
@@ -333,7 +420,7 @@
       .resource-grid {
         grid-template-columns: 1fr;
       }
-      .sp-home-section { padding: 28px 0; }
+      .sp-home-section { padding: 24px 0; }
       h2.center-title, h2.domain-title, .audience-title { font-size: 20px !important; margin-bottom: 18px !important; }
       .pillar-card {
         padding: 14px 10px;
@@ -346,13 +433,290 @@
         line-height: 1.45;
       }
       .pillar-card .m-btn {
-        width: 100%;
+        width: auto;
         padding: 9px 6px;
         font-size: 10px;
         line-height: 1.2;
       }
       .event-item-card { padding: 20px 18px; }
       .founder-quote blockquote { font-size: 15px; line-height: 1.55; }
+    }
+
+    /* ========================================
+       ASYMMETRIC LAYOUT ENHANCEMENTS
+       ======================================== */
+    /* Section 1 : Piliers Asymétriques */
+    .pillar-asymmetric-wrapper {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+      gap: 24px;
+      margin-top: 28px;
+    }
+    .pillar-hero-card {
+      background: linear-gradient(145deg, #09235d 0%, #0f358a 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 12px 32px rgba(9, 35, 93, 0.14);
+      border: 1px solid rgba(245, 181, 27, 0.35);
+      position: relative;
+    }
+    .pillar-hero-qualiopi {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 78px;
+      height: auto;
+      padding: 5px;
+      border-radius: 6px;
+      background: #ffffff;
+      box-shadow: 0 5px 14px rgba(0, 0, 0, .18);
+    }
+    .pillar-hero-badge {
+      display: inline-block;
+      background: #f5b51b;
+      color: #09235d;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      width: fit-content;
+    }
+    .pillar-hero-card h3 {
+      font-size: 24px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      margin: 0 0 12px !important;
+    }
+    .pillar-hero-card p {
+      font-size: 14.5px !important;
+      color: #cbd5e1 !important;
+      line-height: 1.6 !important;
+      margin-bottom: 20px !important;
+    }
+    .pillar-secondary-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .pillar-card-full-span {
+      grid-column: span 2;
+    }
+
+    /* Section 2 : Catalogues Asymétriques */
+    .cat-asymmetric-wrapper {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 28px;
+    }
+    .cat-card-featured {
+      background: #ffffff;
+      border: 2px solid #f5b51b;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(9, 35, 93, 0.08);
+      display: grid;
+      grid-template-columns: minmax(220px, 28%) 1fr;
+      justify-content: space-between;
+    }
+    .cat-featured-img-wrap {
+      position: relative;
+      height: 100%;
+      min-height: 250px;
+      background: #09235d;
+    }
+    .cat-featured-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .cat-featured-body {
+      padding: 24px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      flex-grow: 1;
+    }
+    .cat-secondary-stack {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .cat-secondary-stack .cat-card {
+      min-width: 0;
+    }
+    .catalogues-more-cta {
+      display: flex;
+      justify-content: center;
+      margin-top: 18px;
+    }
+
+    /* Section 3 : Ingénierie Pédagogique Asymétrique */
+    .ing-asymmetric-wrapper {
+      display: grid;
+      grid-template-columns: minmax(300px, 340px) 1fr;
+      gap: 32px;
+      margin-top: 28px;
+      align-items: stretch;
+    }
+    .ing-engagement-box {
+      background: linear-gradient(145deg, #09235d 0%, #1e3a8a 100%);
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 18px 38px rgba(9, 35, 93, 0.16);
+      border: 1px solid rgba(255, 255, 255, .12);
+    }
+    .ing-engagement-box h3 {
+      font-size: 22px !important;
+      font-weight: 800 !important;
+      color: #ffffff !important;
+      margin: 12px 0 10px !important;
+      line-height: 1.3 !important;
+    }
+    .ing-engagement-box p {
+      font-size: 14px !important;
+      color: #cbd5e1 !important;
+      line-height: 1.6 !important;
+    }
+    .ing-timeline-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    .ing-timeline-item {
+      background: transparent;
+      border: 0;
+      border-top: 1px solid #dfe6f0;
+      border-radius: 0;
+      padding: 20px 0 18px;
+      display: flex;
+      gap: 16px;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .ing-timeline-item:hover {
+      transform: translateX(4px);
+      border-color: #f5b51b;
+    }
+    .ing-timeline-num {
+      font-size: 18px;
+      font-weight: 900;
+      color: #c58d08;
+      background: transparent;
+      min-width: 44px;
+      height: auto;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      flex-shrink: 0;
+      letter-spacing: .04em;
+    }
+    .ing-timeline-content h3 {
+      font-size: 18px !important;
+      font-weight: 800 !important;
+      color: #09235d !important;
+      margin: 0 0 6px !important;
+    }
+    .ing-timeline-content p {
+      font-size: 14px !important;
+      color: #475569 !important;
+      line-height: 1.55 !important;
+      margin: 0 !important;
+    }
+
+    /* Responsive Asymmetric Breakpoints */
+    @media (max-width: 1024px) {
+      .pillar-asymmetric-wrapper,
+      .cat-asymmetric-wrapper,
+      .ing-asymmetric-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .pillar-secondary-grid,
+      .ing-timeline-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .pillar-card-full-span { grid-column: span 2; }
+      .cat-secondary-stack { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+    @media (max-width: 640px) {
+      .pillar-asymmetric-wrapper {
+        gap: 10px;
+      }
+      .pillar-hero-card {
+        padding: 18px 12px;
+      }
+      .pillar-hero-qualiopi {
+        top: 12px;
+        right: 12px;
+        width: 58px;
+        padding: 3px;
+      }
+      .pillar-hero-card h3 {
+        font-size: 16px !important;
+        line-height: 1.2 !important;
+      }
+      .pillar-hero-card p,
+      .pillar-hero-card ul {
+        font-size: 11px !important;
+        line-height: 1.45 !important;
+      }
+      .pillar-hero-card ul {
+        margin-bottom: 14px !important;
+      }
+      .pillar-hero-card li {
+        gap: 4px !important;
+      }
+      .pillar-secondary-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .ing-timeline-grid {
+        grid-template-columns: 1fr;
+      }
+      .pillar-card-full-span { grid-column: span 2; }
+      .ing-timeline-item {
+        flex-direction: row;
+        gap: 12px;
+        padding: 16px 0;
+      }
+      .ing-timeline-num {
+        min-width: 34px;
+        width: 34px;
+        font-size: 15px;
+      }
+      .cat-card-featured {
+        grid-template-columns: 1fr;
+      }
+      .cat-featured-img-wrap {
+        height: 120px;
+        min-height: 120px;
+      }
+      .cat-featured-body {
+        padding: 18px;
+      }
+      .cat-secondary-stack {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+      .cat-secondary-stack .cat-card-header {
+        height: 78px !important;
+      }
+      .cat-secondary-stack .cat-card-body {
+        padding: 12px !important;
+      }
+      .catalogues-more-cta {
+        margin-top: 16px;
+      }
     }
   
     /* Highly Aesthetic Catalogue Cards */
@@ -686,7 +1050,7 @@
     @media (max-width: 680px) {
       .ing-steps-grid { grid-template-columns: 1fr; }
       .ing-footer-action { flex-direction: column; align-items: stretch; gap: 16px; text-align: center; }
-      .ing-btn { justify-content: center; width: 100%; }
+      .ing-btn { justify-content: center; width: auto; }
     }
 
 
@@ -737,13 +1101,15 @@
     .apple-quote-container {
       background: #0f172a;
       color: #ffffff;
-      border-radius: 24px;
+      border-radius: 0 !important;
+      width: calc(100% + 84px);
+      margin-left: -42px;
       padding: 56px 60px;
       display: grid;
       grid-template-columns: 240px 1fr;
       gap: 52px;
       align-items: center;
-      box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+      box-shadow: none;
     }
     .apple-quote-portrait {
       width: 100%;
@@ -789,14 +1155,35 @@
       margin-top: 3px;
       font-weight: 500;
     }
+    .founder-about-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 22px;
+      padding: 11px 16px;
+      border: 1px solid #f5b51b;
+      border-radius: 6px;
+      color: #f5b51b;
+      font-size: 13px;
+      font-weight: 800;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .founder-about-cta:hover {
+      background: #f5b51b;
+      color: #09235d;
+      transform: translateY(-2px);
+    }
 
     @media (max-width: 900px) {
       .apple-quote-container {
         grid-template-columns: 120px 1fr !important;
+        width: calc(100% + 48px) !important;
+        margin-left: -24px !important;
         padding: 24px 20px !important;
         gap: 18px !important;
         text-align: left !important;
-        border-radius: 16px !important;
+        border-radius: 0 !important;
       }
       .apple-quote-portrait {
         max-width: 120px !important;
@@ -826,8 +1213,11 @@
     @media (max-width: 480px) {
       .apple-quote-container {
         grid-template-columns: 95px 1fr !important;
+        width: calc(100% + 28px) !important;
+        margin-left: -14px !important;
         padding: 18px 14px !important;
         gap: 14px !important;
+        border-radius: 0 !important;
       }
       .apple-quote-portrait {
         max-width: 95px !important;
@@ -839,6 +1229,20 @@
       .apple-quote-text {
         font-size: 12.5px !important;
         line-height: 1.4 !important;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .apple-quote-container {
+        grid-template-columns: 1fr !important;
+        padding: 28px 18px !important;
+      }
+      .apple-quote-portrait {
+        display: none !important;
+      }
+      .apple-quote-text {
+        font-size: 14px !important;
+        line-height: 1.5 !important;
       }
     }
 
@@ -966,41 +1370,44 @@
 
     /* Social Channels Grid */
     .social-channels-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
       margin-top: 24px;
     }
     .social-channel-card {
-      background: #ffffff;
-      border: 1px solid var(--sp-border);
-      border-radius: 12px;
-      padding: 22px 18px;
-      display: flex;
+      background: transparent;
+      border: 0;
+      border-radius: 0;
+      padding: 12px;
+      display: grid;
+      place-items: center;
+      min-height: 64px;
+      flex: 0 0 auto;
       align-items: center;
-      gap: 16px;
       text-decoration: none;
       transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-      box-shadow: 0 4px 12px rgba(9, 35, 93, 0.03);
     }
     .social-channel-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 14px 28px rgba(9, 35, 93, 0.08);
-      border-color: #cbd5e1;
+      transform: translateY(-3px);
     }
     .social-ico {
-      width: 46px;
-      height: 46px;
-      border-radius: 10px;
+      width: auto;
+      height: auto;
+      border-radius: 0;
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      background: transparent !important;
+      font-size: 24px;
+      line-height: 1;
     }
-    .social-ico.linkedin { background: #0077b5; color: #ffffff; }
-    .social-ico.instagram { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); color: #ffffff; }
-    .social-ico.video { background: #09235d; color: #f5b51b; }
-    .social-ico.news { background: #09235d; color: #ffffff; }
+    .social-ico.linkedin { color: #7dd3fc; }
+    .social-ico.instagram { color: #fbcfe8; }
+    .social-ico.video { color: #ff6b6b; }
+    .social-ico.news { color: #ffffff; }
 
     .social-info {
       flex-grow: 1;
@@ -1030,27 +1437,24 @@
 
     @media (max-width: 1024px) {
       .social-channels-grid {
-        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
         gap: 16px;
       }
     }
     @media (max-width: 550px) {
       .social-channels-grid {
+        display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
         gap: 6px;
         margin-top: 16px;
       }
       .social-channel-card {
         min-width: 0;
+        min-height: 48px;
         padding: 8px 4px;
-        gap: 5px;
-        border-radius: 7px;
       }
       .social-ico {
-        width: 28px;
-        height: 28px;
-        border-radius: 6px;
-        font-size: 13px;
+        font-size: 19px;
       }
       .social-info {
         min-width: 0;
@@ -1102,10 +1506,10 @@
     <div class="rh-hero-inner">
       <div class="rh-hero-copy">
         <h1>Former. Recruter. Accompagner.<br><span>Révéler les talents.</span></h1>
-        <p>Sina &amp; Prestige, organisme de formation certifié Qualiopi au titre de ses actions de formation, accompagne les entreprises, écoles, professionnels et talents dans leurs projets de formation, de recrutement, d'ingénierie pédagogique et de transformation RH et digitale.</p>
+        <p>Organisme de formation certifié Qualiopi, Sina &amp; Prestige accompagne entreprises, écoles, professionnels et talents en formation, recrutement et transformation RH.</p>
         <div class="hero-actions">
-          <a class="btn gold" href="formations.html">Découvrir les formations <b></b></a>
-          <a class="btn" href="contact.html?objet=projet">Parler de mon projet <b></b></a>
+          <a class="btn gold" href="formations.html">Formations</a>
+          <a class="btn" href="contact.html?objet=projet">Échanger</a>
         </div>
       </div>
     </div>
@@ -1113,153 +1517,58 @@
 
   <div class="section-separator-20" aria-hidden="true"></div>
 
-  <!-- SECTION 1 : 4 PILIERS -->
+  <!-- SECTION 1 : PILIERS ASYMÉTRIQUES -->
   <section class="panel-white">
     <div class="section-pad">
       <div class="sp-home-section" style="padding-top:0;">
-        <h2 class="center-title">Nos 4 domaines d'intervention</h2>
-        <p class="section-subhead">Des expertises opérationnelles au service des compétences et du développement de votre organisation.</p>
-        <div class="pillar-grid">
-          <article class="pillar-card">
+        <h2 class="center-title expertise-section-title">Nos expertises &amp; domaines d'intervention</h2>
+        <p class="section-subhead">Un accompagnement global pour développer le capital humain et la performance de votre organisation.</p>
+
+        <div class="pillar-asymmetric-wrapper">
+          <!-- Carte Star : FORMER -->
+          <article class="pillar-hero-card card-linkable" data-card-link="formations.html" role="link" tabindex="0">
+            <img class="pillar-hero-qualiopi" src="images/qualiopi.webp" alt="Certification Qualiopi">
             <div>
-              <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
-              <h3>Former</h3>
-              <p>RH, management, conformité, employabilité, commerce, gestion de projet, IA, data, UX, IT et cloud.</p>
-            </div>
-            <a class="m-btn gold small" href="formations.html">Découvrir les formations &nbsp;</a>
-          </article>
-
-          <article class="pillar-card">
-            <div>
-              <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
-              <h3>Recruter</h3>
-              <p>Sourcing et mise en relation de profils IT, IA, data, formateurs, commerciaux, alternants et stagiaires.</p>
-            </div>
-            <a class="m-btn dark small" href="recrutement.html">Je cherche un profil &nbsp;</a>
-          </article>
-
-          <article class="pillar-card">
-            <div>
-              <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
-              <h3>Accompagner</h3>
-              <p>Diagnostic RH, qualité, accessibilité, ingénierie pédagogique, appels d'offres et pilotage.</p>
-            </div>
-            <a class="m-btn dark small" href="accompagnement-rh.html">Parler de mon projet &nbsp;</a>
-          </article>
-
-          <article class="pillar-card">
-            <div>
-              <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-              <h3>Rejoindre le réseau</h3>
-              <p>Formateurs, recruteurs indépendants, commerciaux, experts, écoles et partenaires.</p>
-            </div>
-            <a class="m-btn gold small" href="recrutement.html#reseau">Rejoindre le réseau &nbsp;</a>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="section-separator-20" aria-hidden="true"></div>
-
-  <!-- SECTION 2 : NOS CATALOGUES -->
-  <section class="panel-white sp-bg-soft">
-    <div class="section-pad">
-      <div class="sp-home-section">
-        <h2 class="domain-title">Nos Catalogues de Formation</h2>
-        <p class="section-subhead">Découvrez nos livrets thématiques et programmes officiels disponibles en téléchargement direct.</p>
-        
-        <div class="catalogue-carousel" aria-label="Catalogues et programmes de formation">
-          <div class="cat-grid">
-          
-          <!-- Carte 1: RH -->
-          <article class="cat-card">
-            <div class="cat-card-header">
-              <img src="images/formation-rh.webp" alt="Catalogue RH Sina &amp; Prestige">
-              <span class="cat-badge gold">PDF • 2026/2027</span>
-            </div>
-            <div class="cat-card-body">
-              <h3>Catalogue RH &amp; Management</h3>
-              <p>Ressources Humaines, conformité, droit social, recrutement, compétences &amp; employabilité.</p>
-              <ul class="cat-list">
-                <li>Programmes de formation certifiants</li>
-                <li>Modalités Inter &amp; Intra-entreprises</li>
-                <li>Accompagnement &amp; ingénierie RH</li>
+              <div class="ico"><svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#f5b51b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+              <h3>Former &amp; révéler les talents</h3>
+              <p>Des formations certifiantes et opérationnelles pour faire progresser vos équipes.</p>
+              <ul style="list-style:none;padding:0;margin:0 0 24px;font-size:14px;color:#cbd5e1;line-height:1.8;">
+                <li style="display:flex;align-items:center;gap:8px;"><span style="color:#f5b51b;font-weight:900;">✓</span> Inter &amp; Intra</li>
+                <li style="display:flex;align-items:center;gap:8px;"><span style="color:#f5b51b;font-weight:900;">✓</span> Experts terrain</li>
+                <li style="display:flex;align-items:center;gap:8px;"><span style="color:#f5b51b;font-weight:900;">✓</span> Financements possibles</li>
               </ul>
-              <div class="cat-action">
-                <a class="cat-btn gold" href="pdfs/Catalogue_Sina_Prestige_RH_Final.pdf" target="_blank" rel="noopener">
-                  <span>Télécharger le catalogue RH</span> <b>↓</b>
-                </a>
-              </div>
             </div>
+            <a class="m-btn gold" href="formations.html" style="text-align:center;justify-content:center;">Voir les formations</a>
           </article>
 
-          <!-- Carte 2: Commerce -->
-          <article class="cat-card">
-            <div class="cat-card-header">
-              <img src="images/formation-vente.webp" alt="Catalogue Commerce Sina &amp; Prestige">
-              <span class="cat-badge">PDF OFFICIEL</span>
-            </div>
-            <div class="cat-card-body">
-              <h3>Commerce &amp; Relation Client</h3>
-              <p>Vente B2B, prospection commerciale, négociation, relation client &amp; développement commercial.</p>
-              <ul class="cat-list">
-                <li>Techniques de vente modernes</li>
-                <li>Relation &amp; fidélisation client</li>
-                <li>Posture &amp; prospection efficace</li>
-              </ul>
-              <div class="cat-action">
-                <a class="cat-btn" href="pdfs/Catalogue_Thematique_Commerce_Vente_Relation_Client_Sina_Prestige (1).pdf" target="_blank" rel="noopener">
-                  <span>Découvrir le catalogue</span> <b>↓</b>
-                </a>
+          <!-- Cartes Secondaires -->
+          <div class="pillar-secondary-grid">
+            <article class="pillar-card card-linkable" data-card-link="recrutement.html" role="link" tabindex="0">
+              <div>
+                <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/><path d="M11 8v6M8 11h6"/></svg></div>
+                <h3>Recruter</h3>
+                <p>Profils ciblés : IT, IA, Data et commerce.</p>
               </div>
-            </div>
-          </article>
+              <a class="m-btn dark small" href="recrutement.html">Recruter un profil</a>
+            </article>
 
-          <!-- Carte 3: Tech & IA -->
-          <article class="cat-card">
-            <div class="cat-card-header">
-              <img src="images/formation-Ia.digi.webp" alt="Catalogue Tech &amp; IA Sina &amp; Prestige">
-              <span class="cat-badge gold">INNOVATION &amp; TECH</span>
-            </div>
-            <div class="cat-card-body">
-              <h3>Projets, IA, Data, UX &amp; IT</h3>
-              <p>Gestion de projet, agilité, IA générative, Data, Cloud, UX Design &amp; transformation digitale.</p>
-              <ul class="cat-list">
-                <li>Cas d'usage IA métiers</li>
-                <li>Méthodologies Agiles &amp; Scrum</li>
-                <li>Design UX/UI &amp; Cloud</li>
-              </ul>
-              <div class="cat-action">
-                <a class="cat-btn gold" href="pdfs/Catalogue_Thematique_Projets_IA_Data_UX_Cloud_IT_Sina_Prestige_Style_Commerce (1).pdf" target="_blank" rel="noopener">
-                  <span>Consulter le catalogue Tech &amp; IA</span> <b>↓</b>
-                </a>
+            <article class="pillar-card card-linkable" data-card-link="accompagnement-rh.html" role="link" tabindex="0">
+              <div>
+                <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                <h3>Accompagner</h3>
+                <p>Conseil RH, qualité et ingénierie pédagogique.</p>
               </div>
-            </div>
-          </article>
+              <a class="m-btn dark small" href="accompagnement-rh.html">Mon projet</a>
+            </article>
 
-          <!-- Carte 4: Masterclass -->
-          <article class="cat-card">
-            <div class="cat-card-header">
-              <img src="images/catalogue-cover-4.webp" alt="Classroom &amp; Masterclass Sina &amp; Prestige">
-              <span class="cat-badge">ÉVÉNEMENTS</span>
-            </div>
-            <div class="cat-card-body">
-              <h3>Classroom &amp; Masterclass</h3>
-              <p>Invités d'exception, conférences, tables rondes et masterclass thématiques exclusives.</p>
-              <ul class="cat-list">
-                <li>Intervenants &amp; experts métiers</li>
-                <li>Sessions interactives en ligne</li>
-                <li>Replays &amp; synthèses d'actualité</li>
-              </ul>
-              <div class="cat-action">
-                <a class="cat-btn" href="webinaires-masterclass.html">
-                  <span>Découvrir les Masterclass</span> <b></b>
-                </a>
+            <article class="pillar-card pillar-card-full-span card-linkable" data-card-link="recrutement.html#reseau" role="link" tabindex="0">
+              <div>
+                <div class="ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#09235d" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h3>Rejoindre le Réseau</h3>
+                <p>Un réseau d'experts, d'écoles et d'entreprises engagés.</p>
               </div>
-            </div>
-          </article>
-
+              <a class="m-btn gold small" href="recrutement.html#reseau">Rejoindre</a>
+            </article>
           </div>
         </div>
       </div>
@@ -1268,45 +1577,132 @@
 
   <div class="section-separator-20" aria-hidden="true"></div>
 
-  <!-- SECTION 3 : INGÉNIERIE PÉDAGOGIQUE -->
+  <!-- SECTION 2 : CATALOGUES ASYMÉTRIQUES -->
+  <section class="panel-white sp-bg-soft">
+    <div class="section-pad">
+      <div class="sp-home-section">
+        <h2 class="domain-title">Nos catalogues et programmes de formation</h2>
+        <p class="section-subhead">Téléchargez nos programmes détaillés et livrets de formation officiels en accès direct.</p>
+        
+        <div class="cat-asymmetric-wrapper">
+          <!-- Carte Vedette : RH & Management -->
+          <article class="cat-card-featured card-linkable" data-card-link="pdfs/Catalogue_Sina_Prestige_RH_Final.pdf" role="link" tabindex="0">
+            <div class="cat-featured-img-wrap">
+              <img src="images/formation-rh.webp" alt="Catalogue RH Sina &amp; Prestige">
+            </div>
+            <div class="cat-featured-body">
+              <div>
+                <h3 style="font-size:22px !important;font-weight:800 !important;color:#09235d !important;margin:10px 0 8px !important;">Ressources Humaines &amp; Management</h3>
+                <p style="font-size:14px;color:#475569;line-height:1.55;margin-bottom:16px;">Programmes certifiants complets : droit social, recrutement, conformité, GPEC, compétences &amp; employabilité.</p>
+                <ul class="cat-list" style="margin-bottom:20px;">
+                  <li>Programmes certifiants &amp; modules sur mesure</li>
+                  <li>Formats Inter-entreprises &amp; Intra-entreprises</li>
+                  <li>Accompagnement opérationnel des équipes RH</li>
+                </ul>
+              </div>
+              <a class="cat-btn gold" href="pdfs/Catalogue_Sina_Prestige_RH_Final.pdf" target="_blank" rel="noopener" style="padding:14px 18px;">
+                <span>Télécharger</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- 3 cartes secondaires empilées -->
+          <div class="cat-secondary-stack">
+            <!-- Commerce -->
+            <article class="cat-card card-linkable" data-card-link="pdfs/Catalogue_Thematique_Commerce_Vente_Relation_Client_Sina_Prestige (1).pdf" role="link" tabindex="0">
+              <div class="cat-card-header" style="height:100px;">
+                <img src="images/formation-vente.webp" alt="Catalogue Commerce">
+              </div>
+              <div class="cat-card-body" style="padding:16px;">
+                <h3 style="font-size:16px !important;margin-bottom:4px !important;">Commerce &amp; Vente</h3>
+                <p style="font-size:13px !important;margin-bottom:10px !important;">Négociation B2B, prospection moderne &amp; fidélisation client.</p>
+                <a class="cat-btn" href="pdfs/Catalogue_Thematique_Commerce_Vente_Relation_Client_Sina_Prestige (1).pdf" target="_blank" rel="noopener" style="padding:9px 12px;font-size:12px;">
+                  <span>Télécharger</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- Tech & IA -->
+            <article class="cat-card card-linkable" data-card-link="pdfs/Catalogue_Thematique_Projets_IA_Data_UX_Cloud_IT_Sina_Prestige_Style_Commerce (1).pdf" role="link" tabindex="0">
+              <div class="cat-card-header" style="height:100px;">
+                <img src="images/formation-Ia.digi.webp" alt="Catalogue Tech &amp; IA">
+              </div>
+              <div class="cat-card-body" style="padding:16px;">
+                <h3 style="font-size:16px !important;margin-bottom:4px !important;">Projets, IA &amp; Data</h3>
+                <p style="font-size:13px !important;margin-bottom:10px !important;">IA générative, Agilité Scrum, Data, Cloud &amp; UX Design.</p>
+                <a class="cat-btn gold" href="pdfs/Catalogue_Thematique_Projets_IA_Data_UX_Cloud_IT_Sina_Prestige_Style_Commerce (1).pdf" target="_blank" rel="noopener" style="padding:9px 12px;font-size:12px;">
+                  <span>Consulter</span>
+                </a>
+              </div>
+            </article>
+
+          </div>
+        </div>
+        <div class="catalogues-more-cta">
+          <a class="m-btn dark" href="catalogues-plaquettes.html">Voir plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-separator-20" aria-hidden="true"></div>
+
+  <!-- SECTION 3 : INGÉNIERIE PÉDAGOGIQUE ASYMÉTRIQUE -->
   <section class="panel-white">
     <div class="section-pad">
       <div class="sp-home-section">
         
-        <h2 class="domain-title">Ingénierie Pédagogique</h2>
-        <p class="section-subhead">De l'idée au parcours de formation : concevoir, structurer, déployer et mesurer.<br>Nous transformons un besoin métier en expérience pédagogique cohérente et performante.</p>
+        <h2 class="domain-title">Notre démarche d'ingénierie pédagogique</h2>
+        <p class="section-subhead">De l'analyse du besoin au déploiement opérationnel : une méthode éprouvée pour mesurer l'impact.</p>
 
-        <div class="pillar-grid" style="margin-bottom: 32px;">
-          
-          <article class="ing-step-card-std">
-            <div class="ing-step-num-std">01</div>
-            <h3>Diagnostic</h3>
-            <p>Analyse des enjeux, cadrage des objectifs &amp; étude des besoins terrain.</p>
-          </article>
+        <div class="ing-asymmetric-wrapper">
+          <!-- Bloc d'engagement (Gauche) -->
+          <div class="ing-engagement-box">
+            <div>
+              <h3>Une ingénierie d'apprentissage tournée vers le résultat</h3>
+              <p>Nous ne nous contentons pas de transmettre du savoir. Nous créons des parcours sur mesure adaptés au contexte réel de vos équipes pour garantir la montée en compétences et le retour sur investissement.</p>
+              <div style="margin-top:20px;padding:16px;background:rgba(255,255,255,0.08);border-radius:10px;border-left:3px solid #f5b51b;">
+                <strong style="display:block;font-size:14px;color:#f5b51b;margin-bottom:4px;">Engagement Qualité</strong>
+                <span style="font-size:13px;color:#e2e8f0;line-height:1.4;">Chaque formation fait l'objet d'une évaluation continue des acquis et d'un suivi personnalisé.</span>
+              </div>
+            </div>
+            <a class="ing-btn" href="accompagnement-rh.html" style="margin-top:24px;">Concevoir</a>
+          </div>
 
-          <article class="ing-step-card-std">
-            <div class="ing-step-num-std">02</div>
-            <h3>Conception</h3>
-            <p>Scénarisation pédagogique, progression &amp; création des supports.</p>
-          </article>
+          <!-- Timeline 4 étapes (Droite) -->
+          <div class="ing-timeline-grid">
+            <div class="ing-timeline-item">
+              <div class="ing-timeline-num">01</div>
+              <div class="ing-timeline-content">
+                <h3>Diagnostic &amp; Cadrage</h3>
+                <p>Analyse approfondie de vos enjeux, audit des compétences existantes et définition précise des objectifs pédagogiques.</p>
+              </div>
+            </div>
 
-          <article class="ing-step-card-std">
-            <div class="ing-step-num-std">03</div>
-            <h3>Sur-mesure</h3>
-            <p>Parcours d'apprentissage adapté, cas pratiques &amp; outils immersifs.</p>
-          </article>
+            <div class="ing-timeline-item">
+              <div class="ing-timeline-num">02</div>
+              <div class="ing-timeline-content">
+                <h3>Conception Sur-Mesure</h3>
+                <p>Scénarisation des parcours, création des supports interactifs, ateliers pratiques et cas d'usage métiers.</p>
+              </div>
+            </div>
 
-          <article class="ing-step-card-std">
-            <div class="ing-step-num-std">04</div>
-            <h3>Déploiement</h3>
-            <p>Animation multi-sites, évaluation des acquis &amp; suivi de performance.</p>
-          </article>
+            <div class="ing-timeline-item">
+              <div class="ing-timeline-num">03</div>
+              <div class="ing-timeline-content">
+                <h3>Animation &amp; Immersion</h3>
+                <p>Déploiement par nos formateurs experts avec mise en situation concrète et outils digitaux modernes.</p>
+              </div>
+            </div>
 
-        </div>
-
-        <div style="text-align: center;">
-          <p style="font-size: 14px; color: #475569; margin-bottom: 14px;">Vous souhaitez concevoir un parcours sur mesure pour vos équipes ?</p>
-          <a class="m-btn gold" href="accompagnement-rh.html">En savoir plus sur nos offres &nbsp;</a>
+            <div class="ing-timeline-item">
+              <div class="ing-timeline-num">04</div>
+              <div class="ing-timeline-content">
+                <h3>Évaluation &amp; Suivi d'Impact</h3>
+                <p>Mesure de l'ancrage mémoriel, évaluation à chaud/froid et restitution du bilan opérationnel.</p>
+              </div>
+            </div>
+          </div>
         </div>
 
       </div>
@@ -1332,6 +1728,7 @@
             <div class="apple-quote-author">
               <strong>Varvara Alfred</strong>
               <span>Fondatrice et CEO • Sina &amp; Prestige</span>
+                <a class="founder-about-cta" href="a-propos.html">Découvrir notre histoire</a>
             </div>
           </div>
         </div>
@@ -1346,13 +1743,12 @@
   <section class="panel-white sp-bg-soft">
     <div class="section-pad">
       <div class="sp-home-section">
-        <h2 class="domain-title">Nos Prochains Rendez-vous</h2>
+        <h2 class="domain-title">Nos prochains rendez-vous</h2>
         <p class="section-subhead">Masterclass, rencontres et événements à venir.</p>
         <div class="events-grid">
-          <article class="event-item-card">
+          <article class="event-item-card card-linkable" data-card-link="webinaires-masterclass.html#agenda" role="link" tabindex="0">
             <div>
               <div class="event-header">
-                <span class="event-badge badge-org">Événement Sina &amp; Prestige</span>
                 <div class="event-date-box">
                   <strong>24</strong>
                   <span>SEP</span>
@@ -1361,13 +1757,12 @@
               <h3>Masterclass RH &amp; Intelligence Artificielle</h3>
               <p style="font-size:13px;color:#475569;margin:8px 0 16px;">Des méthodes opérationnelles et des cas d'usage concrets d'IA appliquée aux Ressources Humaines.</p>
             </div>
-            <a class="m-btn gold small" href="webinaires-masterclass.html#agenda">Je m'inscris à l'événement &nbsp;</a>
+            <a class="m-btn gold small" href="webinaires-masterclass.html#agenda">M'inscrire</a>
           </article>
 
-          <article class="event-item-card">
+          <article class="event-item-card card-linkable" data-card-link="webinaires-masterclass.html#agenda" role="link" tabindex="0">
             <div>
               <div class="event-header">
-                <span class="event-badge badge-part">Participation Sina &amp; Prestige</span>
                 <div class="event-date-box" style="background:#1e3a8a;">
                   <strong>28</strong>
                   <span>SEP</span>
@@ -1376,7 +1771,7 @@
               <h3>Egypt Business Forum au Sénat</h3>
               <p style="font-size:13px;color:#475569;margin:8px 0 16px;">Rencontre et échanges réseau sur les opportunités de coopération internationale et de développement.</p>
             </div>
-            <a class="m-btn dark small" href="webinaires-masterclass.html#agenda">En savoir plus / Nous rencontrer &nbsp;</a>
+            <a class="m-btn dark small" href="webinaires-masterclass.html#agenda">Découvrir</a>
           </article>
         </div>
       </div>
@@ -1460,7 +1855,7 @@
         <div class="join-network-box">
           <h2 class="domain-title" style="margin-bottom:12px !important;">Rejoignez le réseau Sina &amp; Prestige</h2>
           <p class="section-subhead" style="max-width:780px; margin:0 auto 24px;">Vous êtes formateur, consultant, recruteur indépendant, commercial, expert métier, community manager, école ou entreprise ? Rejoignez un réseau engagé dans le développement des compétences et l'employabilité.</p>
-          <a class="m-btn gold" href="recrutement.html#reseau">Rejoindre le réseau Sina &amp; Prestige &nbsp;</a>
+          <a class="m-btn gold" href="recrutement.html#reseau">Rejoindre le réseau</a>
         </div>
       </div>
     </div>
@@ -1469,7 +1864,7 @@
   <div class="section-separator-20" aria-hidden="true"></div>
 
   <!-- SECTION 8 : SUIVEZ LA VIE DE SINA & PRESTIGE -->
-  <section class="panel-white sp-bg-soft">
+  <section class="panel-white sp-bg-soft social-follow-section">
     <div class="section-pad">
       <div class="sp-home-section">
         <h2 class="domain-title">Suivez la vie de Sina &amp; Prestige</h2>
@@ -1477,48 +1872,28 @@
 
         <div class="social-channels-grid">
           
-          <a class="social-channel-card" href="https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391" target="_blank" rel="noopener">
+          <a class="social-channel-card" href="https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391" target="_blank" rel="noopener" aria-label="LinkedIn" title="LinkedIn">
             <div class="social-ico linkedin">
               <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
             </div>
-            <div class="social-info">
-              <h3>LinkedIn</h3>
-              <small>Actualités, carrousels &amp; conseils</small>
-            </div>
-            <span class="social-arrow"></span>
           </a>
 
-          <a class="social-channel-card" href="https://www.instagram.com/sinaprestige/" target="_blank" rel="noopener">
+          <a class="social-channel-card" href="https://www.instagram.com/sinaprestige/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
             <div class="social-ico instagram">
               <i class="fa-brands fa-instagram" aria-hidden="true"></i>
             </div>
-            <div class="social-info">
-              <h3>Instagram</h3>
-              <small>Coulisses, événements &amp; vie d'équipe</small>
-            </div>
-            <span class="social-arrow"></span>
           </a>
 
-          <a class="social-channel-card" href="videos.html">
+          <a class="social-channel-card" href="videos.html" aria-label="Vidéos" title="Vidéos">
             <div class="social-ico video">
               <i class="fa-brands fa-youtube" aria-hidden="true"></i>
             </div>
-            <div class="social-info">
-              <h3>Vidéos</h3>
-              <small>Replays, interviews &amp; capsules</small>
-            </div>
-            <span class="social-arrow"></span>
           </a>
 
-          <a class="social-channel-card" href="actualites.html">
+          <a class="social-channel-card" href="actualites.html" aria-label="Actualités" title="Actualités">
             <div class="social-ico news">
               <i class="fa-solid fa-newspaper" aria-hidden="true"></i>
             </div>
-            <div class="social-info">
-              <h3>Actualités</h3>
-              <small>Articles, conseils &amp; veille RH</small>
-            </div>
-            <span class="social-arrow"></span>
           </a>
 
         </div>
@@ -1580,6 +1955,21 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('[data-card-link]').forEach(function(card) {
+    function openCard(event) {
+      if (event.target.closest('a, button, input, select, textarea')) return;
+      window.location.href = card.dataset.cardLink;
+    }
+    card.addEventListener('click', openCard);
+    card.addEventListener('keydown', function(event) {
+      if ((event.key === 'Enter' || event.key === ' ') && event.target === card) {
+        event.preventDefault();
+        window.location.href = card.dataset.cardLink;
+      }
+    });
+  });
+</script>
 <script src="js/site-data.js"></script>
 <script src="js/refonte-master.js"></script>
 <script src="js/maquette-pages.js"></script>
