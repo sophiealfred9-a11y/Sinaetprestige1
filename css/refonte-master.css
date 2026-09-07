@@ -1,4 +1,4 @@
-@import url('contact-professional.css');
+@import url('contact-professional.css?v=20260907');
 .sp-main > .sp-hero:has(.sp-hero-card){min-height:445px;padding:0;background:#061a45 linear-gradient(90deg,rgba(3,19,51,.98) 0%,rgba(3,19,51,.93) 27%,rgba(3,19,51,.55) 47%,rgba(3,19,51,0) 70%),url('../images/fondatrice-officielle.webp') center right/cover no-repeat}
 .sp-main > .sp-hero:has(.sp-hero-card) .sp-kicker{color:#ffba25}
 .sp-main > .sp-hero:has(.sp-hero-card) .sp-title{color:#fff}
