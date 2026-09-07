@@ -552,6 +552,9 @@
     .cat-secondary-stack .cat-card {
       min-width: 0;
     }
+    .catalogue-mobile-controls {
+      display: none;
+    }
     .catalogues-more-cta {
       display: flex;
       justify-content: center;
@@ -705,8 +708,26 @@
         padding: 18px;
       }
       .cat-secondary-stack {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        display: contents;
+      }
+      .cat-asymmetric-wrapper {
+        display: flex;
+        gap: 12px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+        margin-left: -14px;
+        margin-right: -14px;
+        padding: 0 14px 4px;
+      }
+      .cat-asymmetric-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      .cat-asymmetric-wrapper > .cat-card-featured,
+      .cat-asymmetric-wrapper > .cat-secondary-stack > .cat-card {
+        flex: 0 0 calc(100vw - 56px);
+        scroll-snap-align: start;
       }
       .cat-secondary-stack .cat-card-header {
         height: 78px !important;
@@ -716,6 +737,44 @@
       }
       .catalogues-more-cta {
         margin-top: 16px;
+      }
+      .catalogue-mobile-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        margin-top: 14px;
+      }
+      .catalogue-dots {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+      }
+      .catalogue-dot {
+        width: 7px;
+        height: 7px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #cbd5e1;
+        cursor: pointer;
+      }
+      .catalogue-dot.is-active {
+        width: 20px;
+        border-radius: 999px;
+        background: #f5b51b;
+      }
+      .catalogue-play {
+        width: 30px;
+        height: 30px;
+        padding: 0;
+        border: 1px solid #09235d;
+        border-radius: 50%;
+        background: #ffffff;
+        color: #09235d;
+        font-size: 12px;
+        line-height: 1;
+        cursor: pointer;
       }
     }
   
@@ -796,6 +855,14 @@
       color: #475569 !important;
       line-height: 1.55 !important;
       margin: 0 0 16px !important;
+    }
+    .cat-card-body .cat-list {
+      margin: auto 0 14px;
+      padding-top: 10px;
+    }
+    .cat-card-body .cat-list li {
+      font-size: 11px;
+      margin-bottom: 4px;
     }
     .cat-list {
       list-style: none;
@@ -1616,6 +1683,10 @@
               <div class="cat-card-body" style="padding:16px;">
                 <h3 style="font-size:16px !important;margin-bottom:4px !important;">Commerce &amp; Vente</h3>
                 <p style="font-size:13px !important;margin-bottom:10px !important;">Négociation B2B, prospection moderne &amp; fidélisation client.</p>
+                <ul class="cat-list">
+                  <li>Prospection &amp; vente B2B</li>
+                  <li>Relation client &amp; fidélisation</li>
+                </ul>
                 <a class="cat-btn" href="pdfs/Catalogue_Thematique_Commerce_Vente_Relation_Client_Sina_Prestige (1).pdf" target="_blank" rel="noopener" style="padding:9px 12px;font-size:12px;">
                   <span>Télécharger</span>
                 </a>
@@ -1630,6 +1701,10 @@
               <div class="cat-card-body" style="padding:16px;">
                 <h3 style="font-size:16px !important;margin-bottom:4px !important;">Projets, IA &amp; Data</h3>
                 <p style="font-size:13px !important;margin-bottom:10px !important;">IA générative, Agilité Scrum, Data, Cloud &amp; UX Design.</p>
+                <ul class="cat-list">
+                  <li>IA générative &amp; automatisation</li>
+                  <li>Data, Cloud &amp; transformation digitale</li>
+                </ul>
                 <a class="cat-btn gold" href="pdfs/Catalogue_Thematique_Projets_IA_Data_UX_Cloud_IT_Sina_Prestige_Style_Commerce (1).pdf" target="_blank" rel="noopener" style="padding:9px 12px;font-size:12px;">
                   <span>Consulter</span>
                 </a>
@@ -1637,6 +1712,14 @@
             </article>
 
           </div>
+        </div>
+        <div class="catalogue-mobile-controls" aria-label="Navigation des catalogues">
+          <div class="catalogue-dots">
+            <button class="catalogue-dot is-active" type="button" aria-label="Afficher le catalogue RH" aria-current="true"></button>
+            <button class="catalogue-dot" type="button" aria-label="Afficher le catalogue Commerce"></button>
+            <button class="catalogue-dot" type="button" aria-label="Afficher le catalogue Projets IA et Data"></button>
+          </div>
+          <button class="catalogue-play" type="button" aria-label="Mettre en pause" aria-pressed="false">Ⅱ</button>
         </div>
         <div class="catalogues-more-cta">
           <a class="m-btn dark" href="catalogues-plaquettes.html">Voir plus</a>
@@ -1969,6 +2052,58 @@
       }
     });
   });
+</script>
+<script>
+  (function() {
+    var track = document.querySelector('.cat-asymmetric-wrapper');
+    var controls = document.querySelector('.catalogue-mobile-controls');
+    if (!track || !controls) return;
+    var slides = Array.from(track.querySelectorAll('.cat-card-featured, .cat-secondary-stack .cat-card'));
+    var dots = Array.from(controls.querySelectorAll('.catalogue-dot'));
+    var playButton = controls.querySelector('.catalogue-play');
+    var timer = null;
+    var isMobile = function() { return window.matchMedia('(max-width: 640px)').matches; };
+    var setActive = function(index) {
+      dots.forEach(function(dot, dotIndex) {
+        var active = dotIndex === index;
+        dot.classList.toggle('is-active', active);
+        dot.setAttribute('aria-current', active ? 'true' : 'false');
+      });
+    };
+    var currentIndex = function() {
+      var center = track.scrollLeft + track.clientWidth / 2;
+      return slides.reduce(function(best, slide, index) {
+        return Math.abs(slide.offsetLeft + slide.offsetWidth / 2 - center) < Math.abs(slides[best].offsetLeft + slides[best].offsetWidth / 2 - center) ? index : best;
+      }, 0);
+    };
+    var goTo = function(index) {
+      var nextIndex = (index + slides.length) % slides.length;
+      track.scrollTo({left: slides[nextIndex].offsetLeft - track.offsetLeft, behavior: 'smooth'});
+      setActive(nextIndex);
+    };
+    var stop = function() {
+      window.clearInterval(timer);
+      timer = null;
+      playButton.textContent = '▶';
+      playButton.setAttribute('aria-label', 'Lire automatiquement');
+      playButton.setAttribute('aria-pressed', 'true');
+    };
+    var start = function() {
+      stop();
+      if (!isMobile() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      playButton.textContent = 'Ⅱ';
+      playButton.setAttribute('aria-label', 'Mettre en pause');
+      playButton.setAttribute('aria-pressed', 'false');
+      timer = window.setInterval(function() { goTo(currentIndex() + 1); }, 4500);
+    };
+    dots.forEach(function(dot, index) { dot.addEventListener('click', function() { goTo(index); start(); }); });
+    playButton.addEventListener('click', function() { timer ? stop() : start(); });
+    track.addEventListener('scroll', function() { if (isMobile()) setActive(currentIndex()); }, {passive: true});
+    track.addEventListener('touchstart', stop, {passive: true});
+    track.addEventListener('touchend', function() { if (isMobile() && playButton.getAttribute('aria-pressed') === 'false') start(); }, {passive: true});
+    window.addEventListener('resize', function() { if (isMobile()) start(); else stop(); });
+    start();
+  }());
 </script>
 <script src="js/site-data.js"></script>
 <script src="js/refonte-master.js"></script>
