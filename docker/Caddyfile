@@ -23,7 +23,7 @@ www.sinaetprestige.fr {
 			root /srv
 			hide .htaccess
 		}
-		header Cache-Control "public, max-age=31536000, immutable"
+		header Cache-Control "no-cache, must-revalidate"
 		header Content-Type "text/css; charset=utf-8"
 		encode gzip
 	}
@@ -33,7 +33,7 @@ www.sinaetprestige.fr {
 			root /srv
 			hide .htaccess
 		}
-		header Cache-Control "public, max-age=31536000, immutable"
+		header Cache-Control "no-cache, must-revalidate"
 		header Content-Type "application/javascript; charset=utf-8"
 		encode gzip
 	}
@@ -43,7 +43,7 @@ www.sinaetprestige.fr {
 			root /srv
 			hide .htaccess
 		}
-		header Cache-Control "public, max-age=31536000, immutable"
+		header Cache-Control "public, max-age=86400, must-revalidate"
 		encode gzip
 	}
 
@@ -81,6 +81,7 @@ www.sinaetprestige.fr {
 			index index.html
 			hide .htaccess
 		}
+		header Cache-Control "no-cache, no-store, must-revalidate"
 		header Content-Type "text/html; charset=utf-8"
 		header X-Frame-Options "SAMEORIGIN"
 		header X-Content-Type-Options "nosniff"
@@ -103,6 +104,7 @@ www.sinaetprestige.fr {
 				root /srv
 				hide .htaccess
 			}
+			header Cache-Control "no-cache, no-store, must-revalidate"
 			header Content-Type "text/html; charset=utf-8"
 			header X-Frame-Options "SAMEORIGIN"
 			header X-Content-Type-Options "nosniff"
