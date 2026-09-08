@@ -1,19 +1,377 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Presse &amp; Médias | Sina &amp; Prestige</title>
+  <meta name="description" content="Espace Presse &amp; Médias de Sina &amp; Prestige. Retrouvez nos apparitions médias, nos communiqués officiels, nos dossiers d'information et le kit presse officiel.">
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+  <link rel="icon" type="image/png" href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp">
+  <link rel="stylesheet" href="css/site-redesign.css">
+  <link rel="stylesheet" href="css/recrutement-page.css">
+  <link rel="stylesheet" href="css/maquette-formations-calendrier.css">
+  <link rel="stylesheet" href="css/hero-final.css">
+  <link rel="stylesheet" href="css/global-rh-nav.css">
+  <link rel="stylesheet" href="css/refonte-master.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  
+  <style>
+    :root {
+      --sp-blue-dark: #09235d;
+      --sp-gold: #f5b51b;
+      --sp-text-muted: #475569;
+      --sp-border: #e2e8f0;
+      --sp-bg-light: #f8fafc;
+    }
 
-<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Presse &amp; Médias | Sina &amp; Prestige</title><meta content="Aucune couverture, citation ou apparition média n’est inventée." name="description"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><link href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" rel="icon" type="image/png"/><link href="css/refonte-master.css" rel="stylesheet"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Sina & Prestige","url":"https://www.sinaetprestige.fr","email":"contact@sinaetprestige.fr","telephone":"06 17 42 06 28","areaServed":"FR","sameAs":["https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391","https://www.instagram.com/sinaprestige/"]},{"@type":"WebSite","name":"Sina & Prestige","url":"https://www.sinaetprestige.fr","publisher":{"@type":"Organization","name":"Sina & Prestige"}}]}</script><link rel="stylesheet" href="css/global-rh-nav.css">
+    .section-separator-20 { height: 20px; background-color: #fafafa; width: 100%; border: none; margin: 0; padding: 0; }
+    .sp-home-section { padding: 44px 0; }
+    .sp-bg-soft { background-color: var(--sp-bg-light); }
+
+    /* Desktop Typography Scaling */
+    @media (min-width: 1025px) {
+      .rh-hero-copy h1 { font-size: 44px !important; line-height: 1.22 !important; margin-bottom: 18px !important; }
+      .rh-hero-copy p { font-size: 17px !important; line-height: 1.65 !important; max-width: 760px !important; }
+      h2.center-title, h2.domain-title { font-size: 30px !important; line-height: 1.25 !important; margin-bottom: 24px !important; }
+      .section-subhead { font-size: 16px !important; line-height: 1.55 !important; }
+      .pillar-card h3, .event-item-card h3, .press-kit-card h3 { font-size: 21px !important; line-height: 1.3 !important; }
+      .pillar-card p, .event-item-card p, .press-kit-card p { font-size: 15px !important; line-height: 1.6 !important; }
+    }
+
+    /* Headings Hierarchy */
+    h2.center-title, h2.domain-title {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 26px !important;
+      font-weight: 800 !important;
+      color: var(--sp-blue-dark) !important;
+      line-height: 1.25 !important;
+      margin-bottom: 24px !important;
+      letter-spacing: -0.02em !important;
+      text-align: center;
+    }
+
+    .section-subhead {
+      text-align: center;
+      font-size: 15px;
+      color: var(--sp-text-muted);
+      margin-top: -16px;
+      margin-bottom: 28px;
+      line-height: 1.5;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Container Wrap */
+    .sp-wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Piliers Grid */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--sp-border);
+      border-radius: 12px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      box-shadow: 0 4px 12px rgba(9, 35, 93, 0.03);
+    }
+    .pillar-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(9, 35, 93, 0.08);
+      border-color: #cbd5e1;
+    }
+    .pillar-card .ico {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--sp-bg-light);
+      border: 1px solid var(--sp-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sp-blue-dark);
+      font-size: 18px;
+      margin-bottom: 16px;
+    }
+    .pillar-card h3 {
+      font-size: 19px;
+      font-weight: 800;
+      color: var(--sp-blue-dark);
+      margin: 0 0 10px;
+      line-height: 1.3;
+    }
+    .pillar-card p {
+      font-size: 14px;
+      color: var(--sp-text-muted);
+      line-height: 1.55;
+      margin: 0 0 20px;
+      flex-grow: 1;
+    }
+
+    .sp-pill {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--sp-gold);
+      color: var(--sp-blue-dark);
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    /* Retombées / Events Grid */
+    .events-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .event-item-card {
+      background: #ffffff;
+      border: 1px solid var(--sp-border);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: 0 4px 12px rgba(9, 35, 93, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .event-item-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 24px rgba(9, 35, 93, 0.08);
+    }
+    .event-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+    .event-date-box {
+      background: var(--sp-blue-dark);
+      color: #ffffff;
+      border-radius: 8px;
+      padding: 6px 14px;
+      text-align: center;
+      min-width: 60px;
+      flex-shrink: 0;
+    }
+    .event-date-box strong { display: block; font-size: 18px; line-height: 1; font-weight: 800; color: var(--sp-gold); }
+    .event-date-box span { display: block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 2px; }
+
+    .event-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      background: var(--sp-gold);
+      color: var(--sp-blue-dark);
+    }
+
+    /* Press Kit Grid */
+    .press-kit-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 24px;
+    }
+    .press-kit-card {
+      background: #ffffff;
+      border: 1px solid var(--sp-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(9, 35, 93, 0.03);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+    .press-kit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 14px 28px rgba(9, 35, 93, 0.08);
+      border-color: #cbd5e1;
+    }
+    .press-kit-ico {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: var(--sp-bg-light);
+      border: 1px solid var(--sp-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sp-blue-dark);
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    /* Buttons */
+    .m-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-weight: 700;
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: 1px solid transparent;
+      align-self: flex-start;
+    }
+    .m-btn.gold { background: var(--sp-gold); color: var(--sp-blue-dark); border-color: var(--sp-gold); }
+    .m-btn.gold:hover { background: #e0a312; }
+    .m-btn.light { background: #ffffff; color: var(--sp-blue-dark); border-color: var(--sp-border); }
+    .m-btn.light:hover { border-color: var(--sp-blue-dark); background: var(--sp-bg-light); }
+    .m-btn.small { padding: 8px 14px; font-size: 13px; }
+
+    /* Contact Presse Block */
+    .apple-quote-container {
+      background: #0f172a;
+      color: #ffffff;
+      border-radius: 24px;
+      padding: 48px 52px;
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 44px;
+      align-items: center;
+      box-shadow: 0 20px 48px rgba(15, 23, 42, 0.12);
+    }
+    .apple-quote-portrait {
+      text-align: center;
+    }
+    .apple-quote-portrait img {
+      width: 100%;
+      height: 190px;
+      object-fit: contain;
+      border-radius: 16px;
+      display: block;
+      border: none;
+      box-shadow: none;
+    }
+    .apple-quote-kicker {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--sp-gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    .apple-quote-text {
+      font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 20px !important;
+      font-weight: 600 !important;
+      line-height: 1.55 !important;
+      color: #f8fafc !important;
+      margin: 0 0 18px !important;
+    }
+    .apple-quote-author strong { display: block; font-size: 17px; font-weight: 800; color: #ffffff; }
+    .apple-quote-author span { display: block; font-size: 13.5px; color: #94a3b8; margin-top: 3px; font-weight: 500; }
+    .apple-quote-actions { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
+    .apple-quote-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .apple-quote-actions a.gold { background: var(--sp-gold); color: #07183d !important; border: 1px solid var(--sp-gold); }
+    .apple-quote-actions a.gold:hover { background: #ffffff; color: #07183d !important; }
+    .apple-quote-actions a.outline { border: 1px solid rgba(255,255,255,0.3); color: #ffffff; }
+    .apple-quote-actions a.outline:hover { border-color: var(--sp-gold); color: var(--sp-gold); }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 1024px) {
+      .pillar-grid, .press-kit-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .events-grid { grid-template-columns: 1fr; gap: 16px; }
+      .sp-home-section { padding: 36px 0; }
+      h2.center-title, h2.domain-title { font-size: 24px !important; }
+      .apple-quote-container { grid-template-columns: 150px 1fr; padding: 36px 32px; gap: 28px; }
+    }
+
+    @media (max-width: 640px) {
+      .sp-home-section { padding: 24px 0; }
+      h2.center-title, h2.domain-title { font-size: 20px !important; margin-bottom: 18px !important; }
+      .pillar-grid, .press-kit-grid { grid-template-columns: 1fr; gap: 12px; }
+      .apple-quote-container { grid-template-columns: 1fr !important; text-align: center; padding: 24px 20px !important; }
+      .apple-quote-portrait { max-width: 140px; margin: 0 auto; }
+      .apple-quote-text { font-size: 15px !important; }
+      .apple-quote-actions { justify-content: center; }
+    }
+  </style>
+
   <link rel="canonical" href="https://www.sinaetprestige.fr/presse.html">
   <meta property="og:locale" content="fr_FR">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Sina &amp; Prestige">
   <meta property="og:title" content="Presse &amp; Médias | Sina &amp; Prestige">
-  <meta property="og:description" content="Aucune couverture, citation ou apparition média n’est inventée.">
+  <meta property="og:description" content="Espace Presse &amp; Médias de Sina &amp; Prestige. Retrouvez nos apparitions médias, communiqués officiels et kit presse.">
   <meta property="og:url" content="https://www.sinaetprestige.fr/presse.html">
   <meta property="og:image" content="https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Presse &amp; Médias | Sina &amp; Prestige">
-  <meta name="twitter:description" content="Aucune couverture, citation ou apparition média n’est inventée.">
+  <meta name="twitter:description" content="Espace Presse &amp; Médias de Sina &amp; Prestige. Retrouvez nos apparitions médias, communiqués officiels et kit presse.">
   <meta name="twitter:image" content="https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp">
-</head><body><header class="site-head site-head-global">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    "name": "Sina & Prestige",
+    "legalName": "Sina & Prestige - Alfred HR Consulting",
+    "url": "https://www.sinaetprestige.fr",
+    "logo": "https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp",
+    "image": "https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp",
+    "description": "Organisme de formation certifié Qualiopi. Formations, recrutement et accompagnement RH. Transparence et preuve sociale documentée.",
+    "telephone": "+33 9 72 22 65 26",
+    "email": "contact@sinaetprestige.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Paris",
+      "addressCountry": "FR"
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Qualiopi - Certificat QUA009621",
+      "credentialCategory": "Certification Qualité de Formation"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391",
+      "https://www.instagram.com/sinaprestige/"
+    ]
+  }
+  </script>
+</head>
+
+<body class="maquette-page">
+
+<!-- HEADER NAVIGATION -->
+<header class="site-head site-head-global">
   <nav class="site-nav" aria-label="Navigation principale">
     <a class="brand" href="index.html" aria-label="Sina &amp; Prestige - Accueil">
       <img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt="Sina &amp; Prestige">
@@ -42,7 +400,7 @@
           <a href="evenements.html" role="menuitem">Événements</a>
           <a href="financements.html" role="menuitem">Dispositifs &amp; financements</a>
           <a href="qualite-accessibilite.html" role="menuitem">Qualité &amp; accessibilité</a>
-          <a href="presse.html" role="menuitem">Presse &amp; médias</a>
+          <a class="active" href="presse.html" role="menuitem">Presse &amp; médias</a>
           <a href="faq.html" role="menuitem">FAQ</a>
           <a href="international.html" role="menuitem">International</a>
         </div>
@@ -50,4 +408,289 @@
       <a class="nav-cta" href="contact.html">CONTACT</a>
     </div>
   </nav>
-</header><main class="sp-main"><section class="sp-hero"><div class="sp-wrap sp-hero-grid sp-hero-simple"><div class="sp-breadcrumb"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> Presse &amp;amp; Médias</div><div><span class="sp-kicker">Sina &amp; Prestige</span><h1 class="sp-title">Presse &amp; Médias</h1><p class="sp-lead">Les retombées médias sont publiées uniquement lorsqu’elles sont vérifiées.</p><div class="sp-actions"><a class="sp-btn" href="https://sinaetprestige.fr/contact.html">Nous contacter</a><a class="sp-btn alt" href="https://sinaetprestige.fr/formations.html">Voir les formations</a></div></div></div></section><section class="sp-section"><div class="sp-wrap"><div class="sp-grid"><article class="sp-card"><span class="sp-pill">Positionnement</span><h2>Presse &amp; Médias</h2><p>Aucune couverture, citation ou apparition média n’est inventée.</p></article><article class="sp-card"><span class="sp-pill">Méthode</span><h2>Une réponse proportionnée au besoin</h2><p>Le diagnostic, le contexte, les publics et les objectifs guident le choix de la réponse. Les formulations commerciales ne doivent pas transformer une possibilité en garantie.</p></article><article class="sp-card"><span class="sp-pill">Sources</span><h2>Des preuves avant des promesses</h2><p>Les médias, partenaires, événements et résultats sont publiés uniquement lorsqu’ils sont réellement documentés dans le Pack Source.</p></article></div></div></section></main><footer class="sp-footer"><div class="sp-wrap"><div class="sp-footer-grid"><div><div class="sp-footer-brand"><img alt="Sina &amp; Prestige" height="50" src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" width="50"/><div><strong>SINA &amp; PRESTIGE</strong><small>ALFRED HR CONSULTING</small></div></div><p>Formations • Conseil • Ingénierie pédagogique • Transformation</p><p>Paris 19e</p><p><a href="mailto:contact@sinaetprestige.fr">contact@sinaetprestige.fr</a><br/><a href="tel:+33617420628">06 17 42 06 28</a></p><p><a href="https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/sinaprestige/" rel="noopener" target="_blank">Instagram</a></p></div><div><h3>Explorer</h3><p><a href="https://sinaetprestige.fr/formations.html">Formations</a></p><p><a href="https://sinaetprestige.fr/calendrier-formations.html">Calendrier &amp; inscriptions</a></p><p><a href="https://sinaetprestige.fr/entreprise.html">Entreprises</a></p><p><a href="employabilite.html">Employabilité</a></p><p><a href="https://sinaetprestige.fr/publics.html">Prescripteurs</a></p></div><div><h3>Expertises</h3><p><a href="https://sinaetprestige.fr/recrutement.html">Recrutement &amp; RH</a></p><p><a href="financements.html">Dispositifs &amp; financements</a></p><p><a href="ingenierie-pedagogique.html">Ingénierie pédagogique</a></p><p><a href="https://sinaetprestige.fr/webinaires-masterclass.html">Événements</a></p><p><a href="https://sinaetprestige.fr/univers.html">Expertises</a></p></div><div class="sp-footer-quality-wrap"><h3>Qualité</h3><div class="sp-footer-quality"><img alt="Certification Qualiopi" height="47" src="images/qualiopi.webp" width="88"/><div><strong>Certification Qualiopi</strong><span>Consulter le certificat officiel</span><a href="qualite-accessibilite.html">Qualité &amp; accessibilité </a></div></div><p style="margin-top:13px"><a href="https://sinaetprestige.fr/catalogues-plaquettes.html">Catalogues &amp; programmes</a><br/><a href="mentions-legales.html">Juridique &amp; documents</a><br/><a href="https://sinaetprestige.fr/contact.html">Contact</a></p></div></div><div class="sp-footer-bottom"><span>© 2026 Sina &amp; Prestige — Tous droits réservés.</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="accessibilite.html">Accessibilité</a></span></div></div></footer><script src="js/site-data.js"></script><script src="js/refonte-master.js"></script><script src="js/global-rh-nav.js"></script></body></html>
+</header>
+
+<main>
+  <!-- HERO SECTION -->
+  <section class="rh-hero training-hero">
+    <div class="rh-hero-bg" aria-hidden="true"></div>
+    <div class="rh-hero-inner">
+      <div class="rh-hero-copy">
+        <div class="crumb"><a href="index.html">Accueil</a> › <a href="ressources.html">Ressources</a> › Presse &amp; Médias</div>
+        <div class="kicker">ESPACE PRESSE &amp; MÉDIAS</div>
+        <h1>Presse &amp; Médias<br><span>Transparence &amp; Preuves Éditoriales</span></h1>
+        <p>Retrouvez les apparitions médias, communiqués officiels et le kit presse de Sina &amp; Prestige. Organisme certifié Qualiopi, nous appliquons une règle déontologique stricte : aucune couverture ni citation n'est inventée.</p>
+        <div class="hero-actions">
+          <a class="btn gold" href="#communiques">Consulter les communiqués <i class="fa-solid fa-arrow-down" aria-hidden="true"></i></a>
+          <a class="btn" href="#kit-presse">Télécharger le kit média <i class="fa-solid fa-download" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: PILIERS DÉONTOLOGIQUES -->
+  <section class="sp-home-section">
+    <div class="sp-wrap">
+      <h2 class="center-title">Une Ligne Éditoriale Fondée sur des Preuves</h2>
+      <p class="section-subhead">Sina &amp; Prestige applique les mêmes exigences de transparence et de précision dans ses relations presse que dans ses parcours de formation et d'accompagnement RH.</p>
+      
+      <div class="pillar-grid">
+        <article class="pillar-card">
+          <div>
+            <div class="ico"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></div>
+            <span class="sp-pill">Engagement</span>
+            <h3>Sources Vérifiées</h3>
+            <p>Aucune couverture, citation ou apparition média n’est inventée. Chaque publication fait l’objet d’une vérification préalable dans notre Pack Source.</p>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div>
+            <div class="ico"><i class="fa-solid fa-bullseye" aria-hidden="true"></i></div>
+            <span class="sp-pill">Méthodologie</span>
+            <h3>Réponse Proportionnée</h3>
+            <p>Le diagnostic, le contexte et les objectifs guident le choix de la réponse. Les formulations ne transforment jamais une possibilité en garantie.</p>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div>
+            <div class="ico"><i class="fa-solid fa-layer-group" aria-hidden="true"></i></div>
+            <span class="sp-pill">Clarté</span>
+            <h3>Distinction des Rôles</h3>
+            <p>Les apparitions sont typées de façon explicite : événement organisé par Sina &amp; Prestige, participation d'expert ou partenariat média.</p>
+          </div>
+        </article>
+
+        <article class="pillar-card">
+          <div>
+            <div class="ico"><i class="fa-solid fa-award" aria-hidden="true"></i></div>
+            <span class="sp-pill">Expertises</span>
+            <h3>Sujets RH &amp; Emploi</h3>
+            <p>Nos interventions portent sur le recrutement stratégique, l'ingénierie pédagogique Qualiopi, l'employabilité et l'impact de l'IA.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-separator-20" aria-hidden="true">
+
+  <!-- SECTION 2: RETOMBÉES ET APPARITIONS MÉDIAS -->
+  <section class="sp-home-section sp-bg-soft">
+    <div class="sp-wrap">
+      <h2 class="center-title">Apparitions &amp; Retombées Médias Documentées</h2>
+      <p class="section-subhead">Consultez l'historique des apparitions, interviews et événements qualifiés de Sina &amp; Prestige et de sa fondatrice Varvara Alfred.</p>
+
+      <div class="events-grid">
+        <article class="event-item-card">
+          <div>
+            <div class="event-header">
+              <div class="event-date-box">
+                <strong>2026</strong>
+                <span>PRESSE</span>
+              </div>
+              <span class="event-badge">Focus Entrepreneurs</span>
+            </div>
+            <h3>Presse Événementielle &amp; Entrepreneuriat</h3>
+            <p>Couverture consacrée aux leviers d'accompagnement des créateurs d'entreprise, à la structuration de l'offre et au développement des compétences avec l'IA.</p>
+          </div>
+          <div style="margin-top: 18px;">
+            <a class="m-btn light small" href="contact.html?objet=presse">Fiche média <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <article class="event-item-card">
+          <div>
+            <div class="event-header">
+              <div class="event-date-box">
+                <strong>2026</strong>
+                <span>RENCONTRE</span>
+              </div>
+              <span class="event-badge">Grande Assemblée E</span>
+            </div>
+            <h3>Événements &amp; Rassemblements Métiers</h3>
+            <p>Participations et interventions autour des enjeux d'ingénierie de formation, de la certification Qualiopi et de l'accès durable à l'emploi.</p>
+          </div>
+          <div style="margin-top: 18px;">
+            <a class="m-btn light small" href="contact.html?objet=presse">Fiche événement <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <article class="event-item-card">
+          <div>
+            <div class="event-header">
+              <div class="event-date-box">
+                <strong>2026</strong>
+                <span>TECH &amp; IA</span>
+              </div>
+              <span class="event-badge">OpenAI &amp; Innovation</span>
+            </div>
+            <h3>L'IA appliquée au Recrutement &amp; à la Formation</h3>
+            <p>Analyses et partages d'expérience sur l'intégration éthique des outils IA (ChatGPT, optimisation de candidatures) dans la montée en compétences.</p>
+          </div>
+          <div style="margin-top: 18px;">
+            <a class="m-btn light small" href="articles.html">Lire les articles <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+
+        <article class="event-item-card">
+          <div>
+            <div class="event-header">
+              <div class="event-date-box">
+                <strong>2026</strong>
+                <span>PARCOURS</span>
+              </div>
+              <span class="event-badge">Portrait &amp; Leadership</span>
+            </div>
+            <h3>Varvara Alfred : Fondatrice &amp; Expertises Croisées</h3>
+            <p>Présentation du parcours de la fondatrice, alliant recrutement stratégique, ingénierie de formation certifiée et accompagnement des trajectoires RH.</p>
+          </div>
+          <div style="margin-top: 18px;">
+            <a class="m-btn light small" href="fondatrice.html">Découvrir la fondatrice <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: KIT MÉDIA & COMMUNIQUÉS -->
+  <section class="sp-home-section" id="communiques">
+    <div class="sp-wrap">
+      <h2 class="center-title">Communiqués Officiels &amp; Kit Média</h2>
+      <p class="section-subhead">Téléchargez les supports de référence pour vos articles, citations institutionnelles et représentations de la marque.</p>
+
+      <div class="press-kit-grid">
+        <article class="press-kit-card">
+          <div>
+            <div class="press-kit-ico"><i class="fa-solid fa-file-pdf" aria-hidden="true"></i></div>
+            <h3>Dossier de Presse Synthétique 2026</h3>
+            <p>Présentation institutionnelle, vision des compétences, chiffres clés, démarche qualité Qualiopi et catalogue des formations Sina &amp; Prestige.</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <a class="m-btn gold small" href="catalogues-plaquettes.html"><i class="fa-solid fa-download" aria-hidden="true"></i> Consulter la documentation</a>
+          </div>
+        </article>
+
+        <article class="press-kit-card">
+          <div>
+            <div class="press-kit-ico"><i class="fa-solid fa-image" aria-hidden="true"></i></div>
+            <h3>Kit Logotype &amp; Charte Officielle</h3>
+            <p>Logos officiels haute définition (formats WebP et PNG sur fond clair / sombre) et directives d'utilisation visuelle de la marque.</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <a class="m-btn light small" href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" target="_blank"><i class="fa-solid fa-download" aria-hidden="true"></i> Logo Officiel HD</a>
+          </div>
+        </article>
+
+        <article class="press-kit-card">
+          <div>
+            <div class="press-kit-ico"><i class="fa-solid fa-certificate" aria-hidden="true"></i></div>
+            <h3>Fiche d'Identité &amp; Certifications</h3>
+            <p>Données légales (SIREN 938 888 117), numéro de déclaration d'activité (NDA 11 75 70443 75) et certificat officiel de qualité Qualiopi.</p>
+          </div>
+          <div style="margin-top: 20px;">
+            <a class="m-btn light small" href="qualite-accessibilite.html"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i> Qualité &amp; Accessibilité</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CONTACT PRESSE -->
+  <section class="sp-home-section sp-bg-soft" id="kit-presse">
+    <div class="sp-wrap">
+      <div class="apple-quote-container">
+        <div class="apple-quote-portrait">
+          <img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt="Sina &amp; Prestige Relations Presse">
+        </div>
+        <div>
+          <span class="apple-quote-kicker">CONTACT PRESSE &amp; RELATIONS MÉDIAS</span>
+          <div class="apple-quote-text">« Nous sommes à votre disposition pour toute demande d'interview, de décryptage RH ou d'information institutionnelle vérifiée. »</div>
+          <div class="apple-quote-author">
+            <strong>Service Presse — Sina &amp; Prestige</strong>
+            <span>Paris 19e · Interventions France &amp; International</span>
+          </div>
+          <div class="apple-quote-actions">
+            <a class="gold" href="contact.html?objet=presse"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Contacter le service presse</a>
+            <a class="outline" href="tel:+33972226526"><i class="fa-solid fa-phone" aria-hidden="true"></i> +33 9 72 22 65 26</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER INSTITUTIONNEL -->
+<footer class="maquette-footer">
+  <div class="footer-grid">
+    <div>
+      <div class="footer-brand">
+        <img alt="Sina &amp; Prestige — Alfred HR Consulting" src="images/logo-horizontal-white.webp">
+      </div>
+      <p>Former aujourd’hui pour accompagner les compétences de demain.</p>
+      <p>Paris 19e · Paris, France</p>
+      <p>+33 9 72 22 65 26<br>contact@sinaetprestige.fr</p>
+    </div>
+    <div>
+      <h4>FORMATIONS</h4>
+      <ul>
+        <li><a href="formations.html">Toutes nos formations</a></li>
+        <li><a href="formations.html">Nos domaines</a></li>
+        <li><a href="calendrier-formations.html">Calendrier &amp; inscriptions</a></li>
+        <li><a href="catalogues-plaquettes.html">Catalogue &amp; programmes</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>RECRUTEMENT &amp; RH</h4>
+      <ul>
+        <li><a href="recrutement.html">Nos solutions</a></li>
+        <li><a href="recrutement.html">Offres d’emploi</a></li>
+        <li><a href="candidature.html">Déposer une candidature</a></li>
+        <li><a href="entreprise.html">Espace entreprise</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>RESSOURCES</h4>
+      <ul>
+        <li><a href="articles.html">Blogs &amp; articles</a></li>
+        <li><a href="videos.html">Vidéos &amp; replay</a></li>
+        <li><a href="actualites.html">Actualités RH</a></li>
+        <li><a href="presse.html">Presse &amp; médias</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>À PROPOS</h4>
+      <ul>
+        <li><a href="a-propos.html">Qui sommes-nous ?</a></li>
+        <li><a href="fondatrice.html">La fondatrice</a></li>
+        <li><a href="qualite-accessibilite.html">Qualité &amp; Qualiopi</a></li>
+        <li><a href="presse.html">Presse &amp; médias</a></li>
+      </ul>
+      <h4 style="margin-top:8px">CONTACT</h4>
+      <p>
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i> contact@sinaetprestige.fr<br>
+        <i class="fa-solid fa-phone" aria-hidden="true"></i> +33 9 72 22 65 26<br>
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i> Paris, France
+      </p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Sina &amp; Prestige — Tous droits réservés</span>
+    <span>
+      <a href="mentions-legales.html">Mentions légales</a> · 
+      <a href="confidentialite.html">Politique de confidentialité</a> · 
+      <a href="cgv.html">CGV</a> · 
+      <a href="accessibilite.html">Accessibilité</a> · 
+      <a href="sitemap.xml">Plan du site</a>
+    </span>
+  </div>
+</footer>
+
+<script src="js/site-data.js"></script>
+<script src="js/formspree.js"></script>
+<script src="js/refonte-master.js"></script>
+<script src="js/maquette-pages.js"></script>
+<script src="js/global-rh-nav.js"></script>
+</body>
+</html>
