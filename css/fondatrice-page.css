@@ -1,6 +1,6 @@
 /* ==========================================================================
    Sina & Prestige — Styles dédiés pour fondatrice.html
-   Hero identique à index.html & recrutement.html
+   Hiérarchie visuelle & typographique 100% alignée avec index.html et tout le site
    ========================================================================== */
 
 :root {
@@ -12,15 +12,17 @@
   --sp-border: #e2e8f0;
   --sp-bg-light: #f8fafc;
   --sp-text: #1e293b;
-  --sp-radius: 14px;
+  --sp-radius: 12px;
   --sp-shadow: 0 4px 12px rgba(9, 35, 93, 0.03);
   --sp-shadow-hover: 0 14px 28px rgba(9, 35, 93, 0.08);
 }
 
-/* --- Hero Section Clean sans photo de fond --- */
+/* ==========================================================================
+   1. HERO SECTION CANONIQUE (Aligné sur index.html & recrutement.html)
+   ========================================================================== */
 .rh-hero.fnd-hero {
   position: relative;
-  min-height: 380px;
+  min-height: 445px;
   background: linear-gradient(135deg, #06183b 0%, #09235d 100%);
   color: #ffffff;
   overflow: hidden;
@@ -35,7 +37,7 @@
 .fnd-hero .rh-hero-inner {
   position: relative;
   width: min(1940px, calc(100% - 76px));
-  min-height: 380px;
+  min-height: 445px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -43,13 +45,13 @@
 
 .fnd-hero .rh-hero-copy {
   width: 100%;
-  max-width: 860px;
-  padding: 42px 0;
+  max-width: 760px;
+  padding: 34px 0;
 }
 
 .fnd-hero .crumb {
   font-size: 13px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #e4eaf4;
 }
 
@@ -62,55 +64,62 @@
   color: var(--sp-gold);
 }
 
-/* Gros Titre Responsive */
+/* H1 Cannonique Site (44px Desktop / 34px Tablet / 30px Mobile) */
+.fnd-hero h1,
 .fnd-main-title {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
-  line-height: 1.12 !important;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 44px !important;
+  line-height: 1.22 !important;
   font-weight: 800 !important;
   color: #ffffff !important;
-  margin: 8px 0 16px !important;
+  margin: 8px 0 18px !important;
   letter-spacing: -0.02em !important;
   word-wrap: break-word;
 }
 
+.fnd-hero h1 span,
 .fnd-main-title span {
-  color: var(--sp-gold);
+  color: var(--sp-gold) !important;
   display: block;
 }
 
-.fnd-lead-text {
-  font-size: clamp(1rem, 1.8vw, 1.15rem);
-  line-height: 1.65;
+.fnd-lead-text,
+.fnd-hero .rh-hero-copy p {
+  font-family: Inter, sans-serif;
+  font-size: 17px !important;
+  line-height: 1.65 !important;
   color: #f2f5fa;
-  max-width: 760px;
+  max-width: 760px !important;
   margin: 0 0 26px;
 }
 
-/* Boutons Référence index.html (.btn & .btn.gold) */
+/* Hero Actions & Boutons Canoniques */
 .fnd-hero .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 24px;
 }
 
+.btn,
 .fnd-hero .hero-actions .btn,
 .fnd-cta-btns .btn,
 .fnd-press-card .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 22px;
+  padding: 12px 22px !important;
   border-radius: 6px;
   border: 1px solid #ffffff;
   color: #ffffff !important;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 15px !important;
   text-decoration: none;
   transition: all 0.2s ease;
   min-height: 44px;
 }
 
+.btn:hover,
 .fnd-hero .hero-actions .btn:hover,
 .fnd-cta-btns .btn:hover,
 .fnd-press-card .btn:hover {
@@ -120,6 +129,7 @@
   transform: translateY(-2px);
 }
 
+.btn.gold,
 .fnd-hero .hero-actions .btn.gold,
 .fnd-cta-btns .btn.gold,
 .fnd-press-card .btn.gold {
@@ -128,6 +138,7 @@
   color: var(--sp-blue-dark) !important;
 }
 
+.btn.gold:hover,
 .fnd-hero .hero-actions .btn.gold:hover,
 .fnd-cta-btns .btn.gold:hover,
 .fnd-press-card .btn.gold:hover {
@@ -137,54 +148,52 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 850px) {
-  .rh-hero.fnd-hero {
-    min-height: 360px;
-  }
-  .fnd-hero .rh-hero-inner {
-    width: calc(100% - 28px);
-    min-height: 360px;
-  }
-  .fnd-hero .rh-hero-copy {
-    width: 100%;
-    padding: 30px 0;
-  }
+/* ==========================================================================
+   2. TIRES DE SECTION H2 & SOUS-TITRES (Scale Canonique index.html)
+   ========================================================================== */
+h2.center-title,
+h2.domain-title,
+.fnd-toc-title,
+.fnd-section-head h2 {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 30px !important;
+  line-height: 1.25 !important;
+  font-weight: 800 !important;
+  color: var(--sp-blue-dark) !important;
+  margin-bottom: 24px !important;
+  letter-spacing: -0.02em !important;
 }
 
-@media (max-width: 520px) {
-  .fnd-hero .hero-actions .btn {
-    width: 100%;
-  }
+.section-subhead,
+.fnd-section-head p {
+  font-family: Inter, sans-serif;
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+  color: var(--sp-text-muted);
+  max-width: 720px;
+  margin-top: -16px;
+  margin-bottom: 24px;
 }
 
-/* --- Sommaire / Table des Matières (Quick Nav) --- */
+/* ==========================================================================
+   3. SOMMAIRE INTERACTIF (2 colonnes mobile / 5 colonnes desktop)
+   ========================================================================== */
 .fnd-toc-section {
   background: #ffffff;
   border-bottom: 1px solid var(--sp-border);
   padding: 36px 0;
 }
 
-.fnd-toc-title {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 26px !important;
-  font-weight: 800 !important;
-  color: var(--sp-blue-dark) !important;
-  margin-bottom: 22px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .fnd-toc-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  gap: 12px;
 }
 
 @media (min-width: 900px) {
   .fnd-toc-grid {
     grid-template-columns: repeat(5, 1fr);
-    gap: 14px;
+    gap: 16px;
   }
 }
 
@@ -196,7 +205,7 @@
   background: #ffffff;
   border: 1px solid var(--sp-border);
   border-radius: 12px;
-  padding: 14px;
+  padding: 16px;
   text-decoration: none;
   color: var(--sp-text);
   box-shadow: var(--sp-shadow);
@@ -214,28 +223,30 @@
   background: var(--sp-gold);
   color: var(--sp-blue-dark);
   font-weight: 900;
-  font-size: 0.78rem;
-  padding: 3px 7px;
+  font-size: 0.8rem;
+  padding: 4px 8px;
   border-radius: 6px;
   flex-shrink: 0;
 }
 
 .fnd-toc-text {
-  font-size: 0.84rem;
+  font-size: 0.88rem;
   font-weight: 700;
-  line-height: 1.3;
+  line-height: 1.35;
   color: var(--sp-blue-dark);
 }
 
 .fnd-toc-tag {
   display: block;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--sp-text-muted);
   font-weight: 500;
   margin-top: 3px;
 }
 
-/* --- Interview Q&A Section --- */
+/* ==========================================================================
+   4. QUESTIONS & RÉPONSES (H3 & Textes alignés sur le site)
+   ========================================================================== */
 .fnd-interview-section {
   padding: 56px 0;
   background: #ffffff;
@@ -244,7 +255,7 @@
 .fnd-q-card {
   background: #ffffff;
   border: 1px solid var(--sp-border);
-  border-radius: var(--sp-radius);
+  border-radius: 12px;
   padding: 32px;
   margin-bottom: 28px;
   box-shadow: var(--sp-shadow);
@@ -290,16 +301,19 @@
   letter-spacing: 0.05em;
 }
 
-.fnd-q-title {
-  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem) !important;
+/* Titres H3 / H2 Canoniques d'interview (21px Desktop / Inter) */
+.fnd-q-title,
+.fnd-q-card h2,
+.fnd-q-card h3 {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-size: 21px !important;
   font-weight: 800 !important;
   color: var(--sp-blue-dark) !important;
-  margin: 0 0 20px !important;
-  line-height: 1.28 !important;
+  margin: 0 0 16px !important;
+  line-height: 1.3 !important;
 }
 
-/* Encadré Citation Phare (comme quote-callout d'index.html) */
+/* Encadré Citation Phare (identique à index.html quote-callout) */
 .fnd-q-quote {
   background: var(--sp-bg-light);
   border-left: 4px solid var(--sp-gold);
@@ -308,20 +322,24 @@
   margin-bottom: 20px;
   font-family: Georgia, serif;
   font-style: italic;
-  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-  line-height: 1.6;
+  font-size: 18px !important;
+  line-height: 1.6 !important;
   color: var(--sp-blue-dark);
   font-weight: 600;
 }
 
 .fnd-q-body {
-  font-size: 1.02rem;
-  line-height: 1.75;
-  color: #334155;
+  font-family: Inter, sans-serif;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--sp-text-muted);
   max-width: 860px;
 }
 
 .fnd-q-body p {
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--sp-text-muted);
   margin: 0 0 16px;
 }
 
@@ -329,7 +347,7 @@
   margin-bottom: 0;
 }
 
-/* Masquage / Dépliage ("... Voir plus") */
+/* Pliage / Dépliage ("... Voir plus") */
 .fnd-q-expandable {
   max-height: 165px;
   overflow: hidden;
@@ -364,7 +382,7 @@
   background: var(--sp-bg-light);
   border: 1px solid var(--sp-border);
   color: var(--sp-blue-dark);
-  font-size: 0.88rem;
+  font-size: 14px;
   font-weight: 800;
   padding: 8px 16px;
   border-radius: 6px;
@@ -391,7 +409,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.82rem;
+  font-size: 13px;
   font-weight: 700;
   color: var(--sp-blue-dark);
   text-decoration: none;
@@ -402,31 +420,13 @@
   color: var(--sp-gold-hover);
 }
 
-/* --- Section Parutions Externes / Entreprisma (Style Éditorial Humain) --- */
+/* ==========================================================================
+   5. PARUTIONS EXTERNES & BANNER CTA
+   ========================================================================== */
 .fnd-press-section {
   padding: 56px 0;
   background: var(--sp-bg-light);
   border-top: 1px solid var(--sp-border);
-}
-
-.fnd-press-section .fnd-section-head {
-  text-align: center;
-  max-width: 760px;
-  margin: 0 auto 36px;
-}
-
-.fnd-press-section .fnd-section-head h2 {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 28px !important;
-  font-weight: 700 !important;
-  color: var(--sp-blue-dark) !important;
-  margin: 0 0 10px;
-}
-
-.fnd-press-section .fnd-section-head p {
-  color: var(--sp-text-muted);
-  font-size: 15.5px;
-  line-height: 1.55;
 }
 
 .fnd-press-grid {
@@ -435,33 +435,26 @@
   gap: 24px;
 }
 
-@media (max-width: 768px) {
-  .fnd-press-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-
 .fnd-press-card {
   background: #ffffff;
   border: 1px solid var(--sp-border);
   border-radius: 12px;
-  padding: 30px;
+  padding: 28px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-shadow: 0 4px 14px rgba(9, 35, 93, 0.04);
+  box-shadow: var(--sp-shadow);
   transition: all 0.2s ease;
 }
 
 .fnd-press-card:hover {
   border-color: var(--sp-gold);
   transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(9, 35, 93, 0.08);
+  box-shadow: var(--sp-shadow-hover);
 }
 
 .fnd-press-meta {
-  font-size: 0.82rem;
+  font-size: 13px;
   color: #64748b;
   font-weight: 600;
   margin-bottom: 10px;
@@ -469,18 +462,19 @@
 }
 
 .fnd-press-card h3 {
-  font-family: Georgia, "Times New Roman", serif !important;
-  font-size: 1.3rem !important;
-  font-weight: 700 !important;
+  font-family: Inter, sans-serif !important;
+  font-size: 21px !important;
+  font-weight: 800 !important;
   color: var(--sp-blue-dark) !important;
   margin: 0 0 12px !important;
-  line-height: 1.35 !important;
+  line-height: 1.3 !important;
 }
 
 .fnd-press-card p {
-  color: #334155;
-  font-size: 0.96rem;
-  line-height: 1.6;
+  font-family: Inter, sans-serif;
+  font-size: 15px !important;
+  line-height: 1.6 !important;
+  color: var(--sp-text-muted);
   margin: 0 0 22px;
   flex-grow: 1;
 }
@@ -489,7 +483,7 @@
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  font-size: 0.92rem;
+  font-size: 14px;
   font-weight: 700;
   color: var(--sp-blue-dark);
   text-decoration: none;
@@ -504,11 +498,10 @@
   border-color: var(--sp-blue-dark);
 }
 
-/* --- Banner CTA Vidéo & Contact --- */
 .fnd-cta-banner {
   background: linear-gradient(135deg, var(--sp-navy-darker) 0%, var(--sp-blue-dark) 100%);
   color: #ffffff;
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 40px;
   display: flex;
   align-items: center;
@@ -518,25 +511,19 @@
   box-shadow: 0 20px 48px rgba(9, 35, 93, 0.15);
 }
 
-@media (max-width: 850px) {
-  .fnd-cta-banner {
-    flex-direction: column;
-    text-align: center;
-    padding: 30px 20px;
-  }
-}
-
 .fnd-cta-banner h3 {
-  font-family: Georgia, serif;
-  font-size: 1.8rem;
+  font-family: Inter, sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 800 !important;
   margin: 0 0 8px;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .fnd-cta-banner p {
   margin: 0;
   color: rgba(255, 255, 255, 0.88);
-  font-size: 1rem;
+  font-size: 15px;
+  line-height: 1.55;
   max-width: 600px;
 }
 
@@ -546,7 +533,61 @@
   flex-shrink: 0;
 }
 
-@media (max-width: 600px) {
+/* ==========================================================================
+   6. RESPONSIVE BREAKPOINTS (Alignés sur index.html & recrutement-page.css)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .rh-hero.fnd-hero {
+    min-height: 380px;
+  }
+  .fnd-hero h1,
+  .fnd-main-title {
+    font-size: 38px !important;
+  }
+}
+
+@media (max-width: 850px) {
+  .rh-hero.fnd-hero {
+    min-height: 340px;
+  }
+  .fnd-hero .rh-hero-inner {
+    width: calc(100% - 28px);
+    min-height: 340px;
+  }
+  .fnd-hero .rh-hero-copy {
+    width: 100%;
+    padding: 28px 0;
+  }
+  .fnd-hero h1,
+  .fnd-main-title {
+    font-size: 34px !important;
+  }
+  h2.center-title,
+  h2.domain-title,
+  .fnd-toc-title,
+  .fnd-section-head h2 {
+    font-size: 24px !important;
+  }
+  .fnd-press-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .fnd-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+
+@media (max-width: 520px) {
+  .fnd-hero h1,
+  .fnd-main-title {
+    font-size: 30px !important;
+  }
+  .fnd-hero .hero-actions .btn,
+  .fnd-cta-btns .btn {
+    width: 100%;
+  }
   .fnd-cta-btns {
     flex-direction: column;
     width: 100%;

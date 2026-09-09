@@ -91,3 +91,104 @@
 .sp-international-hero .sp-btn span{margin-left:5px}
 @media(max-width:850px){.sp-international-hero{min-height:560px;background-position:62% center}.sp-international-overlay{background:linear-gradient(180deg,rgba(3,18,43,.96) 0%,rgba(3,18,43,.86) 48%,rgba(3,18,43,.35) 100%)}.sp-international-inner{min-height:560px;padding-top:20px}.sp-international-copy{max-width:620px}.sp-international-title{font-size:3rem}.sp-international-lead{font-size:.92rem}}
 @media(max-width:520px){.sp-international-hero{min-height:600px;background-position:67% center}.sp-international-inner{min-height:600px}.sp-international-title{font-size:2.55rem}.sp-international-tagline{font-size:1.35rem}.sp-international-hero .sp-actions{display:grid;grid-template-columns:1fr}.sp-international-hero .sp-btn{width:100%}}
+
+/* ==========================================================================
+   HIÉRARCHIE VISUELLE GLOBALE DU SITE (RÉFÉRENCE INDEX.HTML)
+   ========================================================================== */
+
+.rh-hero, .hero, .sp-hero, .training-hero, .entreprise-hero, .partner-hero, .sp-about-hero, .sp-international-hero {
+  min-height: 445px !important;
+  background: linear-gradient(135deg, #06183b 0%, #09235d 100%) !important;
+  color: #ffffff !important;
+}
+
+@media (min-width: 1025px) {
+  /* H1 CANONIQUE SITE : 44px / Line-height 1.22 / Inter Bold 800 */
+  .rh-hero-copy h1, .rh-hero h1, .sp-title, .hero h1, .sp-about-copy .sp-title, .fnd-main-title, main h1 {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 44px !important;
+    line-height: 1.22 !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em !important;
+    margin-bottom: 18px !important;
+  }
+
+  .rh-hero-copy h1 span, .rh-hero h1 span, .hero h1 span, .fnd-main-title span {
+    color: #f5b51b !important;
+  }
+
+  .rh-hero-copy p, .sp-lead, .hero-lead, .fnd-lead-text {
+    font-family: Inter, sans-serif !important;
+    font-size: 17px !important;
+    line-height: 1.65 !important;
+    max-width: 760px !important;
+    color: #f2f5fa !important;
+  }
+
+  /* H2 CANONIQUE SECTIONS SITE : 30px / Line-height 1.25 / Inter Bold 800 */
+  h2.center-title, h2.domain-title, .audience-title, .section-title, h2.sp-section-head-title, .fnd-toc-title, .fnd-section-head h2, main section > h2 {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 30px !important;
+    line-height: 1.25 !important;
+    font-weight: 800 !important;
+    color: #09235d !important;
+    margin-bottom: 24px !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  /* SOUS-TITRES DE SECTIONS : 16px / Line-height 1.55 */
+  .section-subhead, .section-sub, .sp-section-head p {
+    font-family: Inter, sans-serif !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    color: #475569 !important;
+    max-width: 720px !important;
+  }
+
+  /* H3 CANONIQUE CARTES : 21px / Line-height 1.3 / Inter Bold 800 */
+  .pillar-card h3, .resource-card h3, .event-item-card h3, .card h3, .panel h3, .sp-card h3, .fnd-press-card h3, .fnd-q-title {
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+    font-size: 21px !important;
+    line-height: 1.3 !important;
+    font-weight: 800 !important;
+    color: #09235d !important;
+  }
+
+  /* PARAGRAPHES DE CARTES : 15px / Line-height 1.6 */
+  .pillar-card p, .resource-card p, .event-item-card p, .audience-box p, .card p, .panel p, .sp-card p, .fnd-press-card p {
+    font-family: Inter, sans-serif !important;
+    font-size: 15px !important;
+    line-height: 1.6 !important;
+    color: #475569 !important;
+  }
+
+  /* BOUTONS CANONIQUES SITE : 15px / Padding 12px 22px / Radius 6px */
+  .btn, .m-btn, .sp-btn {
+    font-family: Inter, sans-serif !important;
+    font-size: 15px !important;
+    padding: 12px 22px !important;
+    font-weight: 800 !important;
+    border-radius: 6px !important;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 521px) {
+  .rh-hero-copy h1, .rh-hero h1, .sp-title, .hero h1, h1 {
+    font-size: 34px !important;
+  }
+  h2.center-title, h2.domain-title, .audience-title, .section-title, h2 {
+    font-size: 26px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .rh-hero-copy h1, .rh-hero h1, .sp-title, .hero h1, h1 {
+    font-size: 30px !important;
+  }
+  h2.center-title, h2.domain-title, .audience-title, .section-title, h2 {
+    font-size: 24px !important;
+  }
+  .btn, .m-btn, .sp-btn {
+    width: 100%;
+  }
+}
