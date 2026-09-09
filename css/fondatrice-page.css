@@ -1,0 +1,556 @@
+/* ==========================================================================
+   Sina & Prestige — Styles dédiés pour fondatrice.html
+   Hero identique à index.html & recrutement.html
+   ========================================================================== */
+
+:root {
+  --sp-blue-dark: #09235d;
+  --sp-navy-darker: #061a45;
+  --sp-gold: #f5b51b;
+  --sp-gold-hover: #e0a312;
+  --sp-text-muted: #475569;
+  --sp-border: #e2e8f0;
+  --sp-bg-light: #f8fafc;
+  --sp-text: #1e293b;
+  --sp-radius: 14px;
+  --sp-shadow: 0 4px 12px rgba(9, 35, 93, 0.03);
+  --sp-shadow-hover: 0 14px 28px rgba(9, 35, 93, 0.08);
+}
+
+/* --- Hero Section Identique à index.html & recrutement.html --- */
+.rh-hero.fnd-hero {
+  position: relative;
+  min-height: 445px;
+  background: var(--sp-navy-darker);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.fnd-hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(90deg, rgba(3,19,51,0.98) 0%, rgba(3,19,51,0.92) 32%, rgba(3,19,51,0.55) 55%, rgba(3,19,51,0) 80%), url('../images/fondatrice-officielle.webp');
+  background-size: cover;
+  background-position: center right;
+}
+
+.fnd-hero .rh-hero-inner {
+  position: relative;
+  width: min(1940px, calc(100% - 76px));
+  min-height: 445px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.fnd-hero .rh-hero-copy {
+  width: 50%;
+  max-width: 760px;
+  padding: 36px 0;
+}
+
+.fnd-hero .crumb {
+  font-size: 13px;
+  margin-bottom: 20px;
+  color: #e4eaf4;
+}
+
+.fnd-hero .crumb a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.fnd-hero .crumb a:hover {
+  color: var(--sp-gold);
+}
+
+/* Gros Titre Responsive */
+.fnd-main-title {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: clamp(2.2rem, 5vw, 3.8rem) !important;
+  line-height: 1.12 !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  margin: 8px 0 16px !important;
+  letter-spacing: -0.02em !important;
+  word-wrap: break-word;
+}
+
+.fnd-main-title span {
+  color: var(--sp-gold);
+  display: block;
+}
+
+.fnd-lead-text {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  color: #f2f5fa;
+  max-width: 720px;
+  margin: 0 0 26px;
+}
+
+/* Boutons Référence index.html (.btn & .btn.gold) */
+.fnd-hero .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.fnd-hero .hero-actions .btn,
+.fnd-cta-btns .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border-radius: 6px;
+  border: 1px solid #ffffff;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 15px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  min-height: 44px;
+}
+
+.fnd-hero .hero-actions .btn:hover,
+.fnd-cta-btns .btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.fnd-hero .hero-actions .btn.gold,
+.fnd-cta-btns .btn.gold {
+  background: var(--sp-gold);
+  border-color: var(--sp-gold);
+  color: var(--sp-blue-dark) !important;
+}
+
+.fnd-hero .hero-actions .btn.gold:hover,
+.fnd-cta-btns .btn.gold:hover {
+  background: var(--sp-gold-hover);
+  border-color: var(--sp-gold-hover);
+  color: var(--sp-blue-dark) !important;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 850px) {
+  .rh-hero.fnd-hero {
+    min-height: 480px;
+  }
+  .fnd-hero-bg {
+    background-image: linear-gradient(180deg, rgba(3,19,51,0.96) 0%, rgba(3,19,51,0.88) 55%, rgba(3,19,51,0.35) 100%), url('../images/fondatrice-officielle.webp');
+    background-position: 65% center;
+  }
+  .fnd-hero .rh-hero-inner {
+    width: calc(100% - 28px);
+    min-height: 480px;
+  }
+  .fnd-hero .rh-hero-copy {
+    width: 100%;
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 520px) {
+  .fnd-hero .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* --- Sommaire / Table des Matières (Quick Nav) --- */
+.fnd-toc-section {
+  background: #ffffff;
+  border-bottom: 1px solid var(--sp-border);
+  padding: 36px 0;
+}
+
+.fnd-toc-title {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 800 !important;
+  color: var(--sp-blue-dark) !important;
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.fnd-toc-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+@media (min-width: 900px) {
+  .fnd-toc-grid {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+  }
+}
+
+.fnd-toc-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  background: #ffffff;
+  border: 1px solid var(--sp-border);
+  border-radius: 12px;
+  padding: 14px;
+  text-decoration: none;
+  color: var(--sp-text);
+  box-shadow: var(--sp-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.fnd-toc-item:hover {
+  background: #ffffff;
+  border-color: var(--sp-gold);
+  transform: translateY(-3px);
+  box-shadow: var(--sp-shadow-hover);
+}
+
+.fnd-toc-num {
+  background: var(--sp-gold);
+  color: var(--sp-blue-dark);
+  font-weight: 900;
+  font-size: 0.78rem;
+  padding: 3px 7px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.fnd-toc-text {
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--sp-blue-dark);
+}
+
+.fnd-toc-tag {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--sp-text-muted);
+  font-weight: 500;
+  margin-top: 3px;
+}
+
+/* --- Interview Q&A Section --- */
+.fnd-interview-section {
+  padding: 56px 0;
+  background: #ffffff;
+}
+
+.fnd-q-card {
+  background: #ffffff;
+  border: 1px solid var(--sp-border);
+  border-radius: var(--sp-radius);
+  padding: 32px;
+  margin-bottom: 28px;
+  box-shadow: var(--sp-shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  scroll-margin-top: 100px;
+}
+
+.fnd-q-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: var(--sp-shadow-hover);
+}
+
+@media (max-width: 600px) {
+  .fnd-q-card {
+    padding: 22px 18px;
+  }
+}
+
+.fnd-q-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.fnd-q-pill {
+  background: var(--sp-blue-dark);
+  color: var(--sp-gold);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 999px;
+}
+
+.fnd-q-cat {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--sp-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fnd-q-title {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, sans-serif !important;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem) !important;
+  font-weight: 800 !important;
+  color: var(--sp-blue-dark) !important;
+  margin: 0 0 20px !important;
+  line-height: 1.28 !important;
+}
+
+/* Encadré Citation Phare (comme quote-callout d'index.html) */
+.fnd-q-quote {
+  background: var(--sp-bg-light);
+  border-left: 4px solid var(--sp-gold);
+  border-radius: 0 8px 8px 0;
+  padding: 18px 24px;
+  margin-bottom: 20px;
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.6;
+  color: var(--sp-blue-dark);
+  font-weight: 600;
+}
+
+.fnd-q-body {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: #334155;
+  max-width: 860px;
+}
+
+.fnd-q-body p {
+  margin: 0 0 16px;
+}
+
+.fnd-q-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Masquage / Dépliage ("... Voir plus") */
+.fnd-q-expandable {
+  max-height: 165px;
+  overflow: hidden;
+  position: relative;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.fnd-q-expandable::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.98) 100%);
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.fnd-q-card.is-expanded .fnd-q-expandable {
+  max-height: 2500px;
+}
+
+.fnd-q-card.is-expanded .fnd-q-expandable::after {
+  opacity: 0;
+}
+
+.fnd-toggle-read {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--sp-bg-light);
+  border: 1px solid var(--sp-border);
+  color: var(--sp-blue-dark);
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-top: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.fnd-toggle-read:hover {
+  background: var(--sp-gold);
+  border-color: var(--sp-gold);
+  color: var(--sp-blue-dark);
+}
+
+.fnd-q-footer {
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--sp-border);
+  display: flex;
+  justify-content: flex-end;
+}
+
+.fnd-back-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--sp-blue-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.fnd-back-top:hover {
+  color: var(--sp-gold-hover);
+}
+
+/* --- Section Parutions Externes / Entreprisma (Style Éditorial Humain) --- */
+.fnd-press-section {
+  padding: 56px 0;
+  background: var(--sp-bg-light);
+  border-top: 1px solid var(--sp-border);
+}
+
+.fnd-press-section .fnd-section-head {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 36px;
+}
+
+.fnd-press-section .fnd-section-head h2 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 28px !important;
+  font-weight: 700 !important;
+  color: var(--sp-blue-dark) !important;
+  margin: 0 0 10px;
+}
+
+.fnd-press-section .fnd-section-head p {
+  color: var(--sp-text-muted);
+  font-size: 15.5px;
+  line-height: 1.55;
+}
+
+.fnd-press-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .fnd-press-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.fnd-press-card {
+  background: #ffffff;
+  border: 1px solid var(--sp-border);
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 14px rgba(9, 35, 93, 0.04);
+  transition: all 0.2s ease;
+}
+
+.fnd-press-card:hover {
+  border-color: var(--sp-gold);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(9, 35, 93, 0.08);
+}
+
+.fnd-press-meta {
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.fnd-press-card h3 {
+  font-family: Georgia, "Times New Roman", serif !important;
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+  color: var(--sp-blue-dark) !important;
+  margin: 0 0 12px !important;
+  line-height: 1.35 !important;
+}
+
+.fnd-press-card p {
+  color: #334155;
+  font-size: 0.96rem;
+  line-height: 1.6;
+  margin: 0 0 22px;
+  flex-grow: 1;
+}
+
+.fnd-press-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--sp-blue-dark);
+  text-decoration: none;
+  border-bottom: 2px solid var(--sp-gold);
+  padding-bottom: 2px;
+  align-self: flex-start;
+  transition: all 0.2s ease;
+}
+
+.fnd-press-link:hover {
+  color: var(--sp-gold-hover);
+  border-color: var(--sp-blue-dark);
+}
+
+/* --- Banner CTA Vidéo & Contact --- */
+.fnd-cta-banner {
+  background: linear-gradient(135deg, var(--sp-navy-darker) 0%, var(--sp-blue-dark) 100%);
+  color: #ffffff;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 40px;
+  box-shadow: 0 20px 48px rgba(9, 35, 93, 0.15);
+}
+
+@media (max-width: 850px) {
+  .fnd-cta-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 20px;
+  }
+}
+
+.fnd-cta-banner h3 {
+  font-family: Georgia, serif;
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.fnd-cta-banner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.fnd-cta-btns {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .fnd-cta-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+}
