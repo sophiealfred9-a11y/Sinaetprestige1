@@ -101,6 +101,37 @@
       height: 100%;
       object-fit: cover;
     }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #09235d;
+    }
+    .video-cover {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 24px;
+      border: 0;
+      background: #09235d;
+      color: #ffffff;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
+    }
+    .video-cover:hover { background: #0f307e; }
+    .video-cover[hidden] { display: none; }
+    .video-cover::before { content: "▶"; position: absolute; top: 50%; left: 50%; display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; padding-left: 3px; border: 2px solid #f5b51b; border-radius: 50%; background: #f5b51b; color: #09235d; font-size: 19px; transform: translate(-50%, -50%); }
+    .video-cover img { width: 34px; height: 34px; object-fit: contain; flex-shrink: 0; }
+    .video-cover span { font-size: 18px; font-weight: 800; line-height: 1.25; }
+    .yt-thumb-box .video-frame { aspect-ratio: 16 / 9; }
+    .yt-thumb-box .video-cover { padding: 18px; }
+    .yt-thumb-box .video-cover span { font-size: 15px; }
+    .yt-thumb-box .video-cover::before { width: 44px; height: 44px; font-size: 16px; }
     .yt-cinema-details {
       display: flex;
       flex-direction: column;
@@ -349,6 +380,11 @@
       background: #071d4b;
       display: block;
     }
+    .yt-mov-frame { position: relative; width: 220px; max-width: 100%; border-radius: 8px; overflow: hidden; background: #09235d; }
+    .yt-mov-frame .video-cover { padding: 12px; }
+    .yt-mov-frame .video-cover::before { width: 38px; height: 38px; font-size: 13px; }
+    .yt-mov-frame .video-cover img { width: 28px; height: 28px; }
+    .yt-mov-frame .video-cover span { font-size: 13px; }
 
     .m-btn {
       display: inline-flex;
@@ -523,9 +559,12 @@
       <!-- YOUTUBE CINEMA SPOTLIGHT PLAYER -->
       <div class="yt-cinema-container">
         <div class="yt-cinema-player">
+          <div class="video-frame">
           <video controls playsinline preload="metadata">
             <source src="videos/01_Bienvenue_Onboarding.mp4" type="video/mp4">
           </video>
+          <button class="video-cover" type="button" aria-label="Lire Bienvenue et Présentation Officielle"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Bienvenue &amp; Présentation Officielle</span></button>
+          </div>
         </div>
         <div class="yt-cinema-details">
           <div class="yt-channel-header">
@@ -561,9 +600,9 @@
         <!-- CARD 1 -->
         <article class="yt-card">
           <div class="yt-thumb-box">
-            <video controls playsinline preload="metadata">
+            <div class="video-frame"><video controls playsinline preload="metadata">
               <source src="videos/01_Bienvenue_Onboarding.mp4" type="video/mp4">
-            </video>
+            </video><button class="video-cover" type="button" aria-label="Lire Bienvenue et Présentation"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Bienvenue &amp; Présentation</span></button></div>
             <span class="yt-badge-cat">INSTITUTIONNEL</span>
             <span class="yt-badge-time">HD 1080p</span>
           </div>
@@ -582,9 +621,9 @@
         <!-- CARD 2 -->
         <article class="yt-card">
           <div class="yt-thumb-box">
-            <video controls playsinline preload="metadata">
+            <div class="video-frame"><video controls playsinline preload="metadata">
               <source src="videos/02_Formation_Sina_Prestige.mp4" type="video/mp4">
-            </video>
+            </video><button class="video-cover" type="button" aria-label="Lire Formations et Pédagogie"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Formations &amp; Pédagogie</span></button></div>
             <span class="yt-badge-cat">FORMATIONS</span>
             <span class="yt-badge-time">HD 1080p</span>
           </div>
@@ -603,9 +642,9 @@
         <!-- CARD 3 -->
         <article class="yt-card">
           <div class="yt-thumb-box">
-            <video controls playsinline preload="metadata">
+            <div class="video-frame"><video controls playsinline preload="metadata">
               <source src="videos/04_Parcours_Vision_Impact.mp4" type="video/mp4">
-            </video>
+            </video><button class="video-cover" type="button" aria-label="Lire Parcours, Vision et Impact"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Parcours, Vision &amp; Impact</span></button></div>
             <span class="yt-badge-cat">FONDATRICE &amp; VISION</span>
             <span class="yt-badge-time">HD 1080p</span>
           </div>
@@ -624,9 +663,9 @@
         <!-- CARD 4 -->
         <article class="yt-card">
           <div class="yt-thumb-box">
-            <video controls playsinline preload="metadata">
+            <div class="video-frame"><video controls playsinline preload="metadata">
               <source src="videos/03_Marche_Dispositifs_Formation_PARTIE_1.mp4" type="video/mp4">
-            </video>
+            </video><button class="video-cover" type="button" aria-label="Lire Marché et Dispositifs partie 1"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Marché &amp; Dispositifs · Partie 1</span></button></div>
             <span class="yt-badge-cat">DISPOSITIFS RH</span>
             <span class="yt-badge-time">PARTIE 1</span>
           </div>
@@ -645,9 +684,9 @@
         <!-- CARD 5 -->
         <article class="yt-card">
           <div class="yt-thumb-box">
-            <video controls playsinline preload="metadata">
+            <div class="video-frame"><video controls playsinline preload="metadata">
               <source src="videos/03_Marche_Dispositifs_Formation_PARTIE_2.mp4" type="video/mp4">
-            </video>
+            </video><button class="video-cover" type="button" aria-label="Lire Marché et Dispositifs partie 2"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Marché &amp; Dispositifs · Partie 2</span></button></div>
             <span class="yt-badge-cat">DISPOSITIFS RH</span>
             <span class="yt-badge-time">PARTIE 2</span>
           </div>
@@ -666,9 +705,9 @@
         <!-- CARD 6 -->
         <article class="yt-card">
           <div class="yt-thumb-box">
-            <video controls playsinline preload="metadata">
+            <div class="video-frame"><video controls playsinline preload="metadata">
               <source src="https://sinaetprestige.fr/videos/03_Marche_Dispositifs_Formation_PARTIE_3.mp4" type="video/mp4">
-            </video>
+            </video><button class="video-cover" type="button" aria-label="Lire Marché et Dispositifs partie 3"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Marché &amp; Dispositifs · Partie 3</span></button></div>
             <span class="yt-badge-cat">DISPOSITIFS RH</span>
             <span class="yt-badge-time">PARTIE 3</span>
           </div>
@@ -703,10 +742,10 @@
               <span>Capture Vidéo Événement • Format Source .MOV</span>
             </div>
           </div>
-          <video class="yt-mov-player" controls playsinline preload="metadata">
+          <div class="yt-mov-frame"><video class="yt-mov-player" controls playsinline preload="metadata">
             <source src="https://sinaetprestige.fr/videos/evenements/entrepreneurs.mov" type="video/quicktime">
             Votre navigateur ne peut pas lire ce replay.
-          </video>
+          </video><button class="video-cover" type="button" aria-label="Lire Événement Entrepreneurs"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Événement Entrepreneurs</span></button></div>
         </div>
 
         <div class="yt-mov-card">
@@ -717,10 +756,10 @@
               <span>Capture Vidéo Événement • Format Source .MOV</span>
             </div>
           </div>
-          <video class="yt-mov-player" controls playsinline preload="metadata">
+          <div class="yt-mov-frame"><video class="yt-mov-player" controls playsinline preload="metadata">
             <source src="https://sinaetprestige.fr/videos/evenements/grande-assemble-e.mov" type="video/quicktime">
             Votre navigateur ne peut pas lire ce replay.
-          </video>
+          </video><button class="video-cover" type="button" aria-label="Lire Grande Assemblée RH"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>Grande Assemblée RH</span></button></div>
         </div>
 
         <div class="yt-mov-card">
@@ -731,10 +770,10 @@
               <span>Capture Vidéo Événement • Format Source .MOV</span>
             </div>
           </div>
-          <video class="yt-mov-player" controls playsinline preload="metadata">
+          <div class="yt-mov-frame"><video class="yt-mov-player" controls playsinline preload="metadata">
             <source src="https://sinaetprestige.fr/videos/evenements/open-ai-2.mov" type="video/quicktime">
             Votre navigateur ne peut pas lire ce replay.
-          </video>
+          </video><button class="video-cover" type="button" aria-label="Lire OpenAI Keynote et IA RH partie 2"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>OpenAI Keynote · Partie 2</span></button></div>
         </div>
 
         <div class="yt-mov-card">
@@ -745,10 +784,10 @@
               <span>Capture Vidéo Événement • Format Source .MOV</span>
             </div>
           </div>
-          <video class="yt-mov-player" controls playsinline preload="metadata">
+          <div class="yt-mov-frame"><video class="yt-mov-player" controls playsinline preload="metadata">
             <source src="https://sinaetprestige.fr/videos/evenements/openai-1.mov" type="video/quicktime">
             Votre navigateur ne peut pas lire ce replay.
-          </video>
+          </video><button class="video-cover" type="button" aria-label="Lire OpenAI Keynote et IA RH partie 1"><img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt=""><span>OpenAI Keynote · Partie 1</span></button></div>
         </div>
       </div>
     </div>
@@ -818,6 +857,21 @@
   </div>
 </footer>
 
+<script>
+  document.querySelectorAll('.video-frame, .yt-mov-frame').forEach(function (frame) {
+    var video = frame.querySelector('video');
+    var cover = frame.querySelector('.video-cover');
+    if (!video || !cover) return;
+    cover.addEventListener('click', function () {
+      cover.hidden = true;
+      video.play().catch(function () {
+        cover.hidden = false;
+      });
+    });
+    video.addEventListener('play', function () { cover.hidden = true; });
+    video.addEventListener('ended', function () { cover.hidden = false; });
+  });
+</script>
 <script src="js/site-data.js"></script>
 <script src="js/refonte-master.js"></script>
 <script src="js/global-rh-nav.js"></script>
