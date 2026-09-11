@@ -1,5 +1,5 @@
 (function(){
-  const qs=(s,c=document)=>c.querySelector(s), qsa=(s,c=document)=>Array.from(c.querySelectorAll(s));
+  const qs=(s,c=document)=>c && c.querySelector ? c.querySelector(s) : null, qsa=(s,c=document)=>c && c.querySelectorAll ? Array.from(c.querySelectorAll(s)) : [];
   const data=window.SINA_DATA||{};
   const forms=data.formations||[];
   const sessions=data.sessions||{};
@@ -117,7 +117,8 @@
     signupModal=document.createElement('div'); signupModal.className='formation-signup-modal'; signupModal.hidden=true;
     signupModal.innerHTML='<div class="formation-signup-backdrop" data-signup-close></div><div class="formation-signup-dialog" role="dialog" aria-modal="true" aria-labelledby="formation-signup-title"><button class="formation-signup-close" type="button" aria-label="Fermer" data-signup-close>&times;</button><div class="formation-signup-heading"><span class="kicker">Inscription à une session</span><h2 id="formation-signup-title">Votre demande d’inscription</h2><div class="formation-selected-session" aria-live="polite"></div></div></div>';
     document.body.appendChild(signupModal);
-    signupModal.querySelector('.formation-signup-dialog').appendChild(quickCard);
+    const signupDialog=qs('.formation-signup-dialog',signupModal);
+    if(signupDialog) signupDialog.appendChild(quickCard);
     signupModal.querySelectorAll('[data-signup-close]').forEach(control=>control.addEventListener('click',()=>{signupModal.hidden=true;document.body.classList.remove('signup-modal-open');}));
     document.addEventListener('keydown',event=>{if(event.key==='Escape'&&signupModal&&!signupModal.hidden){signupModal.hidden=true;document.body.classList.remove('signup-modal-open');}});
   }
