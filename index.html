@@ -52,6 +52,101 @@
       opacity: .82;
     }
 
+    /* Featured video */
+    .featured-video-section {
+      background: #f8fafc;
+    }
+    .featured-video-wrap {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr);
+      gap: 32px;
+      align-items: center;
+      padding: 30px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #09235d 0%, #0d2e7a 100%);
+      box-shadow: 0 16px 40px rgba(9, 35, 93, .16);
+    }
+    .featured-video-player {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border-radius: 12px;
+      background: #020817;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    }
+    .featured-video-player video {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .featured-video-cover {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      background: rgba(3, 19, 51, .42);
+      color: #fff;
+      cursor: pointer;
+    }
+    .featured-video-cover::before {
+      content: "▶";
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 62px;
+      height: 62px;
+      padding-left: 4px;
+      border: 2px solid #f5b51b;
+      border-radius: 50%;
+      background: #f5b51b;
+      color: #09235d;
+      font-size: 22px;
+    }
+    .featured-video-cover:hover { background: rgba(3, 19, 51, .25); }
+    .featured-video-cover[hidden] { display: none; }
+    .featured-video-copy h2 {
+      margin: 0 0 12px;
+      color: #fff;
+      font-size: 28px;
+      line-height: 1.25;
+    }
+    .featured-video-copy p {
+      margin: 0 0 22px;
+      color: #dbe5f4;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+    .featured-video-copy .m-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @media (max-width: 820px) {
+      .featured-video-wrap {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+      .featured-video-copy { display: contents; }
+      .featured-video-copy h2 {
+        grid-row: 1;
+        margin-bottom: 0;
+      }
+      .featured-video-player { grid-row: 2; }
+      .featured-video-copy p {
+        grid-row: 3;
+        margin-top: 0;
+      }
+      .featured-video-copy .m-btn { grid-row: 4; justify-self: start; }
+    }
+    @media (max-width: 520px) {
+      .featured-video-wrap { gap: 22px; padding: 16px; border-radius: 12px; }
+      .featured-video-copy h2 { font-size: 23px; }
+      .featured-video-copy p { font-size: 14px; }
+    }
+
     /* Desktop Typography Scaling */
     @media (min-width: 1025px) {
       .rh-hero-copy h1 {
@@ -1697,7 +1792,31 @@
 
   <div class="section-separator-20" aria-hidden="true"></div>
 
-  <!-- SECTION 2 : CATALOGUES ASYMÉTRIQUES -->
+  <!-- SECTION 2 : VIDEO MISE EN AVANT -->
+  <section class="panel-white featured-video-section">
+    <div class="section-pad">
+      <div class="sp-home-section">
+        <div class="featured-video-wrap">
+          <div class="featured-video-player">
+            <video controls playsinline preload="metadata">
+              <source src="https://sinaetprestige.fr/videos/01_Bienvenue_Onboarding.mp4" type="video/mp4">
+              Votre navigateur ne prend pas en charge la lecture vidéo.
+            </video>
+            <button class="featured-video-cover" type="button" aria-label="Lire la vidéo de présentation"></button>
+          </div>
+          <div class="featured-video-copy">
+            <h2>Découvrez Sina &amp; Prestige en vidéo</h2>
+            <p>Notre approche, nos expertises et notre manière d'accompagner les talents et les organisations.</p>
+            <a class="m-btn gold" href="videos.html">Voir toutes les vidéos <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="section-separator-20" aria-hidden="true"></div>
+
+  <!-- SECTION 3 : CATALOGUES ASYMÉTRIQUES -->
   <section class="panel-white sp-bg-soft">
     <div class="section-pad">
       <div class="sp-home-section">
@@ -2156,6 +2275,24 @@
     track.addEventListener('touchend', function() { if (isMobile() && playButton.getAttribute('aria-pressed') === 'false') start(); }, {passive: true});
     window.addEventListener('resize', function() { if (isMobile()) start(); else stop(); });
     start();
+  }());
+</script>
+<script>
+  (function () {
+    var player = document.querySelector('.featured-video-player');
+    if (!player) return;
+    var video = player.querySelector('video');
+    var cover = player.querySelector('.featured-video-cover');
+    if (!video || !cover) return;
+    video.autoplay = false;
+    video.removeAttribute('autoplay');
+    video.pause();
+    cover.hidden = false;
+    cover.addEventListener('click', function () {
+      video.play().catch(function () {});
+    });
+    video.addEventListener('play', function () { cover.hidden = true; });
+    video.addEventListener('ended', function () { cover.hidden = false; });
   }());
 </script>
 <script src="js/site-data.js"></script>

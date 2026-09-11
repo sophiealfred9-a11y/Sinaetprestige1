@@ -1,0 +1,84 @@
+.univers-page {
+  background: #fff;
+  color: #061a45;
+}
+
+.univers-page main > .sp-section,
+.univers-page main > .sp-section * {
+  opacity: 1 !important;
+  visibility: visible;
+  animation: none !important;
+}
+
+.univers-page .sp-hero {
+  min-height: 430px;
+  background: linear-gradient(90deg, rgba(3, 19, 51, .98) 0%, rgba(3, 19, 51, .94) 34%, rgba(3, 19, 51, .62) 62%, rgba(3, 19, 51, .18) 100%), url('../images/herorh.webp') center right / cover no-repeat;
+}
+
+.univers-page .sp-hero-grid {
+  min-height: 430px;
+}
+
+.univers-page .sp-hero .sp-kicker {
+  color: #ffba25;
+}
+
+.univers-page .sp-hero .sp-title,
+.univers-page .sp-hero .sp-lead,
+.univers-page .sp-hero .sp-breadcrumb {
+  color: #fff;
+}
+
+.univers-page .sp-hero .sp-lead {
+  color: #f2f5fa;
+}
+
+.univers-page .sp-hero .sp-btn {
+  border-color: #f5b51b;
+  background: #f5b51b;
+  color: #07183d;
+}
+
+.univers-page .sp-hero .sp-btn.alt {
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.univers-page .sp-section {
+  padding: 58px 0 72px;
+  background: #fff;
+}
+
+.univers-page .sp-grid {
+  gap: 20px;
+}
+
+.univers-page .sp-card {
+  border: 1px solid #dfe6f1;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(9, 35, 93, .04);
+}
+
+.univers-page .sp-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 14px 28px rgba(9, 35, 93, .08);
+  transform: translateY(-4px);
+}
+
+.univers-page .sp-pill {
+  color: #9b6d00;
+  background: #fff5d9;
+  border-color: #f1d68a;
+}
+
+@media (max-width: 850px) {
+  .univers-page .sp-hero { background-position: 65% center; }
+  .univers-page .sp-hero-grid { min-height: 520px; }
+}
+
+@media (max-width: 520px) {
+  .univers-page .sp-hero { min-height: 520px; }
+  .univers-page .sp-section { padding: 38px 0 52px; }
+}
