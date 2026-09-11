@@ -1,53 +1,499 @@
 <!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ingénierie pédagogique | Sina &amp; Prestige</title>
+  <meta name="description" content="Concevoir des parcours de formation et d’accompagnement structurés, adaptés aux publics et aux objectifs de performance." />
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <link rel="icon" href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" type="image/png" />
+  <link rel="stylesheet" href="css/site-redesign.css" />
+  <link rel="stylesheet" href="css/global-rh-nav.css" />
+  <link rel="stylesheet" href="css/refonte-master.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <style>
+    :root {
+      --sp-blue-dark: #09235d;
+      --sp-blue-deep: #06183b;
+      --sp-gold: #f5b51b;
+      --sp-gold-soft: #f7d468;
+      --sp-text: #14213d;
+      --sp-text-muted: #475569;
+      --sp-border: #e2e8f0;
+      --sp-bg-soft: #f8fafc;
+      --sp-bg-paper: #fffdf9;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--sp-bg-paper);
+      color: var(--sp-text);
+      font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; line-height: 1.12; }
+    .sp-main { min-height: 70vh; }
+    .sp-wrap {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+    .sp-breadcrumb {
+      font-size: 0.78rem;
+      color: #8b93a2;
+      margin-bottom: 18px;
+    }
+    .sp-breadcrumb a { text-decoration: none; }
+    .sp-hero {
+      position: relative;
+      background: linear-gradient(135deg, #06183b 0%, #09235d 58%, #0a1730 100%);
+      color: #fff;
+      padding: 92px 0 86px;
+      overflow: hidden;
+    }
+    .sp-hero:before,
+    .sp-hero:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(226,199,133,.14);
+    }
+    .sp-hero:before {
+      width: 620px;
+      height: 620px;
+      right: -250px;
+      top: -330px;
+      box-shadow: 0 0 0 44px rgba(226,199,133,.035), 0 0 0 100px rgba(226,199,133,.018);
+    }
+    .sp-hero:after {
+      width: 500px;
+      height: 500px;
+      left: -160px;
+      bottom: -290px;
+      border-color: rgba(255,255,255,.05);
+    }
+    .sp-hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .sp-kicker,
+    .sp-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--sp-gold-soft);
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-size: 0.68rem;
+    }
+    .sp-kicker:before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--sp-gold);
+    }
+    .sp-title {
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      letter-spacing: -0.04em;
+      margin: 17px 0 18px;
+      color: #fff;
+      max-width: 820px;
+    }
+    .sp-lead {
+      font-size: 1.08rem;
+      color: rgba(255,255,255,.82);
+      max-width: 760px;
+    }
+    .sp-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .sp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      padding: 12px 17px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 1px solid var(--sp-gold);
+      background: var(--sp-gold);
+      color: #07183d;
+      transition: transform 0.2s ease;
+    }
+    .sp-btn:hover { transform: translateY(-1px); }
+    .sp-btn.alt {
+      background: transparent;
+      border-color: rgba(255,255,255,.7);
+      color: #fff;
+    }
+    .sp-home-section {
+      padding: 72px 0;
+      background: var(--sp-bg-paper);
+    }
+    .sp-home-section.alt {
+      background: #f5f2eb;
+    }
+    .sp-section-head {
+      margin-bottom: 28px;
+    }
+    .sp-section-head h2 {
+      margin: 8px 0 0;
+      color: var(--sp-blue-dark);
+      font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+      letter-spacing: -0.02em;
+    }
+    .sp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+    .sp-card {
+      background: #fff;
+      border: 1px solid var(--sp-border);
+      border-radius: 18px;
+      padding: 26px 24px;
+      box-shadow: 0 12px 35px rgba(13,25,51,.05);
+    }
+    .sp-card.featured {
+      border-color: rgba(245,181,27,.5);
+      box-shadow: 0 16px 45px rgba(245,181,27,.12);
+    }
+    .sp-card h3 {
+      margin: 10px 0 10px;
+      font-size: clamp(1.3rem, 1.8vw, 1.8rem);
+      color: var(--sp-blue-dark);
+    }
+    .sp-card p {
+      margin: 0;
+      color: var(--sp-text-muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .sp-pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      background: rgba(245,181,27,.14);
+      color: #7c5f2e;
+      padding: 6px 10px;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .sp-note {
+      border-left: 3px solid var(--sp-gold);
+      background: #fff;
+      padding: 18px 20px;
+      border-radius: 0 14px 14px 0;
+      color: #566075;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .sp-footer {
+      background: #081328;
+      color: #fff;
+      padding: 58px 0 24px;
+    }
+    .sp-footer-grid {
+      display: grid;
+      grid-template-columns: 1.45fr 1fr 1fr 1.05fr;
+      gap: 30px;
+    }
+    .sp-footer-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 13px; }
+    .sp-footer-brand img { width: 50px; height: 50px; }
+    .sp-footer-brand strong { font-family: Georgia, serif; letter-spacing: .12em; }
+    .sp-footer-brand small { display: block; color: var(--sp-gold-soft); font-size: 0.58rem; letter-spacing: .08em; margin-top: 4px; }
+    .sp-footer h3 { margin: 0 0 13px; font-size: 1.1rem; }
+    .sp-footer p, .sp-footer a { color: rgba(255,255,255,.7); }
+    .sp-footer p { margin: 7px 0; }
+    .sp-footer a { text-decoration: none; }
+    .sp-footer-quality {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      padding: 12px;
+    }
+    .sp-footer-quality img { width: 88px; height: auto; background: #fff; border-radius: 7px; padding: 4px; }
+    .sp-footer-quality strong { display: block; font-size: 0.78rem; }
+    .sp-footer-quality span { display: block; color: rgba(255,255,255,.58); font-size: 0.72rem; margin-top: 2px; }
+    .sp-footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.12);
+      margin-top: 36px;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,.55);
+    }
+    @media (max-width: 820px) {
+      .sp-grid { grid-template-columns: 1fr 1fr; }
+      .sp-footer-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      .sp-wrap { width: min(1180px, calc(100% - 28px)); }
+      .sp-grid, .sp-footer-grid { grid-template-columns: 1fr; }
+      .sp-home-section { padding: 54px 0; }
+      .sp-btn { width: 100%; }
+      .sp-actions { flex-direction: column; align-items: stretch; }
+      .sp-title { font-size: 2.2rem; }
+      .sp-note { font-size: 0.92rem; }
+    }
+  </style>
+  <link rel="canonical" href="https://www.sinaetprestige.fr/ingenierie-pedagogique.html" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sina &amp; Prestige" />
+  <meta property="og:title" content="Ingénierie pédagogique | Sina &amp; Prestige" />
+  <meta property="og:description" content="Concevoir des parcours de formation et d’accompagnement structurés, adaptés aux publics et aux objectifs de performance." />
+  <meta property="og:url" content="https://www.sinaetprestige.fr/ingenierie-pedagogique.html" />
+  <meta property="og:image" content="https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ingénierie pédagogique | Sina &amp; Prestige" />
+  <meta name="twitter:description" content="Concevoir des parcours de formation et d’accompagnement structurés, adaptés aux publics et aux objectifs de performance." />
+  <meta name="twitter:image" content="https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" />
+</head>
+<body>
+  <header class="site-head site-head-global">
+    <nav class="site-nav" aria-label="Navigation principale">
+      <a class="brand" href="index.html" aria-label="Sina &amp; Prestige - Accueil">
+        <img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt="Sina &amp; Prestige" />
+        <span class="brand-text">SINA &amp; PRESTIGE<small>ALFRED HR CONSULTING</small></span>
+      </a>
+      <button class="sp-toggle-global" type="button" aria-label="Ouvrir le menu" aria-controls="globalMenu" aria-expanded="false">☰</button>
+      <div class="nav-links" id="globalMenu">
+        <a href="index.html">Accueil</a>
+        <a href="recrutement.html">Recrutement</a>
+        <a href="webinaires-masterclass.html">Webinaires &amp; Masterclass</a>
+        <a href="accompagnement-rh.html">Accompagnement RH</a>
+        <a href="formations.html">Formations</a>
+        <a href="entreprise.html">Entreprise &amp; Partenaires</a>
+        <a href="qualite-accessibilite.html">Qualité &amp; accessibilité</a>
+        <a href="a-propos.html">À propos</a>
+        <div class="resources-menu">
+          <a href="ressources.html" class="resources-link" aria-haspopup="true" aria-expanded="false">Ressources <span aria-hidden="true">⌄</span></a>
+          <div class="resources-dropdown" role="menu">
+            <a href="ressources.html" role="menuitem">Toutes les ressources</a>
+            <a href="catalogues-plaquettes.html" role="menuitem">Catalogues &amp; plaquettes</a>
+            <a href="actualites.html" role="menuitem">Actualités RH</a>
+            <a href="articles.html" role="menuitem">Articles &amp; conseils</a>
+            <a href="webinaires-masterclass.html" role="menuitem">Webinaires &amp; masterclass</a>
+            <a href="veille-rh-juridique.html" role="menuitem">Veille RH &amp; juridique</a>
+            <a href="videos.html" role="menuitem">Vidéos</a>
+            <a href="evenements.html" role="menuitem">Événements</a>
+            <a href="financements.html" role="menuitem">Dispositifs &amp; financements</a>
+            <a href="qualite-accessibilite.html" role="menuitem">Qualité &amp; accessibilité</a>
+            <a href="presse.html" role="menuitem">Presse &amp; médias</a>
+            <a href="faq.html" role="menuitem">FAQ</a>
+            <a href="international.html" role="menuitem">International</a>
+          </div>
+        </div>
+        <a class="nav-cta" href="contact.html">CONTACT</a>
+      </div>
+    </nav>
+  </header>
 
-<html lang="fr"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>Notre approche / ingénierie pédagogique | Sina &amp; Prestige</title><meta content="Le catalogue présente l’expertise ; le diagnostic oriente la réponse." name="description"/><meta content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" name="robots"/><link href="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" rel="icon" type="image/png"/><link href="css/refonte-master.css" rel="stylesheet"/><script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","name":"Sina & Prestige","url":"https://www.sinaetprestige.fr","email":"contact@sinaetprestige.fr","telephone":"06 17 42 06 28","areaServed":"FR","sameAs":["https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391","https://www.instagram.com/sinaprestige/"]},{"@type":"WebSite","name":"Sina & Prestige","url":"https://www.sinaetprestige.fr","publisher":{"@type":"Organization","name":"Sina & Prestige"}}]}</script><link rel="stylesheet" href="css/global-rh-nav.css">
-  <link rel="canonical" href="https://www.sinaetprestige.fr/ingenierie-pedagogique.html">
-  <meta property="og:locale" content="fr_FR">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Sina &amp; Prestige">
-  <meta property="og:title" content="Notre approche / ingénierie pédagogique | Sina &amp; Prestige">
-  <meta property="og:description" content="Le catalogue présente l’expertise ; le diagnostic oriente la réponse.">
-  <meta property="og:url" content="https://www.sinaetprestige.fr/ingenierie-pedagogique.html">
-  <meta property="og:image" content="https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Notre approche / ingénierie pédagogique | Sina &amp; Prestige">
-  <meta name="twitter:description" content="Le catalogue présente l’expertise ; le diagnostic oriente la réponse.">
-  <meta name="twitter:image" content="https://www.sinaetprestige.fr/images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp">
-</head><body><header class="site-head site-head-global">
-  <nav class="site-nav" aria-label="Navigation principale">
-    <a class="brand" href="index.html" aria-label="Sina &amp; Prestige - Accueil">
-      <img src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" alt="Sina &amp; Prestige">
-      <span class="brand-text">SINA &amp; PRESTIGE<small>ALFRED HR CONSULTING</small></span>
-    </a>
-    <button class="sp-toggle-global" type="button" aria-label="Ouvrir le menu" aria-controls="globalMenu" aria-expanded="false">☰</button>
-    <div class="nav-links" id="globalMenu">
-      <a href="index.html">Accueil</a>
-      <a href="recrutement.html">Recrutement</a>
-      <a href="webinaires-masterclass.html">Webinaires &amp; Masterclass</a>
-      <a class="active" href="accompagnement-rh.html">Accompagnement RH</a>
-      <a href="formations.html">Formations</a>
-      <a href="entreprise.html">Entreprise &amp; Partenaires</a>
-      <a href="qualite-accessibilite.html">Qualité &amp; accessibilité</a>
-      <a href="a-propos.html">À propos</a>
-      <div class="resources-menu">
-        <a href="ressources.html" class="resources-link" aria-haspopup="true" aria-expanded="false">Ressources <span aria-hidden="true">⌄</span></a>
-        <div class="resources-dropdown" role="menu">
-          <a href="ressources.html" role="menuitem">Toutes les ressources</a>
-          <a href="catalogues-plaquettes.html" role="menuitem">Catalogues &amp; plaquettes</a>
-          <a href="actualites.html" role="menuitem">Actualités RH</a>
-          <a href="articles.html" role="menuitem">Articles &amp; conseils</a>
-          <a href="webinaires-masterclass.html" role="menuitem">Webinaires &amp; masterclass</a>
-          <a href="veille-rh-juridique.html" role="menuitem">Veille RH &amp; juridique</a>
-          <a href="videos.html" role="menuitem">Vidéos</a>
-          <a href="evenements.html" role="menuitem">Événements</a>
-          <a href="financements.html" role="menuitem">Dispositifs &amp; financements</a>
-          <a href="qualite-accessibilite.html" role="menuitem">Qualité &amp; accessibilité</a>
-          <a href="presse.html" role="menuitem">Presse &amp; médias</a>
-          <a href="faq.html" role="menuitem">FAQ</a>
-          <a href="international.html" role="menuitem">International</a>
+  <main class="sp-main">
+    <section class="sp-hero">
+      <div class="sp-wrap sp-hero-grid sp-hero-simple">
+        <div class="sp-breadcrumb"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> Ingénierie pédagogique</div>
+        <div>
+          <span class="sp-kicker">Sina &amp; Prestige</span>
+          <h1 class="sp-title">Ingénierie pédagogique</h1>
+          <p class="sp-lead">Du diagnostic au pilotage, nous concevons des parcours de formation, d’accompagnement et de transformation cohérents avec les besoins des publics, des organisations et les objectifs de performance.</p>
+          <div class="sp-actions">
+            <a class="sp-btn" href="contact.html">Nous contacter</a>
+            <a class="sp-btn alt" href="formations.html">Découvrir nos formations</a>
+          </div>
         </div>
       </div>
-      <a class="nav-cta" href="contact.html">CONTACT</a>
+    </section>
+
+    <section class="sp-home-section">
+      <div class="sp-wrap">
+        <div class="sp-section-head">
+          <div>
+            <span class="sp-eyebrow">Notre méthode</span>
+            <h2>Une réponse pédagogique pensée pour la réalité du terrain</h2>
+          </div>
+        </div>
+        <div class="sp-grid">
+          <article class="sp-card featured">
+            <span class="sp-pill">Diagnostic</span>
+            <h3>Comprendre le besoin</h3>
+            <p>Nous identifions les enjeux, les publics, les contraintes de mise en œuvre et les objectifs de performance avant de proposer une réponse.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">Conception</span>
+            <h3>Structurer le parcours</h3>
+            <p>Nous bâtissons un cadre pédagogique clair : objectifs, contenus, méthodes, modalités, évaluation et accompagnement du parcours.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">Pilotage</span>
+            <h3>Suivre et ajuster</h3>
+            <p>Le pilotage pédagogique permet de mesurer les effets, repérer les écarts et améliorer la qualité de chaque intervention.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-home-section alt">
+      <div class="sp-wrap">
+        <div class="sp-section-head">
+          <div>
+            <span class="sp-eyebrow">Étapes clés</span>
+            <h2>Le parcours de conception de nos interventions</h2>
+          </div>
+        </div>
+        <div class="sp-grid">
+          <article class="sp-card">
+            <span class="sp-pill">1</span>
+            <h3>Analyse du contexte</h3>
+            <p>Nous identifions les publics, les enjeux professionnels et les objectifs poursuivis pour cadrer la réponse avec précision.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">2</span>
+            <h3>Définition de la solution</h3>
+            <p>Nous sélectionnons les formats, les outils, les méthodes et les dispositifs les plus adaptés à la situation observée.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">3</span>
+            <h3>Accompagnement</h3>
+            <p>Les parcours sont animés avec une logique d’engagement, de clarté pédagogique et d’adaptation au terrain.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">4</span>
+            <h3>Évaluation</h3>
+            <p>Nous vérifions la pertinence du parcours, son appropriation et les opportunités d’amélioration continue.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-home-section">
+      <div class="sp-wrap">
+        <div class="sp-section-head">
+          <div>
+            <span class="sp-eyebrow">Pourquoi cela compte</span>
+            <h2>Une pédagogie utile, claire et alignée avec les usages</h2>
+          </div>
+        </div>
+        <div class="sp-grid">
+          <article class="sp-card">
+            <h3>Des parcours lisibles</h3>
+            <p>Chaque module, séquence et objectif est pensé pour favoriser la compréhension, le transfert et la mise en pratique.</p>
+          </article>
+          <article class="sp-card">
+            <h3>Des interventions adaptées</h3>
+            <p>Nous ajustons les contenus, les méthodes et les supports selon le public, le contexte et les contraintes de mise en œuvre.</p>
+          </article>
+          <article class="sp-card">
+            <h3>Une logique de résultats</h3>
+            <p>L’objectif est de développer des compétences concrètes, mobilisables en situation réelle et en continu.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-home-section alt">
+      <div class="sp-wrap">
+        <div class="sp-section-head">
+          <div>
+            <span class="sp-eyebrow">Publics</span>
+            <h2>Un accompagnement pensé pour les organisations et les personnes</h2>
+          </div>
+        </div>
+        <div class="sp-grid">
+          <article class="sp-card">
+            <span class="sp-pill">Entreprises</span>
+            <h3>Former les équipes</h3>
+            <p>Des parcours conçus pour renforcer les compétences, fluidifier les pratiques et accompagner les changements d’organisation.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">Demandeurs d’emploi</span>
+            <h3>Accompagner les transitions</h3>
+            <p>Des parcours orientés vers la montée en compétences, la professionnalisation et la meilleure compréhension du marché.</p>
+          </article>
+          <article class="sp-card">
+            <span class="sp-pill">Structures</span>
+            <h3>Construire des dispositifs utiles</h3>
+            <p>Des actions pédagogiques cohérentes avec les enjeux territoriaux, institutionnels et spécifiques à chaque parcours.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sp-home-section">
+      <div class="sp-wrap">
+        <div class="sp-note">
+          <strong>Notre engagement :</strong> proposer des réponses pédagogiques claires, honnêtes et concrètes, sans promesses excessives, avec un encadrement adapté aux réalités du terrain.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="sp-footer">
+    <div class="sp-wrap">
+      <div class="sp-footer-grid">
+        <div>
+          <div class="sp-footer-brand">
+            <img alt="Sina &amp; Prestige" height="50" src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" width="50" />
+            <div>
+              <strong>SINA &amp; PRESTIGE</strong>
+              <small>ALFRED HR CONSULTING</small>
+            </div>
+          </div>
+          <p>Formations • Conseil • Ingénierie pédagogique • Transformation</p>
+          <p>Paris 19e</p>
+          <p><a href="mailto:contact@sinaetprestige.fr">contact@sinaetprestige.fr</a><br /><a href="tel:+33972226526">+33 9 72 22 65 26</a></p>
+          <p><a href="https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/sinaprestige/" rel="noopener" target="_blank">Instagram</a></p>
+        </div>
+        <div>
+          <h3>Explorer</h3>
+          <p><a href="formations.html">Formations</a></p>
+          <p><a href="calendrier-formations.html">Calendrier &amp; inscriptions</a></p>
+          <p><a href="entreprise.html">Entreprises</a></p>
+          <p><a href="employabilite.html">Employabilité</a></p>
+          <p><a href="publics.html">Prescripteurs</a></p>
+        </div>
+        <div>
+          <h3>Expertises</h3>
+          <p><a href="recrutement.html">Recrutement &amp; RH</a></p>
+          <p><a href="financements.html">Dispositifs &amp; financements</a></p>
+          <p><a href="ingenierie-pedagogique.html">Ingénierie pédagogique</a></p>
+          <p><a href="webinaires-masterclass.html">Événements</a></p>
+          <p><a href="univers.html">Expertises</a></p>
+        </div>
+        <div class="sp-footer-quality-wrap">
+          <h3>Qualité</h3>
+          <div class="sp-footer-quality">
+            <img alt="Certification Qualiopi" height="47" src="images/qualiopi.webp" width="88" />
+            <div>
+              <strong>Certification Qualiopi</strong>
+              <span>Consulter le certificat officiel</span>
+              <a href="qualite-accessibilite.html">Qualité &amp; accessibilité</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sp-footer-bottom">
+        <span>© 2026 Sina &amp; Prestige — Tous droits réservés.</span>
+        <span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="accessibilite.html">Accessibilité</a></span>
+      </div>
     </div>
-  </nav>
-</header><main class="sp-main"><section class="sp-hero"><div class="sp-wrap sp-hero-grid sp-hero-simple"><div class="sp-breadcrumb"><a href="index.html">Accueil</a> <span aria-hidden="true">/</span> Notre approche / ingénierie pédagogique</div><div><span class="sp-kicker">Sina &amp; Prestige</span><h1 class="sp-title">Notre approche / ingénierie pédagogique</h1><p class="sp-lead">Du diagnostic à l’amélioration : concevoir des réponses pédagogiques cohérentes, accessibles et mesurables.</p><div class="sp-actions"><a class="sp-btn" href="https://sinaetprestige.fr/contact.html">Nous contacter</a><a class="sp-btn alt" href="https://sinaetprestige.fr/formations.html">Voir les formations</a></div></div></div></section><section class="sp-section"><div class="sp-wrap"><div class="sp-grid"><article class="sp-card"><span class="sp-pill">Positionnement</span><h2>Notre approche / ingénierie pédagogique</h2><p>Le catalogue présente l’expertise ; le diagnostic oriente la réponse.</p></article><article class="sp-card"><span class="sp-pill">Méthode</span><h2>Une réponse proportionnée au besoin</h2><p>Le diagnostic, le contexte, les publics et les objectifs guident le choix de la réponse. Les formulations commerciales ne doivent pas transformer une possibilité en garantie.</p></article><article class="sp-card"><span class="sp-pill">Sources</span><h2>Des preuves avant des promesses</h2><p>Les médias, partenaires, événements et résultats sont publiés uniquement lorsqu’ils sont réellement documentés dans le Pack Source.</p></article></div></div></section></main><footer class="sp-footer"><div class="sp-wrap"><div class="sp-footer-grid"><div><div class="sp-footer-brand"><img alt="Sina &amp; Prestige" height="50" src="images/LOGO_OFFICIEL_SINA_PRESTIGE_NE_PAS_MODIFIER.webp" width="50"/><div><strong>SINA &amp; PRESTIGE</strong><small>ALFRED HR CONSULTING</small></div></div><p>Formations • Conseil • Ingénierie pédagogique • Transformation</p><p>Paris 19e</p><p><a href="mailto:contact@sinaetprestige.fr">contact@sinaetprestige.fr</a><br/><a href="tel:+33617420628">06 17 42 06 28</a></p><p><a href="https://www.linkedin.com/in/sina-et-prestige-formations-3405bb391" rel="noopener" target="_blank">LinkedIn</a> · <a href="https://www.instagram.com/sinaprestige/" rel="noopener" target="_blank">Instagram</a></p></div><div><h3>Explorer</h3><p><a href="https://sinaetprestige.fr/formations.html">Formations</a></p><p><a href="https://sinaetprestige.fr/calendrier-formations.html">Calendrier &amp; inscriptions</a></p><p><a href="https://sinaetprestige.fr/entreprise.html">Entreprises</a></p><p><a href="employabilite.html">Employabilité</a></p><p><a href="https://sinaetprestige.fr/publics.html">Prescripteurs</a></p></div><div><h3>Expertises</h3><p><a href="https://sinaetprestige.fr/recrutement.html">Recrutement &amp; RH</a></p><p><a href="financements.html">Dispositifs &amp; financements</a></p><p><a href="ingenierie-pedagogique.html">Ingénierie pédagogique</a></p><p><a href="https://sinaetprestige.fr/webinaires-masterclass.html">Événements</a></p><p><a href="https://sinaetprestige.fr/univers.html">Expertises</a></p></div><div class="sp-footer-quality-wrap"><h3>Qualité</h3><div class="sp-footer-quality"><img alt="Certification Qualiopi" height="47" src="images/qualiopi.webp" width="88"/><div><strong>Certification Qualiopi</strong><span>Consulter le certificat officiel</span><a href="qualite-accessibilite.html">Qualité &amp; accessibilité </a></div></div><p style="margin-top:13px"><a href="https://sinaetprestige.fr/catalogues-plaquettes.html">Catalogues &amp; programmes</a><br/><a href="mentions-legales.html">Juridique &amp; documents</a><br/><a href="https://sinaetprestige.fr/contact.html">Contact</a></p></div></div><div class="sp-footer-bottom"><span>© 2026 Sina &amp; Prestige — Tous droits réservés.</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="confidentialite.html">Confidentialité</a> · <a href="accessibilite.html">Accessibilité</a></span></div></div></footer><script src="js/site-data.js"></script><script src="js/refonte-master.js"></script><script src="js/global-rh-nav.js"></script></body></html>
+  </footer>
+</body>
+</html>
