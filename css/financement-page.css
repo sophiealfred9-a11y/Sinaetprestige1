@@ -1,0 +1,152 @@
+.financements-page {
+  background: #fff;
+  color: #061a45;
+}
+
+.financements-page main > section,
+.financements-page main > section * {
+  opacity: 1 !important;
+  visibility: visible;
+  animation: none !important;
+}
+
+.financements-page .financement-hero {
+  min-height: 390px;
+  background: linear-gradient(90deg, rgba(3, 19, 51, .98) 0%, rgba(3, 19, 51, .93) 27%, rgba(3, 19, 51, .55) 47%, rgba(3, 19, 51, 0) 70%), url('../images/formations-hero-generated.webp') center right / cover no-repeat;
+}
+
+.financements-page .financement-hero .sp-hero-grid {
+  min-height: 390px;
+  padding: 22px 0 34px;
+  display: flex;
+  align-items: center;
+}
+
+.financements-page .financement-hero .sp-breadcrumb,
+.financements-page .financement-hero .sp-kicker {
+  display: none;
+}
+
+.financements-page .financement-hero .sp-hero-grid > div:not(.sp-breadcrumb) {
+  width: 48%;
+  max-width: 680px;
+}
+
+.financements-page .financement-hero .sp-kicker,
+.financements-page .fin-heading .sp-eyebrow,
+.financements-page .fin-tools-head .sp-eyebrow {
+  color: #f5b51b;
+}
+
+.financements-page .financement-hero .sp-title,
+.financements-page .financement-hero .sp-lead,
+.financements-page .financement-hero .sp-breadcrumb {
+  color: #fff;
+}
+
+.financements-page .financement-hero .sp-title {
+  margin: 8px 0 16px;
+  font: 800 43px/1.08 Inter, Arial, sans-serif;
+  letter-spacing: -.7px;
+}
+
+.financements-page .financement-hero .sp-lead {
+  margin: 0;
+  color: #f2f5fa;
+  font: 17px/1.5 Inter, Arial, sans-serif;
+}
+
+.financements-page .financement-hero .sp-btn {
+  min-height: 46px;
+  padding: 12px 20px !important;
+  border-color: #f5b51b;
+  border-radius: 6px;
+  background: #f5b51b;
+  color: #07183d;
+  font: 800 14px/1.2 Inter, Arial, sans-serif;
+}
+
+.financements-page .financement-hero .sp-btn.alt {
+  border-color: #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.financements-page .fin-section:nth-of-type(even) { background: #f8fafc; }
+.financements-page .fin-section:nth-of-type(odd) { background: #fff; }
+
+.financements-page .fin-situation-card,
+.financements-page .fin-device,
+.financements-page .fin-path,
+.financements-page .fin-tools-card,
+.financements-page .fin-audience-card {
+  border-color: #dfe6f1;
+  box-shadow: 0 4px 12px rgba(9, 35, 93, .04);
+}
+
+.financements-page .fin-situation-card:hover,
+.financements-page .fin-device:hover,
+.financements-page .fin-audience-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 14px 28px rgba(9, 35, 93, .08);
+}
+
+.financements-page .fin-device h3,
+.financements-page .fin-tools-card h2,
+.financements-page .fin-bottom-box h2 {
+  color: #09235d;
+}
+
+.financements-page .fin-tabs button.is-active,
+.financements-page .fin-wide-btn,
+.financements-page .fin-bottom-box .sp-btn {
+  background: #09235d;
+  border-color: #09235d;
+}
+
+.financements-page .fin-bottom-box .sp-btn:first-of-type {
+  background: #f5b51b;
+  border-color: #f5b51b;
+  color: #07183d;
+}
+
+.financements-page .fin-bottom-box .sp-btn,
+.financements-page .fin-help-form .sp-btn {
+  min-height: 46px;
+  padding: 12px 20px !important;
+  border-radius: 6px;
+  font: 800 14px/1.2 Inter, Arial, sans-serif;
+}
+
+@media (max-width: 850px) {
+  .financements-page .financement-hero { background-position: 65% center; }
+  .financements-page .financement-hero,
+  .financements-page .financement-hero .sp-hero-grid { min-height: 520px; }
+  .financements-page .financement-hero .sp-hero-grid > div:not(.sp-breadcrumb) { width: 100%; max-width: none; }
+}
+
+@media (max-width: 520px) {
+  .financements-page .financement-hero .sp-hero-grid { padding-top: 42px; padding-bottom: 42px; }
+  .financements-page .fin-heading h2 { font-size: 1.25rem; }
+}
+
+/* Keep the funding hero identical to the homepage hero despite the legacy
+   generic .sp-main > .sp-hero rules loaded earlier. */
+body.financements-page main.sp-main > .financement-hero {
+  min-height: 390px !important;
+  background: linear-gradient(90deg, rgba(3, 19, 51, .98) 0%, rgba(3, 19, 51, .93) 27%, rgba(3, 19, 51, .55) 47%, rgba(3, 19, 51, 0) 70%), url('../images/formations-hero-generated.webp') center right / cover no-repeat !important;
+}
+
+body.financements-page main.sp-main > .financement-hero .sp-hero-grid {
+  min-height: 390px !important;
+}
+
+@media (max-width: 850px) {
+  body.financements-page main.sp-main > .financement-hero,
+  body.financements-page main.sp-main > .financement-hero .sp-hero-grid {
+    min-height: 520px !important;
+  }
+  body.financements-page main.sp-main > .financement-hero {
+    background-position: 65% center;
+  }
+}

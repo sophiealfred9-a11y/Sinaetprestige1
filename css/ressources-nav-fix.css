@@ -1,0 +1,9 @@
+.site-head-global .nav-links a::after {
+  content: none !important;
+  display: none !important;
+}
+
+.site-head-global .nav-links a:hover {
+  color: #fff !important;
+  transform: none !important;
+}
