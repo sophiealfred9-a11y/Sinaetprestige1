@@ -116,8 +116,10 @@
   });
 
   const list=qs('#session-list');
-  let visibleLimit=5;
-  let loadMoreButton=null;
+  let visibleLimit=15;
+  let loadMoreContainer=null, loadMoreButton=null;
+  let loaderEl=null, endMsgEl=null, isLoadingMore=false;
+  const BATCH_SIZE=15;
   const makeRow=(x)=>{
     const dInfo = parseDateInfo(x.date);
     const day = dInfo ? dInfo.displayDay : (x.displayDay || '');
@@ -135,7 +137,7 @@
 
     const isLong = /35\s*h|5\s*jours/i.test(x.duration);
     const timeMeta = isLong ? '5 jours (35 h) · 09h00 – 17h00' : '1 jour (7 h) · 09h00 – 17h30';
-    const convBadge = x.conventionne ? '<span class="badge-dokelio-row" style="background:#071b46;color:#ffffff;font-size:9px;font-weight:800;padding:3px 4px;border-radius:4px;margin-top:4px;display:block;text-align:center;line-height:1.2;">CONVENTIONNÉ<br>DOKELIO</span>' : '';
+    const convBadge = x.conventionne ? '<span class="badge-dokelio-row" style="background:#071b46;color:#ffffff;font-size:9px;font-weight:800;padding:3px 4px;border-radius:4px;margin-top:4px;display:block;text-align:center;line-height:1.2;"></span>' : '';
     const placesMeta = x.conventionne 
       ? '<strong style="color:#0a45a2;font-size:8px">Conventionné Dokelio IDF</strong>' 
       : 'Places disponibles';
@@ -146,12 +148,49 @@
   if(list){
     list.innerHTML='';
     events.forEach(e=>list.appendChild(makeRow(e)));
+
+    // ── Load-more container under list ──
+    loadMoreContainer=document.createElement('div');
+    loadMoreContainer.className='load-more-container';
+
+    // ── Loader / Spinner during load ──
+    loaderEl=document.createElement('div');
+    loaderEl.className='formations-loader';
+    loaderEl.setAttribute('aria-live','polite');
+    loaderEl.hidden=true;
+    loaderEl.innerHTML='<div class="formations-spinner" aria-hidden="true"></div><span class="formations-loader-text">Chargement des sessions…</span>';
+    loadMoreContainer.appendChild(loaderEl);
+
+    // ── Action Button ──
     loadMoreButton=document.createElement('button');
     loadMoreButton.type='button';
     loadMoreButton.className='load-more-sessions';
-    loadMoreButton.textContent='Charger plus de dates';
-    list.insertAdjacentElement('afterend',loadMoreButton);
-    loadMoreButton.addEventListener('click',()=>{visibleLimit+=5;applyFilters();});
+    loadMoreButton.innerHTML='<span>Afficher 15 sessions supplémentaires</span>';
+    loadMoreContainer.appendChild(loadMoreButton);
+
+    // ── End-of-list message ──
+    endMsgEl=document.createElement('div');
+    endMsgEl.className='formations-end-msg';
+    endMsgEl.hidden=true;
+    endMsgEl.innerHTML='<span class="end-check" aria-hidden="true">✓</span> Toutes les sessions sont affichées';
+    loadMoreContainer.appendChild(endMsgEl);
+
+    list.insertAdjacentElement('afterend',loadMoreContainer);
+
+    // Click handler with feedback
+    loadMoreButton.addEventListener('click',()=>{
+      if(isLoadingMore) return;
+      isLoadingMore=true;
+      loadMoreButton.classList.add('is-loading');
+      loaderEl.hidden=false;
+      setTimeout(()=>{
+        visibleLimit+=BATCH_SIZE;
+        applyFilters();
+        loaderEl.hidden=true;
+        loadMoreButton.classList.remove('is-loading');
+        isLoadingMore=false;
+      },300);
+    });
   }
 
   const selectOptions={
@@ -238,24 +277,43 @@
       r.dataset.filterMatch=matches?'true':'false';
       if(matches)matchingRows.push(r);
     });
-    qsa('.calendar-row').forEach(r=>{r.hidden=r.dataset.filterMatch!=='true'||matchingRows.indexOf(r)>=visibleLimit;});
-    if(loadMoreButton){
-      if(calView && !calView.hidden) {
-        loadMoreButton.hidden = true;
-      } else {
-        loadMoreButton.hidden = matchingRows.length <= visibleLimit;
-        loadMoreButton.textContent = `Charger plus de dates (${Math.min(5,matchingRows.length-visibleLimit)})`;
+    qsa('.calendar-row').forEach(r=>{
+      const idx=matchingRows.indexOf(r);
+      const wasHidden=r.hidden;
+      r.hidden=r.dataset.filterMatch!=='true'||idx>=visibleLimit;
+      // Fade-in animation for newly revealed cards
+      if(wasHidden && !r.hidden && idx>=BATCH_SIZE){
+        r.classList.remove('fade-in-up');
+        void r.offsetWidth; // force reflow
+        r.classList.add('fade-in-up');
       }
+    });
+    const remaining = matchingRows.length - visibleLimit;
+    const allShown = remaining <= 0;
+    const isCalMode = calView && !calView.hidden;
+
+    // ── Button & Feedback management ──
+    if(loadMoreContainer){
+      loadMoreContainer.hidden = isCalMode || matchingRows.length === 0;
+    }
+    if(loadMoreButton){
+      loadMoreButton.hidden = allShown || isCalMode;
+      const nextBatch = Math.min(BATCH_SIZE, remaining);
+      loadMoreButton.innerHTML = `<span>Afficher les ${nextBatch} sessions suivantes</span> <small style="opacity:0.8;font-size:11px;">(${remaining} restante${remaining>1?'s':''})</small>`;
+    }
+    if(endMsgEl){
+      endMsgEl.hidden = !allShown || isCalMode || matchingRows.length === 0;
+      endMsgEl.innerHTML = `<span class="end-check" aria-hidden="true">✓</span> Toutes les sessions sont affichées (${matchingRows.length} au planning)`;
     }
     const label=qs('#active-domain-label');
     if(label){
       label.hidden=!activeDomain||!domainLabels[activeDomain];
       if(domainLabels[activeDomain]) label.textContent='Domaine actif : '+domainLabels[activeDomain];
     }
-    if(calView && !calView.hidden){ renderRealCalendar(); }
+    if(isCalMode){ renderRealCalendar(); }
   };
-  ['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>qs(s)?.addEventListener('input',()=>{visibleLimit=5;applyFilters();}));
-  qs('#reset-filters')?.addEventListener('click',()=>{['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>{const e=qs(s);if(e)e.value='';});activeDomain=''; const u=new URL(location.href); u.search=''; history.replaceState({},'',u); applyFilters();});
+  ['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>qs(s)?.addEventListener('input',()=>{visibleLimit=BATCH_SIZE;applyFilters();}));
+  qs('#reset-filters')?.addEventListener('click',()=>{['#filter-search','#filter-theme','#filter-public','#filter-mode','#filter-location','#filter-month','#filter-funding'].forEach(s=>{const e=qs(s);if(e)e.value='';});activeDomain='';visibleLimit=BATCH_SIZE; const u=new URL(location.href); u.search=''; history.replaceState({},'',u); applyFilters();});
 
   const quick=qs('#inscription');
   const quickCard=quick?.closest('.quick-card');
@@ -613,9 +671,9 @@
       calView.hidden = !isCal;
       calView.style.display = isCal ? 'block' : 'none';
     }
-    if (loadMoreButton) {
-      loadMoreButton.hidden = isCal || (qsa('.calendar-row[data-filter-match="true"]').length <= visibleLimit);
-      loadMoreButton.style.display = isCal ? 'none' : '';
+    if (loadMoreContainer) {
+      loadMoreContainer.hidden = isCal || (qsa('.calendar-row[data-filter-match="true"]').length === 0);
+      loadMoreContainer.style.display = isCal ? 'none' : '';
     }
 
     listBtn?.classList.toggle('active', !isCal);
@@ -623,6 +681,9 @@
 
     if (isCal) {
       renderRealCalendar();
+    } else {
+      // Re-apply filters to update loader/end-msg state when switching back to list
+      applyFilters();
     }
   };
 

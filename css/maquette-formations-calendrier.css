@@ -91,7 +91,61 @@
 .maquette-page .session-card:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(8,30,73,.1)}
 .maquette-page .session-body{padding:14px}
 .maquette-page .calendar-main{grid-template-columns:1fr;gap:22px}
-.maquette-page .load-more-sessions{display:block;margin:18px auto 0;border:1px solid #09235d;border-radius:6px;padding:11px 20px;background:#fff;color:#09235d;font:800 13px/1.2 Inter,Arial,sans-serif;cursor:pointer}.maquette-page .load-more-sessions:hover{background:#09235d;color:#fff}.maquette-page .load-more-sessions[hidden]{display:none}
+.maquette-page .load-more-container{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+  margin-top:22px;
+}
+.maquette-page .load-more-sessions{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:0 auto;
+  border:1.5px solid #09235d;
+  border-radius:8px;
+  padding:13px 28px;
+  background:#fff;
+  color:#09235d;
+  font:800 13.5px/1.2 Inter,Arial,sans-serif;
+  cursor:pointer;
+  transition:all .22s ease;
+  box-shadow:0 4px 14px rgba(9,35,93,.08);
+}
+.maquette-page .load-more-sessions:hover{
+  background:#09235d;
+  color:#fff;
+  border-color:#09235d;
+  transform:translateY(-2px);
+  box-shadow:0 8px 22px rgba(9,35,93,.18);
+}
+.maquette-page .load-more-sessions:active{
+  transform:translateY(0);
+}
+.maquette-page .load-more-sessions.is-loading{
+  pointer-events:none;
+  opacity:.85;
+}
+.maquette-page .load-more-sessions[hidden]{
+  display:none;
+}
+
+/* ── Inline Spinner & Feedback ── */
+.formations-loader{display:flex;flex-direction:column;align-items:center;gap:10px;padding:12px 0 6px;transition:opacity .3s ease}
+.formations-loader[hidden]{display:none}
+.formations-spinner{width:30px;height:30px;border:3px solid #e8dfc5;border-top-color:#c9a227;border-radius:50%;animation:sp-spin .75s linear infinite}
+@keyframes sp-spin{to{transform:rotate(360deg)}}
+.formations-loader-text{font:600 12px/1.3 Inter,Arial,sans-serif;color:#64748b;letter-spacing:.03em}
+.formations-end-msg{display:flex;align-items:center;justify-content:center;gap:8px;padding:18px 0 8px;font:600 13px/1.3 Inter,Arial,sans-serif;color:#64748b;letter-spacing:.02em}
+.formations-end-msg[hidden]{display:none}
+.formations-end-msg .end-check{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:50%;background:#e8f5e9;color:#2e7d32;font-size:14px;font-weight:700}
+
+/* ── Fade-in animation for lazy-loaded cards ── */
+.maquette-page .calendar-row.fade-in-up{opacity:0;transform:translateY(20px);animation:cardFadeIn .45s ease forwards}
+@keyframes cardFadeIn{to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.maquette-page .calendar-row.fade-in-up{opacity:1;transform:none;animation:none}}
 .maquette-page .formation-reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease var(--reveal-delay,0ms),transform .7s cubic-bezier(.2,.7,.2,1) var(--reveal-delay,0ms)}.maquette-page .formation-reveal.is-visible{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){.maquette-page .formation-reveal{opacity:1;transform:none;transition:none}}
 .maquette-page .quick-card{border:1px solid #dce5f3;border-radius:12px;padding:20px;box-shadow:0 8px 22px rgba(8,30,73,.06)}

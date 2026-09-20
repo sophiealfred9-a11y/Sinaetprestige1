@@ -185,7 +185,7 @@ window.SINA_DATA = {
     },
     {
       "code": "F27",
-      "title": "Performance commerciale B2B et outils d'intelligence artificielle générative",
+      "title": "Performance commerciale B2B et outils d’IA générative",
       "family": "Commerce, prospection & IA",
       "duration": "35 h - 5 jours",
       "price": "700 € HT / participant"
