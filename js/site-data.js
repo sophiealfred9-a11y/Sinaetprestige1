@@ -139,6 +139,63 @@ window.SINA_DATA = {
       "family": "Prévention des risques professionnels",
       "duration": "7 h - 1 jour",
       "price": "890 € HT / participant"
+    },
+    {
+      "code": "F21",
+      "title": "Intégrer l'IA dans son développement et codage : assistants de code et génie logiciel",
+      "family": "IA, développement & codage",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant",
+      "conventionne": true
+    },
+    {
+      "code": "F22",
+      "title": "Maîtrise de la Data et des analyses métiers avec l'IA",
+      "family": "Data, IA & analyses métiers",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
+    },
+    {
+      "code": "F23",
+      "title": "Transition numérique, méthodes Agiles et pilotage de projet : posture manager et Agile",
+      "family": "Management & leadership",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
+    },
+    {
+      "code": "F24",
+      "title": "Créer son entreprise avec l'IA : de l'idée aux premiers clients - structuration et lancement de projet",
+      "family": "Entrepreneuriat, IA & commercial",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
+    },
+    {
+      "code": "F25",
+      "title": "Maîtriser l'IA au bureau : gagner du temps et booster sa productivité - bureautique et outils collaboratifs",
+      "family": "IA, productivité & bureautique",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
+    },
+    {
+      "code": "F26",
+      "title": "Booster sa recherche d'emploi : maîtriser l'IA, LinkedIn et les outils ATS",
+      "family": "IA, emploi & insertion",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
+    },
+    {
+      "code": "F27",
+      "title": "Performance commerciale B2B et outils d'intelligence artificielle générative",
+      "family": "Commerce, prospection & IA",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
+    },
+    {
+      "code": "F28",
+      "title": "Prospection commerciale B2B avec l'IA",
+      "family": "Commerce, prospection & IA",
+      "duration": "35 h - 5 jours",
+      "price": "700 € HT / participant"
     }
   ],
   "sessions": {
@@ -340,6 +397,58 @@ window.SINA_DATA = {
       [
         "13 janvier 2027",
         "Présentiel — Normandie"
+      ]
+    ],
+    "F21": [
+      [
+        "19 au 23 octobre 2026",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F22": [
+      [
+        "4 au 8 janvier 2027",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F23": [
+      [
+        "7 au 11 décembre 2026",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F24": [
+      [
+        "23 au 27 novembre 2026",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F25": [
+      [
+        "2 au 6 novembre 2026",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F26": [
+      [
+        "12 au 16 octobre 2026",
+        "Distanciel — France entière"
+      ],
+      [
+        "26 au 30 octobre 2026",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F27": [
+      [
+        "5 au 9 octobre 2026",
+        "Distanciel — France entière"
+      ]
+    ],
+    "F28": [
+      [
+        "2 décembre 2026",
+        "Distanciel — France entière"
       ]
     ]
   }

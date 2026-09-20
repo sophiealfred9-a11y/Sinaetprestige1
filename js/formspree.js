@@ -53,8 +53,13 @@
       formData.append('form_type', form.dataset.formspreeType || 'CONTACT');
     }
 
+    let targetEndpoint = form.dataset.formspreeEndpoint || ENDPOINTS[form.dataset.formspreeType] || ENDPOINTS.contact;
+    if (targetEndpoint === 'contact.php' && location.protocol === 'file:') {
+      targetEndpoint = ENDPOINTS.preinscription || ENDPOINTS.contact;
+    }
+
     try {
-      const response = await fetch(ENDPOINTS.contact, {
+      let response = await fetch(targetEndpoint, {
         method: 'POST',
         body: formData,
         headers: { Accept: 'application/json' }
@@ -63,8 +68,22 @@
       let data = {};
       try { data = await response.json(); } catch (_) {}
 
-      if (!response.ok || !data.success) {
-        throw new Error(data.message || 'Impossible d’envoyer le formulaire.');
+      const isSuccess = response.ok && (data.success === true || data.ok === true || (data.success !== false && !data.errors));
+      if (!isSuccess) {
+        // Fallback to Formspree if local contact.php failed
+        if (targetEndpoint === 'contact.php') {
+          const fallbackResp = await fetch(ENDPOINTS.contact, {
+            method: 'POST',
+            body: formData,
+            headers: { Accept: 'application/json' }
+          });
+          if (fallbackResp.ok) {
+            showMessage(form, form.dataset.formspreeSuccess || 'Votre demande a bien été envoyée. Nous vous recontacterons prochainement.', true);
+            form.reset();
+            return;
+          }
+        }
+        throw new Error(data.message || (data.errors && data.errors[0]?.message) || 'Impossible d’envoyer le formulaire.');
       }
 
       showMessage(form, data.message || form.dataset.formspreeSuccess || 'Votre demande a bien été envoyée. Nous vous recontacterons prochainement.', true);
