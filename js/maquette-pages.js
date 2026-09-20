@@ -140,7 +140,7 @@
       ? '<strong style="color:#0a45a2;font-size:8px">Conventionné Dokelio IDF</strong>' 
       : 'Places disponibles';
 
-    row.innerHTML = `<div class="datebox"><strong>${day}</strong><span>${mon}</span><small>${yr}</small><span class="status gold-status">INSCRIPTIONS<br>OUVERTES</span>${convBadge}</div><img class="cal-thumb" src="${imageForFamily(x.family, x.title)}" alt="" aria-hidden="true"><div class="cal-info"><h3>${x.title}</h3><div class="family">${x.family}</div><p>Session officielle Sina &amp; Prestige · ${x.price}.</p><div class="meta"><span>Durée : ${x.duration}</span><span>${x.mode.includes('Distanciel') ? 'Distanciel' : 'Présentiel'}</span><span>Public : ${x.public}</span>${x.conventionne ? '<span style="color:#0a45a2;font-weight:700">Dokelio IDF</span>' : ''}</div></div><div class="cal-meta">Lieu : ${x.mode}<br>Horaires : ${timeMeta}<br>${placesMeta}</div><div class="cal-actions"><a class="m-btn light small" href="${pdfMap[x.code]}" target="_blank" rel="noopener">Voir le programme</a><a class="m-btn gold small cal-signup" href="#inscription" data-code="${x.code}" data-date="${x.date}" data-mode="${x.mode}">S’inscrire</a></div>`;
+    row.innerHTML = `<div class="datebox"><strong>${day}</strong><span>${mon}</span><small>${yr}</small><span class="status gold-status">INSCRIPTIONS<br>OUVERTES</span>${convBadge}</div><img class="cal-thumb" src="${imageForFamily(x.family, x.title)}" alt="" aria-hidden="true"><div class="cal-info"><h3>${x.title}</h3><div class="family">${x.family}</div><p>Session officielle Sina &amp; Prestige · ${x.price}.</p><div class="meta"><span>Durée : ${x.duration}</span><span>${x.mode.includes('Distanciel') ? 'Distanciel' : 'Présentiel'}</span><span>Public : ${x.public}</span>${x.conventionne ? '<span style="color:#0a45a2;font-weight:700">Dokelio IDF</span>' : ''}</div></div><div class="cal-meta">Lieu : ${x.mode}<br>Horaires : ${timeMeta}<br>${placesMeta}</div><div class="cal-actions"><a class="m-btn light small" href="${pdfMap[x.code]}" target="_blank" rel="noopener">Programme (PDF)</a><a class="m-btn gold small cal-signup" href="#inscription" data-code="${x.code}" data-date="${x.date}" data-mode="${x.mode}">S’inscrire</a></div>`;
     return row;
   };
   if(list){
@@ -534,7 +534,7 @@
                   </div>
                   <div class="cal-detail-actions">
                     <a class="m-btn gold small cal-signup" href="#inscription" data-code="${s.code}" data-date="${s.date}" data-mode="${s.mode}">S’inscrire</a>
-                    <a class="m-btn light small" href="${pdfMap[s.code]}" target="_blank" rel="noopener">Programme</a>
+                    <a class="m-btn light small" href="${pdfMap[s.code]}" target="_blank" rel="noopener">PDF</a>
                   </div>
                 </article>
               `;
